@@ -245,103 +245,137 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto">
-          <div className="px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
-              <div key={link.name}>
-                {link.hasDropdown ? (
-                  <div>
-                    <button
-                      onClick={() =>
-                        setActiveDropdown(
-                          activeDropdown === link.hasDropdown
-                            ? null
-                            : link.hasDropdown,
-                        )
-                      }
-                      className="flex items-center justify-between w-full text-left font-semibold text-text-dark py-3 border-b border-border-color"
-                    >
-                      <span>{link.name}</span>
-                      <FiChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          activeDropdown === link.hasDropdown
-                            ? "rotate-180"
-                            : ""
-                        }`}
-                      />
-                    </button>
-                    {activeDropdown === link.hasDropdown && (
-                      <div className="pl-4 py-2 space-y-2 bg-light-bg rounded-lg mt-2">
-                        {link.hasDropdown === "schemes" &&
-                          schemes.map((scheme) => (
-                            <Link
-                              key={scheme.name}
-                              href={scheme.href}
-                              className="block py-2 text-text-muted hover:text-accent-text"
-                            >
-                              {scheme.name}
-                            </Link>
-                          ))}
-                        {link.hasDropdown === "services" && (
-                          <>
-                            <p className="text-xs uppercase text-accent font-semibold pt-2">
-                              Registration
-                            </p>
-                            {registrationServices.map((service) => (
-                              <Link
-                                key={service.name}
-                                href={service.href}
-                                className="block py-2 text-text-muted hover:text-accent-text"
-                              >
-                                {service.name}
-                              </Link>
-                            ))}
-                            <p className="text-xs uppercase text-accent font-semibold pt-2">
-                              Advisory
-                            </p>
-                            {advisoryServices.map((service) => (
-                              <Link
-                                key={service.name}
-                                href={service.href}
-                                className="block py-2 text-text-muted hover:text-accent-text"
-                              >
-                                {service.name}
-                              </Link>
-                            ))}
-                          </>
+        <>
+          {/* Backdrop */}
+          <div
+            className="lg:hidden fixed inset-0 bg-black/20 z-40"
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="lg:hidden fixed inset-y-0 right-0 w-[85%] max-w-sm bg-white z-50 overflow-y-auto shadow-2xl transform transition-transform duration-300">
+            <div className="px-5 py-6">
+              {/* Close button */}
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-border-color">
+                <Image
+                  src="/logo.png"
+                  alt="Euroasia"
+                  width={140}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 rounded-lg hover:bg-light-bg"
+                >
+                  <FiX className="w-6 h-6 text-text-dark" />
+                </button>
+              </div>
+              <div className="space-y-1">
+                {navLinks.map((link) => (
+                  <div key={link.name}>
+                    {link.hasDropdown ? (
+                      <div>
+                        <button
+                          onClick={() =>
+                            setActiveDropdown(
+                              activeDropdown === link.hasDropdown
+                                ? null
+                                : link.hasDropdown,
+                            )
+                          }
+                          className="flex items-center justify-between w-full text-left font-semibold text-text-dark py-3 border-b border-border-color"
+                        >
+                          <span>{link.name}</span>
+                          <FiChevronDown
+                            className={`w-4 h-4 transition-transform ${
+                              activeDropdown === link.hasDropdown
+                                ? "rotate-180"
+                                : ""
+                            }`}
+                          />
+                        </button>
+                        {activeDropdown === link.hasDropdown && (
+                          <div className="pl-4 py-2 space-y-2 bg-light-bg rounded-lg mt-2">
+                            {link.hasDropdown === "schemes" &&
+                              schemes.map((scheme) => (
+                                <Link
+                                  key={scheme.name}
+                                  href={scheme.href}
+                                  className="block py-2 text-text-muted hover:text-accent-text"
+                                >
+                                  {scheme.name}
+                                </Link>
+                              ))}
+                            {link.hasDropdown === "services" && (
+                              <>
+                                <p className="text-xs uppercase text-accent font-semibold pt-2">
+                                  Registration
+                                </p>
+                                {registrationServices.map((service) => (
+                                  <Link
+                                    key={service.name}
+                                    href={service.href}
+                                    className="block py-2 text-text-muted hover:text-accent-text"
+                                  >
+                                    {service.name}
+                                  </Link>
+                                ))}
+                                <p className="text-xs uppercase text-accent font-semibold pt-2">
+                                  Advisory
+                                </p>
+                                {advisoryServices.map((service) => (
+                                  <Link
+                                    key={service.name}
+                                    href={service.href}
+                                    className="block py-2 text-text-muted hover:text-accent-text"
+                                  >
+                                    {service.name}
+                                  </Link>
+                                ))}
+                              </>
+                            )}
+                          </div>
                         )}
                       </div>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className={`block py-3 font-semibold border-b border-border-color ${
+                          pathname === link.href
+                            ? "text-accent"
+                            : "text-text-dark"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
                     )}
                   </div>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className={`block py-3 font-semibold border-b border-border-color ${
-                      pathname === link.href ? "text-accent" : "text-text-dark"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )}
+                ))}
               </div>
-            ))}
-            <div className="pt-6 space-y-4">
-              <a
-                href="tel:+919898921290"
-                className="flex items-center justify-center text-primary-navy font-semibold py-3 border border-primary-navy rounded-lg"
-              >
-                <FiPhone className="w-4 h-4 mr-2" />
-                +91-9898921290
-              </a>
-              <Link
-                href="/contact"
-                className="block text-center px-6 py-4 bg-accent text-white font-semibold rounded-lg"
-              >
-                Get Free Consultation
-              </Link>
+              <div className="pt-6 space-y-3">
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  className="flex items-center justify-center w-full text-primary-navy font-semibold py-3 border border-primary-navy rounded-lg"
+                >
+                  <FiSearch className="w-4 h-4 mr-2" />
+                  AI Search
+                </button>
+                <a
+                  href="tel:+919898921290"
+                  className="flex items-center justify-center text-primary-navy font-semibold py-3 border border-border-color rounded-lg"
+                >
+                  <FiPhone className="w-4 h-4 mr-2" />
+                  +91-9898921290
+                </a>
+                <Link
+                  href="/contact"
+                  className="block text-center px-6 py-4 bg-primary-navy text-white font-semibold rounded-lg"
+                >
+                  Get Free Consultation
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
 
       {/* AI Search Modal */}

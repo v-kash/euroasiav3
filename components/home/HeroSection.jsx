@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-hero-gradient overflow-hidden">
+    <section className="relative min-h-[100svh] bg-hero-gradient overflow-hidden">
       {/* Background Texture */}
       <div className="absolute inset-0 hero-texture" />
 
@@ -13,8 +13,8 @@ export default function HeroSection() {
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="grid lg:grid-cols-5 gap-12 items-center min-h-[calc(100vh-12rem)]">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-16 lg:pt-32 pb-12 lg:pb-20">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center min-h-[calc(100svh-12rem)]">
           {/* Left Content - 60% */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -28,14 +28,14 @@ export default function HeroSection() {
             </span>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-h1 font-black text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-h1 font-black text-white leading-tight mb-4 sm:mb-6">
               Unlock Government Grants
               <br />
               <span className="text-accent">for Your Business</span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-lg text-white/70 mb-8 max-w-xl">
+            <p className="text-base sm:text-lg text-white/70 mb-6 sm:mb-8 max-w-xl">
               Expert consulting & processing for PMEGP, MUDRA, Startup India,
               ZED & 80-IAC benefits. We help you access
               <span className="text-accent font-semibold">
@@ -46,23 +46,23 @@ export default function HeroSection() {
             </p>
 
             {/* Trust Pills */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <span className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white text-sm">
-                ✓ 100% Secure Process
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+              <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm">
+                ✓ 100% Secure
               </span>
-              <span className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white text-sm">
+              <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm">
                 ⚡ Fast Approvals
               </span>
-              <span className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white text-sm">
+              <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm">
                 📈 Growth Focused
               </span>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
               <Link
                 href="/schemes"
-                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 Explore Grants
                 <svg
@@ -81,17 +81,17 @@ export default function HeroSection() {
               </Link>
               <Link
                 href="/check-eligibility"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-navy transition-all duration-200"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-navy transition-all duration-200 text-sm sm:text-base"
               >
                 Check Eligibility
               </Link>
             </div>
 
             {/* Bottom Stats Line */}
-            <p className="text-white/60 text-sm">
+            <p className="text-white/60 text-xs sm:text-sm">
               <span className="text-white font-semibold">₹100 Cr+</span> Funded
-              ·<span className="text-white font-semibold"> 500+</span>{" "}
-              Businesses ·<span className="text-white font-semibold"> 99%</span>{" "}
+              · <span className="text-white font-semibold">500+</span>{" "}
+              Businesses · <span className="text-white font-semibold">99%</span>{" "}
               Success
             </p>
           </motion.div>

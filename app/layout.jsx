@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
           <AnnouncementBar />
           <Navbar />
         </div>
-        <main className="min-h-screen pt-32">{children}</main>
+        <main className="min-h-screen pt-28 md:pt-32">{children}</main>
         <Footer />
         <WhatsAppButton />
         <FloatingAlerts />
