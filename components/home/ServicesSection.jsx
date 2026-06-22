@@ -143,7 +143,7 @@ const services = [
     title: "GST & Tax Compliance",
     category: "Compliance",
     href: "/services/gst-compliance",
-    badge: "From ₹999/mo",
+    badge: "Same Day",
     successRate: 100,
     price: "₹999/mo",
     timeline: "Ongoing",
@@ -422,11 +422,8 @@ export default function ServicesSection() {
                   ))}
                 </ul>
 
-                {/* Pricing Row */}
-                <div className="flex items-center justify-between mb-5 pb-5 border-b border-gray-100">
-                  <span className="text-primary-navy font-bold">
-                    {service.price}
-                  </span>
+                {/* Timeline */}
+                <div className="flex items-center justify-end mb-5 pb-5 border-b border-gray-100">
                   <span className="px-3 py-1 bg-blue-50 text-primary-navy text-xs font-medium rounded-full">
                     {service.timeline}
                   </span>
