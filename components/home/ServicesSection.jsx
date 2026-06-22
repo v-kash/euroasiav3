@@ -425,7 +425,7 @@ export default function ServicesSection() {
                 {/* Pricing Row */}
                 <div className="flex items-center justify-between mb-5 pb-5 border-b border-gray-100">
                   <span className="text-primary-navy font-bold">
-                    Starting {service.price}
+                    {service.price}
                   </span>
                   <span className="px-3 py-1 bg-blue-50 text-primary-navy text-xs font-medium rounded-full">
                     {service.timeline}

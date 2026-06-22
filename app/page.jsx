@@ -7,6 +7,7 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import SchemeSpotlight from "@/components/home/SchemeSpotlight";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import ProcessSection from "@/components/home/ProcessSection";
+import OfficesSection from "@/components/shared/OfficesSection";
 import BlogPreview from "@/components/home/BlogPreview";
 import CTABanner from "@/components/home/CTABanner";
 
@@ -33,6 +34,7 @@ export default function HomePage() {
       <SchemeSpotlight />
       <TestimonialsSection />
       <ProcessSection />
+      <OfficesSection />
       <BlogPreview />
       <CTABanner />
     </>

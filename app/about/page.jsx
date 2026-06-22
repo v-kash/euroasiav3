@@ -6,11 +6,23 @@ import TeamSection from "@/components/home/TeamSection";
 import CTABanner from "@/components/home/CTABanner";
 
 export const metadata = {
-  title: "About Us",
+  title: "About Us - Your Trusted MSME Funding Consultancy",
   description:
-    "Learn about Euroasia Aquatic Pvt Ltd — your trusted partner for business certifications, compliance, and growth solutions in Ahmedabad, Gujarat.",
+    "Euroasia Aquatic Pvt Ltd helps MSMEs access ₹10L-₹1Cr government grants. 99% success rate, 500+ businesses funded, ₹100Cr+ disbursed. Expert PMEGP, MUDRA, Startup India consultants in Ahmedabad.",
+  keywords: [
+    "MSME consultancy",
+    "government grants consultant",
+    "PMEGP consultant Ahmedabad",
+    "business funding expert",
+    "startup consultancy Gujarat",
+  ],
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title: "About Euroasia - MSME Funding & Government Grants Experts",
+    description:
+      "99% success rate in government funding. 500+ businesses funded with ₹100Cr+ in grants.",
   },
 };
 

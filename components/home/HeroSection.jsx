@@ -29,9 +29,11 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-h1 font-black text-white leading-tight mb-4 sm:mb-6">
-              Unlock Government Grants
+              Making
               <br />
-              <span className="text-accent">for Your Business</span>
+              Compliance
+              <br />
+              <span className="text-accent">Effortless</span>
             </h1>
 
             {/* Subtext */}

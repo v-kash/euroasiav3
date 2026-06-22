@@ -1,13 +1,26 @@
 import PageHero from "@/components/shared/PageHero";
 import ContactForm from "@/components/contact/ContactForm";
+import OfficesSection from "@/components/shared/OfficesSection";
 import { FiMapPin, FiPhone, FiMail, FiClock } from "react-icons/fi";
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Us - Get Free MSME Funding Consultation",
   description:
-    "Get in touch with Euroasia Aquatic Pvt Ltd for business certifications, compliance, and consulting services. Located in Ahmedabad, Gujarat.",
+    "Contact Euroasia for free consultation on PMEGP, MUDRA, Startup India registration. Call +91-9898921290. Offices in Ahmedabad & Pune. Expert guidance for government grants.",
+  keywords: [
+    "contact MSME consultant",
+    "PMEGP consultant contact",
+    "government grants consultation Ahmedabad",
+    "business funding help Pune",
+    "MSME consultant Gujarat Maharashtra",
+  ],
   alternates: {
     canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Euroasia - Free MSME Funding Consultation",
+    description:
+      "Get expert guidance on government schemes. Call +91-9898921290 or visit our offices in Ahmedabad & Pune.",
   },
 };
 
@@ -44,18 +57,36 @@ export default function ContactPage() {
     description: "Get in touch with Euroasia for business consulting services.",
     url: "https://www.euroasias.com/contact",
     mainEntity: {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       name: "Euroasia Aquatic Pvt Ltd",
       telephone: "+91-9898921290",
       email: "info@euroasias.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "105–107, Athena Avenue, Gota",
-        addressLocality: "Ahmedabad",
-        addressRegion: "Gujarat",
-        postalCode: "382481",
-        addressCountry: "IN",
-      },
+      location: [
+        {
+          "@type": "Place",
+          name: "Euroasia Head Office - Ahmedabad",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "105–107, Athena Avenue, Gota",
+            addressLocality: "Ahmedabad",
+            addressRegion: "Gujarat",
+            postalCode: "382481",
+            addressCountry: "IN",
+          },
+        },
+        {
+          "@type": "Place",
+          name: "Euroasia Branch Office - Pune",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "201, D Gold House, Dnyaneshwar Paduka Chowk, Fergusson College Rd, Shivajinagar",
+            addressLocality: "Pune",
+            addressRegion: "Maharashtra",
+            postalCode: "411005",
+            addressCountry: "IN",
+          },
+        },
+      ],
     },
   };
 
@@ -116,20 +147,6 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Google Map */}
-              <div className="rounded-xl overflow-hidden shadow-lg h-[300px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5!2d72.5!3d23.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA2JzAwLjAiTiA3MsKwMzAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Euroasia Office Location"
-                />
-              </div>
-
               {/* WhatsApp CTA */}
               <div className="mt-8 bg-green-50 rounded-xl p-6 flex items-center justify-between">
                 <div>
@@ -160,6 +177,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Office Locations */}
+      <OfficesSection variant="compact" />
     </>
   );
 }

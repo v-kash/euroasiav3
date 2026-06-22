@@ -1,16 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FiLinkedin,
-  FiInstagram,
-  FiFacebook,
-  FiMail,
-  FiPhone,
-  FiMapPin,
-} from "react-icons/fi";
+import { FiLinkedin, FiInstagram, FiFacebook } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const services = [
@@ -28,9 +18,19 @@ const services = [
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Our Services", href: "/services" },
+  { name: "Services", href: "/services" },
+  { name: "Contact Us", href: "/contact" },
+];
+
+const companyLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Our Team", href: "/about#team" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+];
+
+const policyLinks = [
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms & Conditions", href: "/terms-conditions" },
 ];
 
 const socialLinks = [
@@ -53,33 +53,13 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribeStatus, setSubscribeStatus] = useState("");
-
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    if (!email) return;
-
-    try {
-      setSubscribeStatus("Subscribing...");
-      // In production, this would call an API endpoint
-      setTimeout(() => {
-        setSubscribeStatus("Thank you for subscribing!");
-        setEmail("");
-        setTimeout(() => setSubscribeStatus(""), 3000);
-      }, 1000);
-    } catch (error) {
-      setSubscribeStatus("Something went wrong. Please try again.");
-    }
-  };
-
   return (
     <footer className="bg-primary-navy text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Logo & Description */}
-          <div className="space-y-6">
-            <Link href="/">
+      {/* Top Section - Logo & Social */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div className="max-w-xl">
+            <Link href="/" className="inline-block mb-4">
               <Image
                 src="/logo-white.png"
                 alt="Euroasia Aquatic Pvt Ltd"
@@ -89,119 +69,108 @@ export default function Footer() {
               />
             </Link>
             <p className="text-silver-grey text-sm leading-relaxed">
-              Making Compliance Effortless. Your trusted partner for business
-              certifications, compliance, tenders, and digital marketing
-              solutions in Gujarat.
+              At the core of our work is a commitment to simplifying business processes. 
+              Your growth is our shared success, and we&apos;re dedicated to guiding you at every step.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-secondary-navy flex items-center justify-center hover:bg-accent transition-colors"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
           </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    href={service.href}
-                    className="text-silver-grey hover:text-white transition-colors text-sm"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-silver-grey hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <FiMapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-silver-grey text-sm">
-                  105–107, Athena Avenue, Gota,
-                  <br />
-                  Ahmedabad, Gujarat – 382481
-                </span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <FiPhone className="w-5 h-5 text-accent flex-shrink-0" />
-                <a
-                  href="tel:+919898921290"
-                  className="text-silver-grey hover:text-white transition-colors text-sm"
-                >
-                  +91-9898921290
-                </a>
-              </li>
-              <li className="flex items-center space-x-3">
-                <FiMail className="w-5 h-5 text-accent flex-shrink-0" />
-                <a
-                  href="mailto:info@euroasias.com"
-                  className="text-silver-grey hover:text-white transition-colors text-sm"
-                >
-                  info@euroasias.com
-                </a>
-              </li>
-            </ul>
-
-            {/* Newsletter */}
-            <div className="mt-8">
-              <h4 className="text-sm font-semibold mb-3">
-                Subscribe to Our Newsletter
-              </h4>
-              <form
-                onSubmit={handleSubscribe}
-                className="flex flex-col space-y-2"
+          <div className="flex space-x-3">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-secondary-navy flex items-center justify-center hover:bg-accent transition-colors"
+                aria-label={social.name}
               >
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="px-4 py-2 rounded-lg bg-secondary-navy text-white placeholder-silver-grey text-sm focus:outline-none focus:ring-2 focus:ring-accent"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-accent text-white text-sm font-semibold rounded-lg hover:bg-orange-600 transition-colors"
-                >
-                  Subscribe
-                </button>
-                {subscribeStatus && (
-                  <p className="text-xs text-silver-grey">{subscribeStatus}</p>
-                )}
-              </form>
+                <social.icon className="w-5 h-5" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Disclaimer Section */}
+      <div className="border-t border-secondary-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <p className="text-silver-grey text-sm leading-relaxed">
+            <span className="text-white font-medium">Disclaimer:</span> We act solely as an independent third-party consultant, 
+            providing advisory support, documents support, guidance, and application assistance; approval or sanction of any 
+            scheme or service is not guaranteed and remains subject to the sole discretion of the concerned authority.
+          </p>
+        </div>
+      </div>
+
+      {/* Links Grid */}
+      <div className="border-t border-secondary-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Services */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Services</h3>
+              <ul className="space-y-3">
+                {services.slice(0, 4).map((service) => (
+                  <li key={service.name}>
+                    <Link
+                      href={service.href}
+                      className="text-silver-grey hover:text-white transition-colors text-sm"
+                    >
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Menu */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Menu</h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-silver-grey hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
+              <ul className="space-y-3">
+                {companyLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-silver-grey hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Policies */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Policies</h3>
+              <ul className="space-y-3">
+                {policyLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-silver-grey hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -210,17 +179,13 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-secondary-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-silver-grey text-sm">
-              © {new Date().getFullYear()} Euroasia Aquatic Pvt Ltd. All rights
-              reserved.
-            </p>
-            <p className="text-silver-grey text-xs text-center md:text-right">
-              Disclaimer: The information provided on this website is for
-              general purposes only and does not constitute legal or
-              professional advice.
-            </p>
-          </div>
+          <p className="text-silver-grey text-sm text-center">
+            © {new Date().getFullYear()}{" "}
+            <Link href="/" className="text-accent hover:text-white transition-colors">
+              Euroasia
+            </Link>
+            . All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
