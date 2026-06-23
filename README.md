@@ -157,4 +157,4 @@ Proprietary - All rights reserved.
 - Address: 105–107, Athena Avenue, Gota, Ahmedabad, Gujarat – 382481
 - Phone: +91-9898921290
 - Email: info@euroasias.com
-- WhatsApp: +91-8485984488
+- WhatsApp: +91-9898921290

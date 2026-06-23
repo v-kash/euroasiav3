@@ -6,24 +6,63 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiX, FiArrowRight, FiZap } from 'react-icons/fi';
 
 const allSchemes = [
-  { name: 'PMEGP', category: 'Funding', amount: 'Up to ₹25 Lakhs', keywords: ['manufacturing', 'service', 'new business', 'startup', 'loan', 'subsidy', 'employment'], href: '/schemes/pmegp' },
-  { name: 'MUDRA Loan', category: 'Funding', amount: 'Up to ₹10 Lakhs', keywords: ['small business', 'working capital', 'shishu', 'kishore', 'tarun', 'loan'], href: '/schemes/mudra' },
-  { name: 'Startup India', category: 'Registration', amount: 'Tax Benefits', keywords: ['startup', 'dpiit', 'innovation', 'technology', 'tax exemption', '80-iac'], href: '/schemes/startup-india' },
-  { name: 'ZED Certification', category: 'Quality', amount: '₹5L Subsidy', keywords: ['zero defect', 'quality', 'manufacturing', 'export', 'certification'], href: '/schemes/zed' },
-  { name: 'CGTMSE', category: 'Funding', amount: 'Up to ₹2 Crore', keywords: ['collateral free', 'guarantee', 'loan', 'credit', 'bank'], href: '/schemes/cgtmse' },
-  { name: '80-IAC Tax Exemption', category: 'Tax', amount: '100% Exempt 3 Years', keywords: ['tax', 'income tax', 'startup', 'exemption', 'angel tax'], href: '/schemes/80-iac' },
-  { name: 'Stand-Up India', category: 'Funding', amount: '₹10L – ₹1Cr', keywords: ['women', 'sc', 'st', 'entrepreneur', 'greenfield', 'loan'], href: '/schemes/stand-up-india' },
-  { name: 'GEM Registration', category: 'Marketplace', amount: 'Govt Orders', keywords: ['government', 'tender', 'marketplace', 'vendor', 'seller', 'orders'], href: '/schemes/gem' },
-  { name: 'Udyam MSME', category: 'Registration', amount: 'Priority Lending', keywords: ['msme', 'micro', 'small', 'medium', 'registration', 'udyog'], href: '/schemes/udyam' },
-  { name: 'IEC Code', category: 'Export', amount: 'Export Benefits', keywords: ['import', 'export', 'international', 'trade', 'dgft', 'customs'], href: '/schemes/iec' },
+  // Core Funding Schemes
+  { name: 'PMEGP', category: 'Funding', amount: 'Up to ₹50L (Mfg) / ₹20L (Service)', keywords: ['manufacturing', 'service', 'new business', 'startup', 'loan', 'subsidy', 'employment', 'individual', '15%', '35%'], href: '/services/pmegp', eligibility: 'Individual with new business' },
+  { name: 'MUDRA Loan', category: 'Funding', amount: 'Up to ₹20 Lakhs', keywords: ['small business', 'working capital', 'shishu', 'kishore', 'tarun', 'loan', 'msme'], href: '/services/mudra', eligibility: 'For MSMEs' },
+  { name: 'CGTMSE', category: 'Funding', amount: 'Up to ₹10 Crore', keywords: ['collateral free', 'guarantee', 'loan', 'credit', 'bank', 'large loan'], href: '/services/cgtmse', eligibility: 'Entity age > 2 years' },
+  { name: 'Seed Fund', category: 'Funding', amount: '₹20L Grant or ₹50L Debt/Equity', keywords: ['seed', 'early stage', 'dpiit', 'new startup', 'grant', 'equity'], href: '/services/startup-india', eligibility: 'DPIIT registered, Entity age < 2 yrs' },
+  { name: 'CGSS Scheme', category: 'Funding', amount: 'Credit Guarantee up to ₹20 Cr', keywords: ['credit guarantee', 'large loan', 'dpiit', 'collateral free'], href: '/contact', eligibility: 'Pvt Ltd, LLP, Partnership with DPIIT' },
+  
+  // Grant Schemes
+  { name: 'Business for Impact Grant', category: 'Grant', amount: 'Up to ₹2.3 Crore', keywords: ['grant', 'impact', 'social', 'pvt ltd', 'llp', 'partnership'], href: '/contact', eligibility: 'Pvt Ltd, LLP, Partnership & others' },
+  { name: 'Global Impact Grant', category: 'Grant', amount: 'Up to ₹20 Crore', keywords: ['global', 'impact', 'large grant', 'ngo', 'foundation', 'section 8'], href: '/contact', eligibility: 'All entity types including NGO, Foundation' },
+  { name: 'Spark Grant', category: 'Grant', amount: 'Up to ₹88 Lakhs', keywords: ['women', 'female founder', 'grant', 'women entrepreneur'], href: '/contact', eligibility: 'At least 1 female founder required' },
+  { name: 'Growth Grant', category: 'Grant', amount: 'Up to ₹1.7 Crore', keywords: ['young', 'youth', 'under 22', 'young entrepreneur'], href: '/contact', eligibility: 'Applicants must be aged 22 or younger' },
+  { name: 'TIDE 2.0', category: 'Grant', amount: 'Up to ₹7 Lakhs', keywords: ['tide', 'technology', 'incubation', 'grant'], href: '/contact', eligibility: 'Pvt Ltd, LLP, Partnership, Proprietorship' },
+  { name: 'Idea Grant', category: 'Grant', amount: 'Up to ₹10 Lakhs', keywords: ['idea', 'prototype', 'student', 'innovator', 'early stage'], href: '/contact', eligibility: 'Indian innovators & students, Idea to prototype stage' },
+  
+  // Sector Specific
+  { name: 'RKVY RAFTAAR', category: 'Agriculture', amount: 'Grant up to ₹25 Lakhs', keywords: ['agriculture', 'agri', 'farming', 'agritech', 'rural'], href: '/contact', eligibility: 'Pvt Ltd, LLP, Partnership, Proprietorship & Individual' },
+  { name: 'Agri-Sure Fund', category: 'Agriculture', amount: 'Up to ₹25 Crore (Equity)', keywords: ['agriculture', 'agri', 'equity', 'large funding', 'agritech'], href: '/contact', eligibility: 'DPIIT registered' },
+  { name: 'NAIFF', category: 'Agriculture', amount: 'Loan up to ₹2 Cr @ 3% Interest', keywords: ['agriculture', 'loan', 'interest subsidy', 'fpo', 'cooperative'], href: '/contact', eligibility: 'Startups, MSMEs, FPO, SHG, Cooperative' },
+  { name: 'Healthcare Innovation Grant', category: 'Healthcare', amount: 'Up to ₹10 Lakhs', keywords: ['healthcare', 'health', 'medical', 'biotech', 'hospital'], href: '/contact', eligibility: 'Startup/Company, Individual' },
+  { name: 'Biomanufacturing Grant', category: 'Healthcare', amount: 'Up to ₹50 Lakhs', keywords: ['biomanufacturing', 'biotech', 'pharma', 'manufacturing'], href: '/contact', eligibility: 'Pvt Ltd & LLP' },
+  
+  // Registration & Compliance
+  { name: 'Startup India (DPIIT)', category: 'Registration', amount: 'Tax Benefits + IPR Support', keywords: ['startup', 'dpiit', 'innovation', 'technology', 'registration'], href: '/services/startup-india', eligibility: 'Innovation-driven company < 10 years' },
+  { name: '80-IAC Tax Exemption', category: 'Tax', amount: '100% Tax Free for 3 Years', keywords: ['tax', 'income tax', 'startup', 'exemption', 'angel tax'], href: '/services/80-iac', eligibility: 'DPIIT registered startup' },
+  { name: 'ZED Certification', category: 'Quality', amount: '₹5L Subsidy', keywords: ['zero defect', 'quality', 'manufacturing', 'export', 'certification'], href: '/services/zed-certification', eligibility: 'Registered MSME, Manufacturing' },
+  { name: 'GEM Registration', category: 'Marketplace', amount: 'Access to Govt Orders', keywords: ['government', 'tender', 'marketplace', 'vendor', 'seller', 'orders'], href: '/services/gem-registration', eligibility: 'GST registered entity' },
+  { name: 'Udyam MSME', category: 'Registration', amount: 'Priority Lending', keywords: ['msme', 'micro', 'small', 'medium', 'registration', 'udyam'], href: '/services/msme-registration', eligibility: 'Any business entity' },
+  { name: 'IEC Code', category: 'Export', amount: 'Export/Import Benefits', keywords: ['import', 'export', 'international', 'trade', 'dgft', 'customs'], href: '/services/iec-registration', eligibility: 'PAN, Bank Account, Address proof' },
+  
+  // State Specific
+  { name: 'SRUJAN 2025 (Gujarat)', category: 'State', amount: '₹2.5L to ₹10 Lakhs', keywords: ['gujarat', 'srujan', 'young', 'under 35', 'state scheme'], href: '/contact', eligibility: 'Gujarat based, Age < 35 years' },
+  { name: 'Funding Support (Gujarat)', category: 'State', amount: 'Up to ₹30 Lakhs', keywords: ['gujarat', 'state', 'grant'], href: '/contact', eligibility: 'Gujarat based startups only' },
+  { name: 'Venture Fund (Maharashtra)', category: 'State', amount: 'Up to ₹10 Crore', keywords: ['maharashtra', 'venture', 'large funding', 'equity'], href: '/contact', eligibility: 'Pvt Ltd (DPIIT), Maharashtra only' },
+  { name: 'AI First Fund (Telangana)', category: 'State', amount: 'Up to ₹2 Crore', keywords: ['telangana', 'ai', 'artificial intelligence', 'tech'], href: '/contact', eligibility: 'DPIIT registered, Telangana only' },
+  
+  // Special Category
+  { name: 'Fund for SC/ST Entrepreneurs', category: 'Special', amount: 'Up to ₹5 Crore (Equity)', keywords: ['sc', 'st', 'scheduled caste', 'scheduled tribe', 'minority'], href: '/contact', eligibility: '100% SC/ST ownership, DPIIT/MSME approved' },
+  { name: 'Stand-Up India', category: 'Special', amount: '₹10L to ₹1 Crore', keywords: ['women', 'sc', 'st', 'entrepreneur', 'greenfield'], href: '/services/government-grants', eligibility: 'SC/ST or Women entrepreneur' },
+  { name: 'Social Fund', category: 'Social', amount: 'Up to ₹2.63 Crore', keywords: ['ngo', 'non profit', 'social', 'impact', 'foundation'], href: '/contact', eligibility: 'Non-profit, mission-driven for-profit' },
+  
+  // Equity & Investment
+  { name: 'Evolve-Tech Funding', category: 'Equity', amount: 'Up to ₹25 Lakhs (Equity)', keywords: ['equity', 'tech', 'revenue', 'investment'], href: '/contact', eligibility: 'DPIIT registered, Revenue generating' },
+  { name: 'Master Fund', category: 'Funding', amount: 'Up to ₹35 Lakhs', keywords: ['funding', 'pvt ltd', 'llp', 'partnership'], href: '/contact', eligibility: 'Private Limited, LLP, Partnerships' },
+  { name: 'Pro-Fund Support', category: 'Funding', amount: '₹2L to ₹30 Lakhs', keywords: ['small funding', 'individual', 'proprietorship', 'early stage'], href: '/contact', eligibility: 'All entity types including Individual' },
+  { name: 'Startup Support Scheme (SSS)', category: 'Funding', amount: '₹25L to ₹1 Crore', keywords: ['startup', 'sss', 'funding', 'medium funding'], href: '/contact', eligibility: 'Pvt Ltd, LLP, Partnership, Proprietorship' },
+  { name: 'Inno-Preneurs', category: 'Funding', amount: 'Up to ₹5 Crore + ₹50L Reward', keywords: ['innovation', 'innopreneur', 'reward', 'large funding'], href: '/contact', eligibility: 'All entity types' },
 ];
 
 const suggestedQueries = [
   'I need funding for my startup',
-  'Tax exemption for new business',
+  'Grant for women entrepreneur',
   'Loan without collateral',
-  'Women entrepreneur schemes',
-  'Export business registration',
+  'Agriculture business funding',
+  'SC/ST entrepreneur schemes',
+  'Gujarat based startup schemes',
+  'Young entrepreneur under 25',
 ];
 
 export default function AISchemeSearch() {

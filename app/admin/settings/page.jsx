@@ -42,7 +42,7 @@ export default function AdminSettingsPage() {
             <p><strong>Company:</strong> Euroasia Aquatic Pvt Ltd</p>
             <p><strong>Email:</strong> info@euroasias.com</p>
             <p><strong>Phone:</strong> +91-9898921290</p>
-            <p><strong>WhatsApp:</strong> +91-8485984488</p>
+            <p><strong>WhatsApp:</strong> +91-9898921290</p>
             <p><strong>Address:</strong> 105–107, Athena Avenue, Gota, Ahmedabad, Gujarat – 382481</p>
           </div>
         </div>

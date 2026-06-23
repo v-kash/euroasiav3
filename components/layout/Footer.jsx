@@ -49,7 +49,7 @@ const socialLinks = [
     icon: FiFacebook,
     href: "https://www.facebook.com/euroasiaaquatic",
   },
-  { name: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/918485984488" },
+  { name: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/919898921290" },
 ];
 
 export default function Footer() {

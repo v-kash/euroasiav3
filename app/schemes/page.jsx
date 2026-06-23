@@ -38,7 +38,7 @@ const schemes = [
       "Margin money subsidy",
       "Bank loan facilitation",
     ],
-    href: "/schemes/pmegp",
+    href: "/services/pmegp",
   },
   {
     id: "mudra",
@@ -58,7 +58,7 @@ const schemes = [
       "Flexible repayment",
       "Working capital support",
     ],
-    href: "/schemes/mudra",
+    href: "/services/mudra",
   },
   {
     id: "cgtmse",
@@ -78,7 +78,7 @@ const schemes = [
       "Coverage up to 85%",
       "Lower interest rates",
     ],
-    href: "/schemes/cgtmse",
+    href: "/services/cgtmse",
   },
   {
     id: "80-iac",
@@ -98,7 +98,7 @@ const schemes = [
       "Angel tax exemption",
       "Self-certification for labor laws",
     ],
-    href: "/schemes/80-iac",
+    href: "/services/80-iac",
   },
   {
     id: "startup-india",
@@ -119,7 +119,7 @@ const schemes = [
       "Funding access",
       "IPR support",
     ],
-    href: "/schemes/startup-india",
+    href: "/services/startup-india",
   },
   {
     id: "zed",
@@ -140,7 +140,7 @@ const schemes = [
       "Quality certification",
       "Tender preference",
     ],
-    href: "/schemes/zed",
+    href: "/services/zed-certification",
   },
   {
     id: "stand-up-india",
@@ -160,7 +160,7 @@ const schemes = [
       "Margin money 25%",
       "Working capital included",
     ],
-    href: "/schemes/stand-up-india",
+    href: "/services/government-grants",
   },
   {
     id: "gem",
@@ -177,7 +177,7 @@ const schemes = [
       "Quick payments",
       "Pan-India market",
     ],
-    href: "/schemes/gem",
+    href: "/services/gem-registration",
   },
   {
     id: "udyam",
@@ -194,7 +194,7 @@ const schemes = [
       "Tender eligibility",
       "Subsidy access",
     ],
-    href: "/schemes/udyam",
+    href: "/services/msme-registration",
   },
   {
     id: "iec",
@@ -211,7 +211,7 @@ const schemes = [
       "Export incentives",
       "Global market access",
     ],
-    href: "/schemes/iec",
+    href: "/services/iec-registration",
   },
 ];
 

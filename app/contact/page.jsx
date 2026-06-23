@@ -158,7 +158,7 @@ export default function ContactPage() {
                   </p>
                 </div>
                 <a
-                  href="https://wa.me/918485984488?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20services"
+                  href="https://wa.me/919898921290?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors"
