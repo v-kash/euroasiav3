@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiLinkedin, FiInstagram, FiFacebook } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { NavratriGreeting } from "@/components/navratri/NavratriAccents";
 
 const services = [
   {
@@ -186,6 +187,7 @@ export default function Footer() {
             </Link>
             . All rights reserved.
           </p>
+          <NavratriGreeting />
         </div>
       </div>
     </footer>
