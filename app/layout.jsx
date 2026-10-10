@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
+// import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
-import FloatingAlerts from "@/components/shared/FloatingAlerts";
+// import FloatingAlerts from "@/components/shared/FloatingAlerts";
 import NavratriProvider from "@/components/navratri/NavratriProvider";
+import NavratriOfferBar from "@/components/navratri/NavratriOfferBar";
 
 export const metadata = {
   metadataBase: new URL("https://www.euroasias.com"),
@@ -216,10 +217,14 @@ export default function RootLayout({ children }) {
         {/* Seasonal layer; renders the children untouched outside Navratri (components/navratri/config.js). */}
         <NavratriProvider>
           <div className="fixed top-0 left-0 right-0 z-50">
-            <AnnouncementBar />
+            {/* <AnnouncementBar /> */}
+                        <NavratriOfferBar />
+
             <Navbar />
           </div>
-          <main className="min-h-screen pt-28 md:pt-32">{children}</main>
+          <main className="min-h-screen pt-28 md:pt-32">
+            {children}
+          </main>
           <Footer />
           <WhatsAppButton />
           {/* <FloatingAlerts /> */}
