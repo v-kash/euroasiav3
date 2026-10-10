@@ -11,14 +11,34 @@ import OfficesSection from "@/components/shared/OfficesSection";
 import BlogPreview from "@/components/home/BlogPreview";
 import CTABanner from "@/components/home/CTABanner";
 
+const title = "MSME Funding & Government Scheme Consultants India | Euroasia";
+const ogImage = "/images/euroasia-og.jpg";
+
 export const metadata = {
-  title: "MSME Consulting & Government Scheme Processing | Euroasia",
+  title: { absolute: title },
   description:
-    "Expert consulting for PMEGP, MUDRA, Startup India, ZED, 80-IAC. We process government schemes worth ₹10 Lakh – ₹1 Crore for your MSME. 99% success rate. Pan-India services.",
+    "Euroasia supports MSMEs and startups across India with government schemes, funding documentation, Udyam, DPIIT, certifications, tenders and compliance.",
   keywords:
     "PMEGP, MUDRA loan, Startup India, MSME registration, Udyam, ZED certification, 80-IAC, government schemes, business consulting, CGTMSE",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Euroasia",
+    title,
+    description:
+      "Independent MSME consulting for funding, government schemes, registrations, certifications, tenders and compliance.",
+    url: "/",
+    locale: "en_IN",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description:
+      "Funding, government scheme, registration, certification, tender and compliance support for Indian businesses.",
+    images: [ogImage],
   },
 };
 

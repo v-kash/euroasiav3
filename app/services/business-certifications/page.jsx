@@ -1,16 +1,8 @@
 import ServicePageTemplate from '@/components/services/ServicePageTemplate';
+import { seoFaqs } from '@/lib/seo/services';
 
 export const metadata = {
-  title: 'Business Certification Services in Ahmedabad',
-  description: 'Get Startup India, MSME Udyam, ZED, ISO, and other essential business certifications. Expert assistance for registration and documentation in Gujarat.',
   keywords: ['Startup India registration', 'MSME Udyam', 'ZED certification', 'ISO certification', 'business certification Ahmedabad'],
-  alternates: {
-    canonical: '/services/business-certifications',
-  },
-  openGraph: {
-    title: 'Business Certification Services | Euroasia',
-    description: 'Expert assistance for Startup India, MSME, ZED, and ISO certifications in Gujarat.',
-  },
 };
 
 const serviceData = {
@@ -73,6 +65,7 @@ const serviceData = {
       question: 'Do you provide ISO certification?',
       answer: 'We provide complete ISO certification support including gap analysis, documentation, implementation guidance, and liaison with certification bodies for ISO 9001, 14001, 45001, and other standards.',
     },
+    ...seoFaqs('business-certifications'),
   ],
   relatedServices: [
     {

@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "Startup India Registration",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "Can existing businesses register under Startup India?",
       answer: "Yes, if the business is less than 10 years old from incorporation, meets the innovation criteria, and has turnover below ₹100 Crores.",
     },
+    ...seoFaqs("startup-india"),
   ],
   relatedServices: [
     {

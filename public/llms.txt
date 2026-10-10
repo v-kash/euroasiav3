@@ -1,0 +1,22 @@
+# Euroasia
+> Independent MSME and startup consultancy in India providing government-scheme,
+> funding-documentation, registration, certification, tender and compliance support.
+
+## Core pages
+- https://www.euroasias.com/
+- https://www.euroasias.com/about
+- https://www.euroasias.com/services
+- https://www.euroasias.com/contact
+
+## Funding and scheme pages
+- https://www.euroasias.com/services/government-grants
+- https://www.euroasias.com/services/pmegp
+- https://www.euroasias.com/services/cgtmse
+- https://www.euroasias.com/services/business-funding
+- https://www.euroasias.com/services/startup-india
+- https://www.euroasias.com/services/80-iac
+
+## Business support
+- https://www.euroasias.com/services/tender-assistance
+- https://www.euroasias.com/services/business-certifications
+- https://www.euroasias.com/services/compliance-legal

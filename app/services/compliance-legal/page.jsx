@@ -1,16 +1,8 @@
 import ServicePageTemplate from '@/components/services/ServicePageTemplate';
+import { seoFaqs } from '@/lib/seo/services';
 
 export const metadata = {
-  title: 'Company Compliance & Legal Advisory in Ahmedabad',
-  description: 'Expert ROC filings, annual compliance, legal documentation, company formation, and regulatory advisory services for businesses in Gujarat.',
   keywords: ['ROC filing', 'company compliance', 'legal advisory', 'LLP formation', 'company registration Gujarat'],
-  alternates: {
-    canonical: '/services/compliance-legal',
-  },
-  openGraph: {
-    title: 'Company Compliance & Legal Advisory | Euroasia',
-    description: 'Professional compliance and legal services for companies in Gujarat.',
-  },
 };
 
 const serviceData = {
@@ -73,6 +65,7 @@ const serviceData = {
       question: 'Can you help convert my business structure?',
       answer: 'Yes, we assist with conversions such as proprietorship to Pvt Ltd, partnership to LLP, LLP to Pvt Ltd, and private to public company conversions.',
     },
+    ...seoFaqs('compliance-legal'),
   ],
   relatedServices: [
     {

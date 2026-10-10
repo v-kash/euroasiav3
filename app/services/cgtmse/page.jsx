@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "CGTMSE Loan Scheme",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "Can existing businesses apply for CGTMSE loans?",
       answer: "Yes, both new and existing micro and small enterprises can avail loans under CGTMSE scheme for various purposes including working capital and term loan.",
     },
+    ...seoFaqs("cgtmse"),
   ],
   relatedServices: [
     {

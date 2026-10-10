@@ -3,13 +3,20 @@ import { FiCheck, FiArrowRight } from "react-icons/fi";
 import CTABanner from "@/components/home/CTABanner";
 
 export const metadata = {
-  title: "MSME Services | Registration, Funding, Compliance",
+  title: {
+    absolute: "MSME Funding, Registration & Compliance Services | Euroasia",
+  },
   description:
-    "Complete MSME consulting services - Udyam registration, Startup India, government grants, GST compliance, tender assistance, ZED certification. Starting ₹999. 99% success rate.",
+    "Explore Euroasia services for government grants, MSME/Udyam registration, business funding, Startup India, GST, tenders, ZED, IEC and digital marketing.",
   keywords:
     "MSME registration, Udyam, Startup India, DPIIT, GST compliance, tender assistance, ZED certification, government grants, business funding",
   alternates: {
     canonical: "/services",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
   },
 };
 

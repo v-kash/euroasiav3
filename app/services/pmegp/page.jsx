@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "PMEGP Scheme",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "Can I apply for PMEGP if I already have a business?",
       answer: "No, PMEGP is only for new units. However, you can apply for PMEGP for a new unit if your existing business is not registered under any government scheme.",
     },
+    ...seoFaqs("pmegp"),
   ],
   relatedServices: [
     {

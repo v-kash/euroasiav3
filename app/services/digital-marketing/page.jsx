@@ -1,16 +1,8 @@
 import ServicePageTemplate from '@/components/services/ServicePageTemplate';
+import { seoFaqs } from '@/lib/seo/services';
 
 export const metadata = {
-  title: 'Web & Digital Marketing Solutions in Ahmedabad',
-  description: 'Professional website development, SEO, social media marketing, and digital presence management services for businesses in Gujarat.',
   keywords: ['digital marketing Ahmedabad', 'website development', 'SEO services', 'social media marketing Gujarat'],
-  alternates: {
-    canonical: '/services/digital-marketing',
-  },
-  openGraph: {
-    title: 'Web & Digital Marketing Solutions | Euroasia',
-    description: 'Comprehensive digital marketing services in Gujarat.',
-  },
 };
 
 const serviceData = {
@@ -73,6 +65,7 @@ const serviceData = {
       question: 'How do you measure digital marketing success?',
       answer: 'We track key metrics including website traffic, search rankings, lead generation, conversion rates, social engagement, and ROI. You receive monthly reports with detailed analytics.',
     },
+    ...seoFaqs('digital-marketing'),
   ],
   relatedServices: [
     {

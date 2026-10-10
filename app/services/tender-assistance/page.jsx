@@ -1,16 +1,8 @@
 import ServicePageTemplate from '@/components/services/ServicePageTemplate';
+import { seoFaqs } from '@/lib/seo/services';
 
 export const metadata = {
-  title: 'Tender & Government Liaison Services in Ahmedabad',
-  description: 'Expert GEM registration, tender participation, bid management, and government portal assistance for businesses looking to win government contracts.',
   keywords: ['GEM registration', 'tender assistance', 'government tenders', 'bid management', 'government liaison Gujarat'],
-  alternates: {
-    canonical: '/services/tender-assistance',
-  },
-  openGraph: {
-    title: 'Tender & Government Liaison | Euroasia',
-    description: 'Win government contracts with expert tender assistance in Gujarat.',
-  },
 };
 
 const serviceData = {
@@ -73,6 +65,7 @@ const serviceData = {
       question: 'Do you help with tender document preparation?',
       answer: 'Yes, we prepare complete bid documents including technical proposals, compliance sheets, price bids, and all required supporting documentation to ensure your bid is compliant and competitive.',
     },
+    ...seoFaqs('tender-assistance'),
   ],
   relatedServices: [
     {

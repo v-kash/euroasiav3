@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "Business Funding Solutions",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "What is the typical success rate?",
       answer: "Our clients have a 90%+ success rate for funding applications, significantly higher than direct applications, due to our expertise in proposal preparation and lender relationships.",
     },
+    ...seoFaqs("business-funding"),
   ],
   relatedServices: [
     {

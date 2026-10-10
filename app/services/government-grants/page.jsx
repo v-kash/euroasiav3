@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "Government Grants Assistance",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "How long does the grant process take?",
       answer: "Timeline varies by scheme - typically 2-6 months from application to disbursement. Our expertise helps expedite the process significantly.",
     },
+    ...seoFaqs("government-grants"),
   ],
   relatedServices: [
     {

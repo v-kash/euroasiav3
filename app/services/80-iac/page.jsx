@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "80-IAC Tax Exemption",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "Can I apply for 80-IAC if my startup is 5 years old?",
       answer: "Yes, as long as your startup is less than 10 years old from incorporation, you can apply. The 3-year exemption can be claimed anytime within the 10-year window.",
     },
+    ...seoFaqs("80-iac"),
   ],
   relatedServices: [
     {

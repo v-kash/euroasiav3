@@ -90,11 +90,56 @@ export default function ContactPage() {
     },
   };
 
+  const officesSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.euroasias.com/#ahmedabad-office",
+        name: "Euroasia - Ahmedabad",
+        url: "https://www.euroasias.com/contact",
+        telephone: "+91-9898921290",
+        email: "info@euroasias.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "105–107, Athena Avenue, Gota",
+          addressLocality: "Ahmedabad",
+          addressRegion: "Gujarat",
+          postalCode: "382481",
+          addressCountry: "IN",
+        },
+        parentOrganization: { "@id": "https://www.euroasias.com/#organization" },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.euroasias.com/#pune-office",
+        name: "Euroasia - Pune",
+        url: "https://www.euroasias.com/contact",
+        telephone: "+91-9898921290",
+        email: "pune@euroasias.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "201, D Gold House, Dnyaneshwar Paduka Chowk, Fergusson College Rd, behind Bharat Petrol Pump, Shivajinagar",
+          addressLocality: "Pune",
+          addressRegion: "Maharashtra",
+          postalCode: "411005",
+          addressCountry: "IN",
+        },
+        parentOrganization: { "@id": "https://www.euroasias.com/#organization" },
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(officesSchema) }}
       />
 
       <PageHero
