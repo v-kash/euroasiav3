@@ -13,7 +13,7 @@ const serviceData = {
     "IEC is a lifetime license with no renewal required. It's essential for customs clearance, receiving foreign payments, and availing export benefits like duty drawback and GST refunds.",
     "Euroasia Aquatic provides hassle-free IEC registration with quick processing, ensuring you can start your international trade operations without delay.",
   ],
-  image: "/images/services/iec.jpg",
+  image: "/images/services/iec.png",
   included: [
     "Eligibility assessment",
     "DGFT portal registration",

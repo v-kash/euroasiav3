@@ -392,35 +392,38 @@ export default async function BlogDetailPage({ params }) {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-navy to-secondary-navy pt-32 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-light-bg border-b border-[#D5DDE9]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 lg:pt-14 pb-20 lg:pb-24">
           <Link
             href="/blog"
-            className="inline-flex items-center text-silver-grey hover:text-white transition-colors mb-6"
+            className="inline-flex items-center font-semibold text-primary-navy hover:text-accent-text transition-colors mb-7"
           >
-            <FiArrowLeft className="w-4 h-4 mr-2" />
+            <FiArrowLeft aria-hidden="true" className="w-4 h-4 mr-2" />
             Back to Blog
           </Link>
 
-          <span className="inline-block px-3 py-1 bg-accent text-white text-sm font-semibold rounded-full mb-4">
-            {blog.category}
-          </span>
+          <div>
+            <span className="inline-flex items-center gap-2.5 px-3.5 py-2 mb-6 border-[1.5px] border-primary-navy rounded-full text-primary-navy font-ledger text-xs font-semibold uppercase tracking-[0.12em]">
+              <span aria-hidden="true" className="w-2 h-2 rounded-[2px] bg-accent" />
+              {blog.category}
+            </span>
+          </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h1 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1] tracking-[-0.04em] mb-7">
             {blog.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-silver-grey">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-ledger text-sm font-medium text-primary-navy">
             <span className="flex items-center">
-              <FiUser className="w-4 h-4 mr-2" />
+              <FiUser aria-hidden="true" className="w-4 h-4 mr-2 text-accent-text" />
               {blog.author || "Euroasia Team"}
             </span>
             <span className="flex items-center">
-              <FiCalendar className="w-4 h-4 mr-2" />
+              <FiCalendar aria-hidden="true" className="w-4 h-4 mr-2 text-accent-text" />
               {formatDate(blog.publishedAt)}
             </span>
             <span className="flex items-center">
-              <FiClock className="w-4 h-4 mr-2" />
+              <FiClock aria-hidden="true" className="w-4 h-4 mr-2 text-accent-text" />
               {readTime} min read
             </span>
           </div>
@@ -428,8 +431,8 @@ export default async function BlogDetailPage({ params }) {
       </section>
 
       {/* Featured Image */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
-        <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 lg:-mt-14 relative">
+        <div className="relative h-[260px] md:h-[400px] rounded-2xl overflow-hidden border-2 border-primary-navy shadow-hard bg-white">
           <Image
             src={blog.featuredImage}
             alt={blog.title}
@@ -442,12 +445,12 @@ export default async function BlogDetailPage({ params }) {
       </div>
 
       {/* Content */}
-      <article className="py-16">
+      <article className="py-12 lg:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-4 gap-8">
+          <div className="grid lg:grid-cols-4 gap-10 lg:gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-3">
-              <div className="prose prose-lg max-w-none prose-headings:text-primary-navy prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
+            <div className="lg:col-span-3 min-w-0">
+              <div className="article-body">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   rehypePlugins={[rehypeHighlight]}
@@ -457,8 +460,8 @@ export default async function BlogDetailPage({ params }) {
               </div>
 
               {/* Share Buttons */}
-              <div className="mt-12 pt-8 border-t border-border-color">
-                <h3 className="text-lg font-semibold text-primary-navy mb-4">
+              <div className="mt-12 pt-8 border-t-2 border-primary-navy">
+                <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] mb-4">
                   Share this article
                 </h3>
                 <ShareButtons title={blog.title} slug={blog.slug} />
@@ -467,17 +470,17 @@ export default async function BlogDetailPage({ params }) {
 
             {/* Sidebar */}
             <aside className="lg:col-span-1">
-              <div className="sticky top-24 space-y-8">
+              <div className="lg:sticky lg:top-40 space-y-8">
                 {/* CTA Card */}
-                <div className="bg-primary-navy rounded-xl p-6 text-white">
-                  <h3 className="font-semibold mb-2">Need Help?</h3>
-                  <p className="text-silver-grey text-sm mb-4">
+                <div className="bg-primary-navy rounded-2xl p-6 text-white">
+                  <h3 className="font-display font-bold text-xl tracking-[-0.02em] mb-2">Need Help?</h3>
+                  <p className="text-white/70 text-sm mb-5">
                     Our experts can help you with {blog.category.toLowerCase()}{" "}
                     services.
                   </p>
                   <Link
                     href="/contact"
-                    className="block text-center py-2 bg-white text-primary-navy font-semibold rounded-lg hover:bg-light-bg transition-colors"
+                    className="flex items-center justify-center min-h-[44px] bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors text-sm"
                   >
                     Get Consultation
                   </Link>

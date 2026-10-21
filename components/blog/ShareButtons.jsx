@@ -43,22 +43,23 @@ export default function ShareButtons({ title, slug }) {
   };
 
   return (
-    <div className="flex items-center space-x-3">
+    <div className="flex flex-wrap items-center gap-3">
       {shareLinks.map((link) => (
         <a
           key={link.name}
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`w-10 h-10 rounded-full bg-light-bg flex items-center justify-center text-text-muted hover:text-white transition-colors ${link.color}`}
+          className={`w-11 h-11 rounded-full border-2 border-primary-navy flex items-center justify-center text-primary-navy hover:text-white hover:border-transparent transition-colors ${link.color}`}
           aria-label={`Share on ${link.name}`}
         >
-          <link.icon className="w-5 h-5" />
+          <link.icon aria-hidden="true" className="w-5 h-5" />
         </a>
       ))}
       <button
+        type="button"
         onClick={copyToClipboard}
-        className="w-10 h-10 rounded-full bg-light-bg flex items-center justify-center text-text-muted hover:bg-primary-navy hover:text-white transition-colors"
+        className="w-11 h-11 rounded-full border-2 border-primary-navy flex items-center justify-center text-primary-navy hover:bg-primary-navy hover:text-white transition-colors"
         aria-label="Copy link"
       >
         {copied ? (

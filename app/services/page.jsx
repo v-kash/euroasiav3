@@ -179,84 +179,87 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-hero-gradient py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
-            EXPERT MSME SERVICES
-          </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Complete Solutions for
-            <br />
-            <span className="text-accent">Your Business Growth</span>
-          </h1>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            From registration to funding, compliance to expansion — end-to-end
-            consulting with 99% success rate.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-white/80">
-            <span className="flex items-center">
-              <FiCheck className="mr-1 text-success-green" /> 500+ Clients
+      <section className="relative bg-light-bg border-b border-[#D5DDE9] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="max-w-4xl">
+            <span className="inline-flex items-center gap-2.5 px-3.5 py-2 mb-7 border-[1.5px] border-primary-navy rounded-full text-primary-navy font-ledger text-xs font-semibold tracking-[0.12em]">
+              <span aria-hidden="true" className="w-2 h-2 rounded-[2px] bg-accent" />
+              EXPERT MSME SERVICES
             </span>
-            <span className="flex items-center">
-              <FiCheck className="mr-1 text-success-green" /> 48-Hour Processing
-            </span>
-            <span className="flex items-center">
-              <FiCheck className="mr-1 text-success-green" /> 99% Success Rate
-            </span>
+            <h1 className="font-display font-extrabold text-primary-navy text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[-0.04em] mb-6">
+              Complete Solutions for
+              <br />
+              <span className="text-accent-text">Your Business Growth</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-text-muted leading-relaxed max-w-2xl mb-8">
+              From registration to funding, compliance to expansion — end-to-end
+              consulting with 99% success rate.
+            </p>
+            <div className="flex flex-wrap gap-2.5 text-sm font-medium text-primary-navy">
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full">
+                <FiCheck aria-hidden="true" className="text-success-green" /> 500+ Clients
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full">
+                <FiCheck aria-hidden="true" className="text-success-green" /> 48-Hour Processing
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full">
+                <FiCheck aria-hidden="true" className="text-success-green" /> 99% Success Rate
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+                className="group flex flex-col bg-white border border-[#D5DDE9] rounded-2xl p-6 hover:border-primary-navy transition-colors duration-200"
               >
                 {/* Category + Success Badge */}
-                <div className="flex items-start justify-between mb-4">
-                  <span className="px-2 py-1 bg-primary-navy/10 text-primary-navy text-xs font-medium rounded">
+                <div className="flex items-start justify-between mb-5">
+                  <span className="px-2.5 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-[11px] font-semibold uppercase tracking-[0.1em] rounded">
                     {service.category}
                   </span>
-                  <span className="px-2 py-1 bg-success-green/10 text-success-green text-xs font-semibold rounded">
+                  <span className="px-2 py-1 bg-success-green/10 text-success-green font-ledger text-xs font-semibold rounded">
                     ✓ {service.successRate}%
                   </span>
                 </div>
 
                 {/* Badge */}
-                <div className="text-accent-text font-bold text-xl mb-2">
+                <div className="font-display font-extrabold text-accent-text text-2xl tracking-[-0.02em] mb-1">
                   {service.badge}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-primary-navy mb-2 group-hover:text-accent-text transition-colors">
+                <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] leading-snug mb-2">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-text-muted text-sm mb-4 line-clamp-2">
+                <p className="text-text-muted text-sm mb-5 line-clamp-2">
                   {service.description}
                 </p>
 
                 {/* Bullets */}
-                <ul className="space-y-2 mb-5">
+                <ul className="space-y-2 mb-6">
                   {service.bullets.map((bullet, idx) => (
                     <li
                       key={idx}
                       className="flex items-center text-sm text-text-dark"
                     >
-                      <FiCheck className="w-4 h-4 text-accent-text mr-2 flex-shrink-0" />
+                      <FiCheck aria-hidden="true" className="w-4 h-4 text-accent-text mr-2 flex-shrink-0" />
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
                 {/* Timeline */}
-                <div className="flex items-center justify-end mb-5 pb-5 border-b border-gray-100">
-                  <span className="px-3 py-1 bg-blue-50 text-primary-navy text-xs font-medium rounded-full">
+                <div className="mt-auto flex items-center justify-end pt-4 mb-5 border-t border-dashed border-[#D5DDE9]">
+                  <span className="px-3 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-xs font-semibold rounded-full">
                     {service.timeline}
                   </span>
                 </div>
@@ -265,13 +268,13 @@ export default function ServicesPage() {
                 <div className="flex gap-3">
                   <Link
                     href={service.href}
-                    className="flex-1 text-center py-2.5 border border-primary-navy text-primary-navy font-medium rounded-lg hover:bg-primary-navy hover:text-white transition-colors text-sm"
+                    className="flex-1 inline-flex items-center justify-center min-h-[44px] border-2 border-primary-navy text-primary-navy font-semibold rounded-lg hover:bg-primary-navy hover:text-white transition-colors text-sm"
                   >
                     Learn More
                   </Link>
                   <Link
                     href="/contact"
-                    className="flex-1 text-center py-2.5 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transition-colors text-sm"
+                    className="flex-1 inline-flex items-center justify-center min-h-[44px] bg-accent text-primary-navy font-semibold rounded-lg hover:bg-accent-dark transition-colors text-sm"
                   >
                     Apply Now
                   </Link>

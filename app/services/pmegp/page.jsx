@@ -14,7 +14,7 @@ const serviceData = {
     "Under this scheme, you can get a subsidy of up to 35% for manufacturing units and 25% for service units, depending on your category and location. The maximum project cost is ₹50 Lakhs for manufacturing and ₹20 Lakhs for service sector.",
     "Euroasia Aquatic helps you navigate the entire PMEGP application process, from documentation to bank liaison, ensuring maximum chances of approval.",
   ],
-  image: "/images/services/pmegp.jpg",
+  image: "/images/services/pmegp.png",
   included: [
     "Complete eligibility assessment",
     "Business plan preparation",

@@ -14,7 +14,7 @@ const serviceData = {
     "Our expert team identifies the best schemes for your business, prepares winning applications, and liaises with authorities to maximize your chances of securing government grants.",
     "We have helped 500+ businesses secure over ₹100 Crore in government funding across various schemes including PMEGP, MUDRA, State subsidies, and sector-specific grants.",
   ],
-  image: "/images/services/grants.jpg",
+  image: "/images/services/grants.png",
   included: [
     "Scheme identification",
     "Eligibility assessment",

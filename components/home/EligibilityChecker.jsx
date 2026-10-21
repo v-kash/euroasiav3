@@ -67,12 +67,20 @@ const allSchemes = [
   { id: "sss", name: "Startup Support Scheme (SSS)", amount: "₹25L to ₹1 Crore", icon: "💼", sectors: ["tech", "healthcare", "fintech", "agriculture"], entities: ["individual", "partnership", "pvtltd"], funding: ["10l-50l", "50l-1cr"], special: [] },
   { id: "masterfund", name: "Master Fund", amount: "Up to ₹35 Lakhs", icon: "🎓", sectors: ["tech", "manufacturing", "services"], entities: ["partnership", "pvtltd"], funding: ["10l-50l"], special: [] },
   { id: "profund", name: "Pro-Fund Support", amount: "₹2L to ₹30 Lakhs", icon: "💡", sectors: ["tech", "services", "manufacturing"], entities: ["individual", "partnership", "pvtltd"], funding: ["under10l", "10l-50l"], special: [] },
-  { id: "innopreneur", name: "Inno-Preneurs", amount: "Up to ₹5 Cr + ₹50L Reward", icon: "�", sectors: ["tech", "healthcare", "cleantech", "defence"], entities: ["individual", "partnership", "pvtltd"], funding: ["1cr-5cr", "above5cr"], special: [] },
+  { id: "innopreneur", name: "Inno-Preneurs", amount: "Up to ₹5 Cr + ₹50L Reward", icon: "", sectors: ["tech", "healthcare", "cleantech", "defence"], entities: ["individual", "partnership", "pvtltd"], funding: ["1cr-5cr", "above5cr"], special: [] },
   { id: "dpiit", name: "Startup India (DPIIT)", amount: "Tax Benefits + IPR Support", icon: "🇮🇳", sectors: ["tech", "healthcare", "fintech", "cleantech", "education", "ecommerce"], entities: ["pvtltd", "partnership"], funding: ["under10l", "10l-50l", "50l-1cr", "1cr-5cr", "above5cr"], special: [] },
-  { id: "80iac", name: "80-IAC Tax Exemption", amount: "100% Tax Free 3 Years", icon: "�", sectors: ["tech", "healthcare", "fintech", "cleantech", "education"], entities: ["pvtltd", "partnership"], funding: ["under10l", "10l-50l", "50l-1cr", "1cr-5cr", "above5cr"], special: [] },
+  { id: "80iac", name: "80-IAC Tax Exemption", amount: "100% Tax Free 3 Years", icon: "", sectors: ["tech", "healthcare", "fintech", "cleantech", "education"], entities: ["pvtltd", "partnership"], funding: ["under10l", "10l-50l", "50l-1cr", "1cr-5cr", "above5cr"], special: [] },
   { id: "zed", name: "ZED Certification", amount: "₹5L Subsidy", icon: "✓", sectors: ["manufacturing"], entities: ["individual", "partnership", "pvtltd"], funding: ["under10l", "10l-50l"], special: [] },
   { id: "gem", name: "GEM Registration", amount: "Access to Govt Orders", icon: "🛒", sectors: ["manufacturing", "services", "trading", "tech"], entities: ["individual", "partnership", "pvtltd"], funding: ["under10l", "10l-50l", "50l-1cr", "1cr-5cr", "above5cr"], special: [] },
 ];
+
+// Shared look for every answer button in the wizard
+const optionClass = (selected) =>
+  `min-h-[56px] p-4 rounded-xl border-2 text-center text-sm font-semibold transition-colors duration-150 ${
+    selected
+      ? "border-primary-navy bg-primary-navy text-white"
+      : "border-[#D5DDE9] bg-white text-primary-navy hover:border-primary-navy"
+  }`;
 
 export default function EligibilityChecker() {
   const [step, setStep] = useState(1);
@@ -104,81 +112,82 @@ export default function EligibilityChecker() {
       const sectorMatch = scheme.sectors.includes(answers.businessType);
       const entityMatch = scheme.entities.includes(answers.entityType);
       const fundingMatch = scheme.funding.includes(answers.fundingRange);
-      const specialMatch = scheme.special.length === 0 || 
+      const specialMatch = scheme.special.length === 0 ||
         (answers.specialCategory !== "none" && scheme.special.includes(answers.specialCategory));
-      
+
       return sectorMatch && entityMatch && fundingMatch && (scheme.special.length === 0 || specialMatch);
     });
-    
+
     // Sort by relevance - special category matches first
     results.sort((a, b) => {
       const aSpecial = a.special.includes(answers.specialCategory) ? 1 : 0;
       const bSpecial = b.special.includes(answers.specialCategory) ? 1 : 0;
       return bSpecial - aSpecial;
     });
-    
+
     setMatchedSchemes(results.slice(0, 8));
     setStep(5);
   };
 
+  const currentStep = Math.min(step, 4);
+
   return (
-    <section className="py-20 bg-light-gradient">
+    <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-h2 font-bold text-primary-navy mb-4">
+          <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl leading-[1.05] tracking-[-0.035em] mb-4">
             Check Your Eligibility in 60 Seconds
           </h2>
-          <p className="text-text-muted max-w-xl mx-auto">
+          <p className="text-text-muted text-lg max-w-xl mx-auto">
             Find out which government schemes your business qualifies for —
             instantly.
           </p>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex justify-between text-sm text-text-muted mb-2">
-            <span>Step {Math.min(step, 4)} of 4</span>
-            <span>{Math.round((Math.min(step, 4) / 4) * 100)}%</span>
+        {/* Progress */}
+        <div className="mb-6">
+          <div className="flex justify-between font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2.5">
+            <span>Step {currentStep} of 4</span>
+            <span>{Math.round((currentStep / 4) * 100)}%</span>
           </div>
-          <div className="h-2 bg-white rounded-full overflow-hidden">
-            <div
-              className="h-full bg-accent rounded-full transition-all duration-500"
-              style={{ width: `${(Math.min(step, 4) / 4) * 100}%` }}
-            />
+          <div className="grid grid-cols-4 gap-1.5">
+            {[1, 2, 3, 4].map((n) => (
+              <div
+                key={n}
+                className={`h-1.5 rounded-full transition-colors duration-300 ${
+                  n <= currentStep ? "bg-accent" : "bg-[#D5DDE9]"
+                }`}
+              />
+            ))}
           </div>
         </div>
 
         {/* Wizard Card */}
-        <div className="bg-white rounded-2xl shadow-lg p-8">
+        <div className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard p-6 sm:p-8">
           <AnimatePresence mode="wait">
             {/* Step 1: Business Type */}
             {step === 1 && (
               <motion.div
                 key="step1"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
               >
-                <h3 className="text-xl font-semibold text-primary-navy mb-6">
+                <h3 className="font-display font-bold text-primary-navy text-2xl tracking-[-0.02em] mb-6">
                   What sector is your business in?
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {businessTypes.map((type) => (
                     <button
                       key={type.id}
+                      type="button"
                       onClick={() => handleSelect("businessType", type.id)}
-                      className={`p-3 rounded-xl border-2 transition-all duration-200 text-center ${
-                        answers.businessType === type.id
-                          ? "border-accent bg-accent/5"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
+                      aria-pressed={answers.businessType === type.id}
+                      className={optionClass(answers.businessType === type.id)}
                     >
-                      <span className="text-2xl mb-1 block">{type.icon}</span>
-                      <span className="font-medium text-primary-navy text-sm">
-                        {type.label}
-                      </span>
+                      {type.label}
                     </button>
                   ))}
                 </div>
@@ -189,28 +198,24 @@ export default function EligibilityChecker() {
             {step === 2 && (
               <motion.div
                 key="step2"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
               >
-                <h3 className="text-xl font-semibold text-primary-navy mb-6">
+                <h3 className="font-display font-bold text-primary-navy text-2xl tracking-[-0.02em] mb-6">
                   What is your business entity type?
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {entityTypes.map((option) => (
                     <button
                       key={option.id}
+                      type="button"
                       onClick={() => handleSelect("entityType", option.id)}
-                      className={`p-4 rounded-xl border-2 transition-all duration-200 text-center ${
-                        answers.entityType === option.id
-                          ? "border-accent bg-accent/5"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
+                      aria-pressed={answers.entityType === option.id}
+                      className={optionClass(answers.entityType === option.id)}
                     >
-                      <span className="font-medium text-primary-navy">
-                        {option.label}
-                      </span>
+                      {option.label}
                     </button>
                   ))}
                 </div>
@@ -221,28 +226,24 @@ export default function EligibilityChecker() {
             {step === 3 && (
               <motion.div
                 key="step3"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
               >
-                <h3 className="text-xl font-semibold text-primary-navy mb-6">
+                <h3 className="font-display font-bold text-primary-navy text-2xl tracking-[-0.02em] mb-6">
                   How much funding do you need?
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {fundingRanges.map((option) => (
                     <button
                       key={option.id}
+                      type="button"
                       onClick={() => handleSelect("fundingRange", option.id)}
-                      className={`p-4 rounded-xl border-2 transition-all duration-200 text-center ${
-                        answers.fundingRange === option.id
-                          ? "border-accent bg-accent/5"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
+                      aria-pressed={answers.fundingRange === option.id}
+                      className={optionClass(answers.fundingRange === option.id)}
                     >
-                      <span className="font-medium text-primary-navy">
-                        {option.label}
-                      </span>
+                      {option.label}
                     </button>
                   ))}
                 </div>
@@ -253,28 +254,24 @@ export default function EligibilityChecker() {
             {step === 4 && (
               <motion.div
                 key="step4"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
               >
-                <h3 className="text-xl font-semibold text-primary-navy mb-6">
+                <h3 className="font-display font-bold text-primary-navy text-2xl tracking-[-0.02em] mb-6">
                   Do you belong to any special category?
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {specialCategories.map((option) => (
                     <button
                       key={option.id}
+                      type="button"
                       onClick={() => handleSelect("specialCategory", option.id)}
-                      className={`p-4 rounded-xl border-2 transition-all duration-200 text-center ${
-                        answers.specialCategory === option.id
-                          ? "border-accent bg-accent/5"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
+                      aria-pressed={answers.specialCategory === option.id}
+                      className={optionClass(answers.specialCategory === option.id)}
                     >
-                      <span className="font-medium text-primary-navy">
-                        {option.label}
-                      </span>
+                      {option.label}
                     </button>
                   ))}
                 </div>
@@ -285,43 +282,50 @@ export default function EligibilityChecker() {
             {step === 5 && (
               <motion.div
                 key="step5"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -30 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.25 }}
                 className="text-center"
               >
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-2xl font-bold text-primary-navy mb-2">
-                  {matchedSchemes.length > 0 
+                <div className="mx-auto mb-5 w-16 h-16 rounded-full bg-success-green/10 text-success-green flex items-center justify-center">
+                  <FiCheck aria-hidden="true" className="w-8 h-8" />
+                </div>
+                <h3 className="font-display font-extrabold text-primary-navy text-3xl tracking-[-0.03em] mb-2">
+                  {matchedSchemes.length > 0
                     ? `Great news! You qualify for ${matchedSchemes.length} schemes`
                     : "Let us help you find the right schemes"}
                 </h3>
                 <p className="text-text-muted mb-8">
-                  {matchedSchemes.length > 0 
+                  {matchedSchemes.length > 0
                     ? "Based on your inputs, here are the government schemes you can apply for:"
                     : "Our experts can identify custom funding opportunities for your business."}
                 </p>
 
                 {matchedSchemes.length > 0 && (
-                  <div className="grid md:grid-cols-2 gap-4 mb-8 text-left">
+                  <div className="grid md:grid-cols-2 gap-3 mb-8 text-left">
                     {matchedSchemes.map((scheme, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center p-4 bg-light-bg rounded-xl"
+                        className="flex items-center gap-4 p-4 bg-light-bg border border-[#D5DDE9] rounded-xl"
                       >
-                        <span className="text-2xl mr-3">{scheme.icon}</span>
+                        <span
+                          aria-hidden="true"
+                          className="font-ledger text-xs font-semibold text-accent-text"
+                        >
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
                         <div className="flex-1">
-                          <p className="font-semibold text-primary-navy">
+                          <p className="font-bold text-primary-navy">
                             {scheme.name}
                           </p>
-                          <p className="text-accent-text font-medium text-sm">
+                          <p className="text-accent-text font-semibold text-sm">
                             {scheme.amount}
                           </p>
                         </div>
                         <Link
                           href="/contact"
-                          className="text-accent-text font-medium text-sm hover:underline"
+                          className="text-primary-navy font-semibold text-sm underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-text"
                         >
                           Apply →
                         </Link>
@@ -333,16 +337,16 @@ export default function EligibilityChecker() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors"
                   >
                     Book Free Consultation
-                    <FiArrowRight className="w-5 h-5 ml-2" />
+                    <FiArrowRight aria-hidden="true" className="w-5 h-5 ml-2" />
                   </Link>
                   <a
                     href="https://wa.me/919898921290?text=Hi%2C%20I%20checked%20my%20eligibility%20and%20want%20to%20know%20more%20about%20government%20schemes"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-semibold rounded-lg hover:bg-primary-navy hover:text-white transition-colors"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors"
                   >
                     Talk to Expert on WhatsApp
                   </a>
@@ -353,30 +357,32 @@ export default function EligibilityChecker() {
 
           {/* Navigation Buttons */}
           {step < 5 && (
-            <div className="flex justify-between mt-8 pt-6 border-t border-gray-100">
+            <div className="flex justify-between mt-8 pt-6 border-t border-[#E6ECF4]">
               <button
+                type="button"
                 onClick={prevStep}
                 disabled={step === 1}
-                className={`flex items-center px-6 py-3 font-medium rounded-lg transition-colors ${
+                className={`flex items-center min-h-[48px] px-5 font-semibold rounded-xl transition-colors ${
                   step === 1
                     ? "text-gray-300 cursor-not-allowed"
                     : "text-primary-navy hover:bg-light-bg"
                 }`}
               >
-                <FiArrowLeft className="w-5 h-5 mr-2" />
+                <FiArrowLeft aria-hidden="true" className="w-5 h-5 mr-2" />
                 Back
               </button>
               <button
+                type="button"
                 onClick={step === 4 ? calculateResults : nextStep}
                 disabled={!canProceed()}
-                className={`flex items-center px-6 py-3 font-semibold rounded-lg transition-colors ${
+                className={`flex items-center min-h-[48px] px-6 font-bold rounded-xl transition-colors ${
                   canProceed()
-                    ? "bg-accent text-white hover:bg-accent-dark"
-                    : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    ? "bg-accent text-primary-navy hover:bg-accent-dark"
+                    : "bg-gray-200 text-gray-500 cursor-not-allowed"
                 }`}
               >
                 {step === 4 ? "See My Schemes" : "Next"}
-                <FiArrowRight className="w-5 h-5 ml-2" />
+                <FiArrowRight aria-hidden="true" className="w-5 h-5 ml-2" />
               </button>
             </div>
           )}

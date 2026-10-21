@@ -28,26 +28,27 @@ export default function LiveNotifications() {
   const current = notifications[currentIndex];
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-xl max-w-[220px]">
+    <div className="bg-white border-2 border-primary-navy rounded-xl p-4 shadow-hard-sm max-w-[240px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-          className="flex items-start space-x-3"
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+          className="flex items-start gap-3"
         >
-          <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 text-lg">
-            {current.icon}
+          <div className="w-10 h-10 bg-success-green/10 text-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+            <FiCheck aria-hidden="true" className="w-5 h-5" />
           </div>
           <div>
-            <p className="text-xs text-text-muted">Just Now</p>
-            <p className="text-sm font-semibold text-primary-navy">
+            <p className="font-ledger text-[11px] uppercase tracking-[0.12em] text-text-muted">
+              Just Now
+            </p>
+            <p className="text-sm font-bold text-primary-navy">
               {current.service}
             </p>
-            <p className="text-xs text-success-green font-medium flex items-center">
-              <FiCheck className="w-3 h-3 mr-1" />
+            <p className="text-xs text-success-green font-semibold">
               {current.status}
             </p>
           </div>

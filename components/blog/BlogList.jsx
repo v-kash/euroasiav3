@@ -48,32 +48,35 @@ export default function BlogList({ initialBlogs }) {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search Bar */}
-        <div className="max-w-xl mx-auto mb-12">
+        <div className="max-w-xl mb-8">
           <div className="relative">
-            <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted w-5 h-5" />
+            <FiSearch aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-navy w-5 h-5" />
             <input
               type="text"
               placeholder="Search articles..."
               value={searchQuery}
               onChange={handleSearch}
-              className="w-full pl-12 pr-4 py-3 rounded-lg border border-border-color focus:outline-none focus:ring-2 focus:ring-primary-navy focus:border-transparent transition-colors"
+              aria-label="Search articles"
+              className="w-full min-h-[52px] pl-12 pr-4 py-3 rounded-xl border-2 border-primary-navy bg-white text-text-dark placeholder:text-silver-grey shadow-hard-sm focus:outline-none focus:ring-4 focus:ring-accent/30 transition-shadow"
             />
           </div>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-[#D5DDE9]">
           {categories.map((category) => (
             <button
               key={category}
+              type="button"
               onClick={() => handleCategoryChange(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              aria-pressed={selectedCategory === category}
+              className={`min-h-[44px] px-5 rounded-full border-2 font-semibold text-sm transition-colors duration-150 ${
                 selectedCategory === category
-                  ? 'bg-primary-navy text-white'
-                  : 'bg-light-bg text-text-muted hover:bg-primary-navy/10'
+                  ? 'bg-primary-navy border-primary-navy text-white'
+                  : 'border-[#D5DDE9] text-primary-navy hover:border-primary-navy'
               }`}
             >
               {category}
@@ -83,13 +86,13 @@ export default function BlogList({ initialBlogs }) {
 
         {/* Blog Grid */}
         {paginatedBlogs.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {paginatedBlogs.map((blog, index) => (
               <BlogCard key={blog.id || blog.slug} blog={blog} index={index} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
+          <div className="text-center py-12 border-2 border-dashed border-[#D5DDE9] rounded-2xl">
             <p className="text-text-muted text-lg">
               No articles found matching your criteria.
             </p>
@@ -98,11 +101,11 @@ export default function BlogList({ initialBlogs }) {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center space-x-2 mt-12">
+          <div className="flex flex-wrap justify-center items-center gap-2 mt-12">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="px-4 py-2 rounded-lg border border-border-color text-text-muted hover:bg-light-bg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="min-h-[44px] px-5 rounded-full border-2 border-primary-navy text-primary-navy font-semibold text-sm hover:bg-primary-navy hover:text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-primary-navy transition-colors"
             >
               Previous
             </button>
@@ -110,10 +113,11 @@ export default function BlogList({ initialBlogs }) {
               <button
                 key={index}
                 onClick={() => setCurrentPage(index + 1)}
-                className={`w-10 h-10 rounded-lg font-medium transition-colors ${
+                aria-current={currentPage === index + 1 ? 'page' : undefined}
+                className={`w-11 h-11 rounded-full border-2 font-ledger font-semibold text-sm transition-colors ${
                   currentPage === index + 1
-                    ? 'bg-primary-navy text-white'
-                    : 'text-text-muted hover:bg-light-bg'
+                    ? 'bg-primary-navy border-primary-navy text-white'
+                    : 'border-[#D5DDE9] text-primary-navy hover:border-primary-navy'
                 }`}
               >
                 {index + 1}
@@ -122,7 +126,7 @@ export default function BlogList({ initialBlogs }) {
             <button
               onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-lg border border-border-color text-text-muted hover:bg-light-bg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="min-h-[44px] px-5 rounded-full border-2 border-primary-navy text-primary-navy font-semibold text-sm hover:bg-primary-navy hover:text-white disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-primary-navy transition-colors"
             >
               Next
             </button>

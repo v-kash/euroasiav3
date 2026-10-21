@@ -13,7 +13,7 @@ const serviceData = {
     "Our services cover GST registration and amendments, monthly/quarterly return filing, annual returns, e-invoicing setup, and handling GST notices and assessments.",
     "We also provide tax planning services to help you legitimately reduce tax burden through available exemptions, deductions, and scheme-specific benefits.",
   ],
-  image: "/images/services/gst.jpg",
+  image: "/images/services/gst.png",
   included: [
     "GST registration",
     "GSTR-1, GSTR-3B filing",

@@ -219,74 +219,81 @@ export default function SchemesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-hero-gradient py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
-            50+ GOVERNMENT SCHEMES
-          </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Explore Government Schemes
-            <br />
-            <span className="text-accent">for Your Business</span>
-          </h1>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            From ₹10 Lakhs to ₹2 Crore funding, tax exemptions to quality
-            certifications — find the right scheme for your MSME.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/check-eligibility"
-              className="inline-flex items-center px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
-            >
-              Check Your Eligibility
-              <FiArrowRight className="ml-2" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-navy transition-colors"
-            >
-              Talk to Expert
-            </Link>
+      <section className="relative bg-light-bg border-b border-[#D5DDE9] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="max-w-4xl">
+            <span className="inline-flex items-center gap-2.5 px-3.5 py-2 mb-7 border-[1.5px] border-primary-navy rounded-full text-primary-navy font-ledger text-xs font-semibold tracking-[0.12em]">
+              <span aria-hidden="true" className="w-2 h-2 rounded-[2px] bg-accent" />
+              50+ GOVERNMENT SCHEMES
+            </span>
+            <h1 className="font-display font-extrabold text-primary-navy text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-[-0.04em] mb-6">
+              Explore Government Schemes
+              <br />
+              <span className="text-accent-text">for Your Business</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-text-muted leading-relaxed max-w-2xl mb-8">
+              From ₹10 Lakhs to ₹2 Crore funding, tax exemptions to quality
+              certifications — find the right scheme for your MSME.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link
+                href="/check-eligibility"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl shadow-hard-sm hover:bg-accent-dark hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150"
+              >
+                Check Your Eligibility
+                <FiArrowRight aria-hidden="true" className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors duration-150"
+              >
+                Talk to Expert
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-white py-8 border-b border-border-color">
+      <section className="bg-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-16 text-center">
-            <div>
-              <p className="text-2xl font-bold text-primary-navy">₹100 Cr+</p>
-              <p className="text-sm text-text-muted">Funding Secured</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-primary-navy">500+</p>
-              <p className="text-sm text-text-muted">Businesses Helped</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-primary-navy">50+</p>
-              <p className="text-sm text-text-muted">Schemes Available</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-primary-navy">99%</p>
-              <p className="text-sm text-text-muted">Success Rate</p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 border-t-2 border-primary-navy">
+            {[
+              { value: "₹100 Cr+", label: "Funding Secured" },
+              { value: "500+", label: "Businesses Helped" },
+              { value: "50+", label: "Schemes Available" },
+              { value: "99%", label: "Success Rate" },
+            ].map((stat, index) => (
+              <div
+                key={stat.label}
+                className={`pt-8 pb-6 px-4 md:px-8 border-[#D5DDE9] ${
+                  index % 2 === 1 ? "border-l" : ""
+                } ${index > 0 ? "md:border-l" : ""} ${
+                  index > 1 ? "border-t md:border-t-0" : ""
+                }`}
+              >
+                <p className="font-display text-4xl md:text-5xl font-extrabold text-primary-navy tracking-[-0.04em] leading-none mb-3">
+                  {stat.value}
+                </p>
+                <p className="text-text-muted font-medium">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Schemes Grid */}
-      <section className="py-16 bg-light-bg">
+      <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Tabs - Static for now */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-[#D5DDE9]">
             {schemeCategories.map((cat) => (
               <span
                 key={cat}
-                className={`px-5 py-2.5 rounded-lg font-medium text-sm ${
+                className={`inline-flex items-center min-h-[44px] px-5 rounded-full border-2 font-semibold text-sm ${
                   cat === "All"
-                    ? "bg-primary-navy text-white"
-                    : "bg-white text-text-dark hover:bg-gray-100"
+                    ? "bg-primary-navy border-primary-navy text-white"
+                    : "bg-white border-[#D5DDE9] text-primary-navy"
                 }`}
               >
                 {cat}
@@ -299,48 +306,46 @@ export default function SchemesPage() {
             {schemes.map((scheme) => (
               <div
                 key={scheme.id}
-                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+                className="group flex flex-col bg-white border border-[#D5DDE9] rounded-2xl p-6 hover:border-primary-navy transition-colors duration-200"
               >
                 {/* Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <span className="inline-block px-2 py-1 bg-primary-navy/10 text-primary-navy text-xs font-medium rounded mb-2">
-                      {scheme.category}
-                    </span>
-                    <h3 className="text-xl font-bold text-primary-navy group-hover:text-accent-text transition-colors">
-                      {scheme.name}
-                    </h3>
-                    <p className="text-sm text-text-muted">{scheme.fullName}</p>
-                  </div>
+                <div className="mb-4">
+                  <span className="inline-block px-2.5 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-[11px] font-semibold uppercase tracking-[0.1em] rounded mb-3">
+                    {scheme.category}
+                  </span>
+                  <h3 className="font-display font-bold text-primary-navy text-2xl tracking-[-0.02em] leading-snug">
+                    {scheme.name}
+                  </h3>
+                  <p className="text-sm text-text-muted mt-1">{scheme.fullName}</p>
                 </div>
 
                 {/* Amount Badge */}
-                <div className="text-accent-text font-bold text-2xl mb-4">
+                <div className="font-display font-extrabold text-accent-text text-3xl tracking-[-0.03em] leading-none mb-4">
                   {scheme.amount}
                 </div>
 
                 {/* Info Row */}
-                <div className="flex gap-2 mb-4">
-                  <span className="px-3 py-1 bg-success-green/10 text-success-green text-xs font-medium rounded-full">
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="px-3 py-1 bg-success-green/10 text-success-green font-ledger text-xs font-semibold rounded-full">
                     {scheme.subsidy}
                   </span>
-                  <span className="px-3 py-1 bg-blue-50 text-primary-navy text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-xs font-semibold rounded-full">
                     {scheme.timeline}
                   </span>
                 </div>
 
                 {/* Eligibility */}
-                <div className="mb-4">
-                  <p className="text-xs font-semibold text-text-muted uppercase mb-2">
+                <div className="mb-6 pt-4 border-t border-dashed border-[#D5DDE9]">
+                  <p className="font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-3">
                     Eligibility
                   </p>
-                  <ul className="space-y-1">
+                  <ul className="space-y-2">
                     {scheme.eligibility.slice(0, 3).map((item, idx) => (
                       <li
                         key={idx}
                         className="flex items-start text-sm text-text-dark"
                       >
-                        <FiCheck className="w-4 h-4 text-success-green mr-2 flex-shrink-0 mt-0.5" />
+                        <FiCheck aria-hidden="true" className="w-4 h-4 text-success-green mr-2 flex-shrink-0 mt-0.5" />
                         {item}
                       </li>
                     ))}
@@ -348,13 +353,13 @@ export default function SchemesPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="pt-4 border-t border-gray-100">
+                <div className="mt-auto">
                   <Link
                     href={scheme.href}
-                    className="flex items-center justify-center w-full py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
+                    className="flex items-center justify-center gap-2 w-full min-h-[48px] bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors"
                   >
                     Apply for {scheme.name}
-                    <FiArrowRight className="ml-2" />
+                    <FiArrowRight aria-hidden="true" />
                   </Link>
                 </div>
               </div>
@@ -364,22 +369,26 @@ export default function SchemesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary-navy">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Not Sure Which Scheme is Right for You?
-          </h2>
-          <p className="text-white/70 mb-8">
-            Our experts will analyze your business and recommend the best
-            schemes you qualify for.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
-          >
-            Get Free Expert Consultation
-            <FiArrowRight className="ml-2" />
-          </Link>
+      <section className="py-12 lg:py-16 bg-white border-t border-[#D5DDE9]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-primary-navy rounded-3xl px-6 py-12 sm:px-10 lg:px-16 lg:py-16 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 text-center lg:text-left">
+            <div className="max-w-2xl">
+              <h2 className="font-display font-extrabold text-white text-4xl md:text-5xl leading-[1.02] tracking-[-0.035em] mb-4">
+                Not Sure Which Scheme is Right for You?
+              </h2>
+              <p className="text-lg text-white/75">
+                Our experts will analyze your business and recommend the best
+                schemes you qualify for.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors flex-shrink-0"
+            >
+              Get Free Expert Consultation
+              <FiArrowRight aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
     </>

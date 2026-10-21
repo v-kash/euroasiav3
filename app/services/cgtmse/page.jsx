@@ -14,7 +14,7 @@ const serviceData = {
     "Under this scheme, banks can lend to MSMEs without demanding collateral security or third-party guarantee. The guarantee covers up to 85% of the sanctioned amount for micro enterprises.",
     "Euroasia Aquatic helps you prepare a strong loan application and connects you with CGTMSE-enrolled banks for maximum loan approval chances.",
   ],
-  image: "/images/services/cgtmse.jpg",
+  image: "/images/services/cgtmse.png",
   included: [
     "Eligibility assessment",
     "Business plan preparation",

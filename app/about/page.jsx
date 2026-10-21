@@ -132,6 +132,11 @@ const milestones = [
   },
 ];
 
+const eyebrow =
+  "font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent-text";
+const sectionTitle =
+  "font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em]";
+
 export default function AboutPage() {
   return (
     <>
@@ -142,29 +147,28 @@ export default function AboutPage() {
       />
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-                alt="Euroasia team"
-                width={600}
-                height={450}
-                className="rounded-2xl object-cover shadow-xl"
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary-navy/10 rounded-2xl -z-10" />
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="w-full max-w-xl mx-auto lg:max-w-none">
+              <div className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+                  alt="Euroasia team"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
             <div>
-              <span className="inline-block text-label uppercase tracking-widest text-accent-text font-semibold mb-4">
-                OUR STORY
-              </span>
-              <h2 className="text-3xl md:text-h2 font-bold text-primary-navy mb-6">
+              <span className={eyebrow}>OUR STORY</span>
+              <h2 className={`${sectionTitle} mt-4 mb-6`}>
                 Making Compliance Effortless Since 2021
               </h2>
-              <div className="space-y-4 text-text-muted">
+              <div className="space-y-4 text-text-muted text-lg leading-relaxed">
                 <p>
                   Euroasia Aquatic Pvt Ltd was founded with a simple mission: to
                   make business compliance effortless for entrepreneurs and
@@ -197,13 +201,14 @@ export default function AboutPage() {
       <StatsSection />
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-primary-navy rounded-2xl p-8 text-white">
-              <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="bg-primary-navy rounded-2xl p-8 lg:p-10 text-white">
+              <div className="w-14 h-14 border-2 border-accent rounded-xl flex items-center justify-center text-accent mb-6">
                 <svg
-                  className="w-8 h-8"
+                  aria-hidden="true"
+                  className="w-7 h-7"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -216,18 +221,21 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-silver-grey">
+              <h3 className="font-display font-extrabold text-white text-3xl md:text-4xl tracking-[-0.03em] mb-4">
+                Our Mission
+              </h3>
+              <p className="text-white/75 text-lg leading-relaxed">
                 To empower businesses by simplifying compliance, unlocking
                 growth opportunities, and providing expert guidance that enables
                 our clients to focus on what they do best — running and growing
                 their business.
               </p>
             </div>
-            <div className="bg-light-bg rounded-2xl p-8">
-              <div className="w-16 h-16 bg-primary-navy/10 rounded-xl flex items-center justify-center mb-6">
+            <div className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard p-8 lg:p-10">
+              <div className="w-14 h-14 border-2 border-primary-navy rounded-xl flex items-center justify-center text-accent-text mb-6">
                 <svg
-                  className="w-8 h-8 text-primary-navy"
+                  aria-hidden="true"
+                  className="w-7 h-7"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -246,10 +254,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-primary-navy mb-4">
+              <h3 className="font-display font-extrabold text-primary-navy text-3xl md:text-4xl tracking-[-0.03em] mb-4">
                 Our Vision
               </h3>
-              <p className="text-text-muted">
+              <p className="text-text-muted text-lg leading-relaxed">
                 To be the most trusted business consulting partner in India,
                 known for our expertise, integrity, and commitment to client
                 success. We aim to be the first choice for businesses seeking
@@ -261,29 +269,22 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-light-bg">
+      <section className="py-12 lg:py-16 bg-white border-t border-[#D5DDE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block text-label uppercase tracking-widest text-accent-text font-semibold mb-4">
-              OUR VALUES
-            </span>
-            <h2 className="text-3xl md:text-h2 font-bold text-primary-navy">
-              What Drives Us
-            </h2>
+          <div className="max-w-2xl mb-10">
+            <span className={eyebrow}>OUR VALUES</span>
+            <h2 className={`${sectionTitle} mt-4`}>What Drives Us</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-sm"
-              >
-                <div className="w-16 h-16 bg-primary-navy/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-navy">
+              <div key={index} className="border-t-2 border-primary-navy pt-6">
+                <div className="w-12 h-12 rounded-xl border-2 border-primary-navy flex items-center justify-center text-accent-text mb-5 [&>svg]:w-6 [&>svg]:h-6">
                   {value.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-primary-navy mb-2">
+                <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] mb-2">
                   {value.title}
                 </h3>
-                <p className="text-text-muted text-sm">{value.description}</p>
+                <p className="text-text-muted">{value.description}</p>
               </div>
             ))}
           </div>
@@ -291,45 +292,28 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block text-label uppercase tracking-widest text-accent-text font-semibold mb-4">
-              OUR JOURNEY
-            </span>
-            <h2 className="text-3xl md:text-h2 font-bold text-primary-navy">
-              Milestones
-            </h2>
+      <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-10 lg:mb-12">
+            <span className={eyebrow}>OUR JOURNEY</span>
+            <h2 className={`${sectionTitle} mt-4`}>Milestones</h2>
           </div>
-          <div className="relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border-color -translate-x-1/2" />
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  }`}
-                >
-                  <div
-                    className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8"}`}
-                  >
-                    <span className="text-accent-text font-bold text-lg">
-                      {milestone.year}
-                    </span>
-                    <h3 className="text-xl font-semibold text-primary-navy">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-text-muted text-sm">
-                      {milestone.description}
-                    </p>
-                  </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-primary-navy rounded-full border-4 border-white" />
-                  <div className="w-1/2" />
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {milestones.map((milestone, index) => (
+              <li key={index} className="flex flex-col">
+                <span className="font-display font-extrabold text-accent-text text-6xl lg:text-7xl leading-none tracking-[-0.05em] mb-5">
+                  {milestone.year}
+                </span>
+                <div aria-hidden="true" className="relative h-0.5 bg-primary-navy mb-5">
+                  <span className="absolute -top-[5px] left-0 w-3 h-3 rounded-[3px] bg-accent border-2 border-primary-navy" />
                 </div>
-              ))}
-            </div>
-          </div>
+                <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] mb-2">
+                  {milestone.title}
+                </h3>
+                <p className="text-text-muted">{milestone.description}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

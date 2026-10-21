@@ -135,45 +135,45 @@ function SearchResults() {
     : [];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       {query ? (
         <>
-          <p className="text-text-gray mb-8">
+          <p className="font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-6 pb-4 border-b border-[#D5DDE9]">
             {results.length} result{results.length !== 1 ? "s" : ""} for &ldquo;
             {query}&rdquo;
           </p>
 
           {results.length > 0 ? (
-            <div className="space-y-6">
+            <div className="space-y-4">
               {results.map((result, index) => (
                 <Link
                   key={index}
                   href={result.href}
-                  className="block p-6 bg-white border border-border-color rounded-xl hover:shadow-lg hover:border-accent transition-all duration-200"
+                  className="group block p-6 bg-white border border-[#D5DDE9] rounded-2xl hover:border-primary-navy transition-colors duration-200"
                 >
-                  <h2 className="text-xl font-semibold text-primary-navy mb-2 flex items-center">
+                  <h2 className="font-display font-bold text-primary-navy text-xl md:text-2xl tracking-[-0.02em] mb-2 flex items-center">
                     {result.title}
-                    <FiArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <FiArrowRight aria-hidden="true" className="w-5 h-5 ml-2 text-accent-text opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                   </h2>
-                  <p className="text-text-gray">{result.description}</p>
-                  <span className="text-sm text-accent mt-2 inline-block">
+                  <p className="text-text-muted">{result.description}</p>
+                  <span className="font-ledger text-xs font-medium text-accent-text mt-3 inline-block">
                     euroasias.com{result.href}
                   </span>
                 </Link>
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <FiSearch className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h2 className="text-xl font-semibold text-primary-navy mb-2">
+            <div className="text-center py-8">
+              <span aria-hidden="true" className="w-16 h-16 mx-auto mb-5 rounded-2xl border-2 border-primary-navy flex items-center justify-center text-accent-text"><FiSearch className="w-7 h-7" /></span>
+              <h2 className="font-display font-extrabold text-primary-navy text-3xl tracking-[-0.03em] mb-2">
                 No results found
               </h2>
-              <p className="text-text-gray mb-6">
+              <p className="text-text-muted text-lg mb-6">
                 Try searching for PMEGP, MUDRA, Startup India, or other schemes
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl shadow-hard-sm hover:bg-accent-dark hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150"
               >
                 Browse All Services
                 <FiArrowRight className="w-4 h-4 ml-2" />
@@ -182,12 +182,12 @@ function SearchResults() {
           )}
         </>
       ) : (
-        <div className="text-center py-12">
-          <FiSearch className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <h2 className="text-xl font-semibold text-primary-navy mb-2">
+        <div className="text-center py-8">
+          <span aria-hidden="true" className="w-16 h-16 mx-auto mb-5 rounded-2xl border-2 border-primary-navy flex items-center justify-center text-accent-text"><FiSearch className="w-7 h-7" /></span>
+          <h2 className="font-display font-extrabold text-primary-navy text-3xl tracking-[-0.03em] mb-2">
             Search Euroasia
           </h2>
-          <p className="text-text-gray mb-6">
+          <p className="text-text-muted text-lg mb-6">
             Search for government schemes, services, and more
           </p>
           <div className="flex flex-wrap justify-center gap-2">
@@ -195,7 +195,7 @@ function SearchResults() {
               <Link
                 key={term}
                 href={`/search?q=${term.toLowerCase()}`}
-                className="px-4 py-2 bg-light-bg text-primary-navy rounded-full hover:bg-accent hover:text-white transition-colors text-sm"
+                className="inline-flex items-center min-h-[44px] px-5 border-2 border-[#D5DDE9] text-primary-navy font-semibold rounded-full hover:border-primary-navy transition-colors text-sm"
               >
                 {term}
               </Link>

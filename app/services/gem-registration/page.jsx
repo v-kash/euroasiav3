@@ -13,7 +13,7 @@ const serviceData = {
     "Once registered, you can list your products/services and participate in government tenders. MSMEs get special benefits like relaxed criteria, price preference, and exclusive items reserved for them.",
     "Euroasia Aquatic provides complete GEM registration support, from seller onboarding to product cataloguing and bid participation guidance.",
   ],
-  image: "/images/services/gem.jpg",
+  image: "/images/services/gem.png",
   included: [
     "Seller registration on GeM",
     "Profile verification support",

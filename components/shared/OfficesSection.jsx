@@ -50,7 +50,7 @@ const offices = [
     mapUrl: "https://maps.google.com/?q=105-107,+Athena+Avenue,+Gota,+Ahmedabad,+Gujarat+382481",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5!2d72.5!3d23.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA2JzAwLjAiTiA3MsKwMzAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",
     Icon: AhmedabadIcon,
-    typeColor: "bg-accent text-white",
+    typeColor: "bg-accent text-primary-navy",
   },
   {
     id: 2,
@@ -71,24 +71,26 @@ export default function OfficesSection({ variant = "default" }) {
   const isCompact = variant === "compact";
 
   return (
-    <section className={`${isCompact ? "py-12" : "py-20"} bg-light-bg overflow-hidden`}>
+    <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         {!isCompact && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
           >
-            <span className="inline-block px-4 py-1.5 bg-primary-navy/10 text-primary-navy text-sm font-semibold rounded-full mb-4">
-              Our Presence
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-4">
-              Visit Our Offices
-            </h2>
-            <p className="text-text-gray max-w-2xl mx-auto">
+            <div className="max-w-2xl">
+              <span className="font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent-text">
+                Our Presence
+              </span>
+              <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mt-4">
+                Visit Our Offices
+              </h2>
+            </div>
+            <p className="text-text-muted text-lg max-w-md">
               We have strategically located offices to serve you better. 
               Visit us for a free consultation on government schemes and business funding.
             </p>
@@ -97,44 +99,44 @@ export default function OfficesSection({ variant = "default" }) {
 
         {isCompact && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <h2 className="text-2xl font-bold text-primary-navy">
+            <h2 className="font-display font-extrabold text-primary-navy text-3xl md:text-4xl tracking-[-0.03em]">
               Our Office Locations
             </h2>
           </motion.div>
         )}
 
         {/* Office Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {offices.map((office, index) => (
             <motion.div
               key={office.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-t-4 border-accent"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="flex flex-col bg-white border border-[#D5DDE9] rounded-2xl overflow-hidden hover:border-primary-navy transition-colors duration-200"
             >
-              <div className="p-6 md:p-8">
+              <div className="flex flex-col flex-1 p-6 md:p-8">
                 {/* Office Header */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex items-start justify-between gap-4 mb-6">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 flex-shrink-0">
                       <office.Icon />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-primary-navy tracking-wide">
+                      <h3 className="font-display font-extrabold text-primary-navy text-2xl tracking-[-0.02em] leading-tight">
                         {office.city}
                       </h3>
-                      <span className="text-sm text-text-gray">{office.state}</span>
+                      <span className="text-sm text-text-muted">{office.state}</span>
                     </div>
                   </div>
-                  <span className={`px-4 py-1.5 rounded-full text-xs font-semibold ${office.typeColor}`}>
+                  <span className={`px-3 py-1.5 rounded-full font-ledger text-[11px] font-semibold uppercase tracking-[0.1em] whitespace-nowrap ${office.typeColor}`}>
                     {office.type}
                   </span>
                 </div>
@@ -150,22 +152,22 @@ export default function OfficesSection({ variant = "default" }) {
                 <div className="space-y-3 mb-6">
                   <a 
                     href={`tel:${office.phone.replace(/-/g, '')}`}
-                    className="flex items-center gap-3 text-text-gray hover:text-primary-navy transition-colors"
+                    className="flex items-center gap-3 text-primary-navy font-medium hover:text-accent-text transition-colors"
                   >
-                    <FiPhone className="w-5 h-5 text-accent" />
-                    <span className="text-sm">{office.phone}</span>
+                    <FiPhone aria-hidden="true" className="w-5 h-5 text-accent-text" />
+                    <span className="font-ledger text-sm">{office.phone}</span>
                   </a>
                   <a 
                     href={`mailto:${office.email}`}
-                    className="flex items-center gap-3 text-text-gray hover:text-primary-navy transition-colors"
+                    className="flex items-center gap-3 text-primary-navy font-medium hover:text-accent-text transition-colors"
                   >
-                    <FiMail className="w-5 h-5 text-accent" />
-                    <span className="text-sm">{office.email}</span>
+                    <FiMail aria-hidden="true" className="w-5 h-5 text-accent-text" />
+                    <span className="font-ledger text-sm">{office.email}</span>
                   </a>
                 </div>
 
                 {/* Map Preview */}
-                <div className="rounded-xl overflow-hidden h-36 relative border border-gray-200">
+                <div className="mt-auto rounded-xl overflow-hidden h-40 relative border-2 border-primary-navy">
                   <iframe
                     src={office.mapEmbed}
                     width="100%"
@@ -181,9 +183,9 @@ export default function OfficesSection({ variant = "default" }) {
                     href={office.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute bottom-2 left-2 inline-flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-sm text-primary-navy text-xs font-medium rounded-lg hover:bg-white transition-colors shadow-sm"
+                    className="absolute bottom-2 left-2 inline-flex items-center gap-1 px-3 py-1.5 bg-white border-2 border-primary-navy text-primary-navy text-xs font-bold rounded-lg hover:bg-accent transition-colors"
                   >
-                    Maps <FiExternalLink className="w-3 h-3" />
+                    Maps <FiExternalLink aria-hidden="true" className="w-3 h-3" />
                   </a>
                 </div>
               </div>
@@ -194,20 +196,20 @@ export default function OfficesSection({ variant = "default" }) {
         {/* Bottom CTA */}
         {!isCompact && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-12 text-center"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-10 pt-10 border-t border-[#D5DDE9] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left"
           >
-            <p className="text-text-gray mb-4">
-              Can&apos;t visit us? No problem! We offer <span className="text-primary-navy font-medium">online consultations</span> across India.
+            <p className="text-text-muted">
+              Can&apos;t visit us? No problem! We offer <span className="text-primary-navy font-semibold">online consultations</span> across India.
             </p>
             <a
               href="tel:+919898921290"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-primary-navy transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-primary-navy font-bold rounded-xl shadow-hard-sm hover:bg-accent-dark hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150 flex-shrink-0"
             >
-              <FiPhone className="w-4 h-4" />
+              <FiPhone aria-hidden="true" className="w-4 h-4" />
               Schedule a Call
             </a>
           </motion.div>

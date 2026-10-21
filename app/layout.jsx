@@ -1,11 +1,11 @@
 import "@/styles/globals.css";
-// import AnnouncementBar from "@/components/layout/AnnouncementBar";
+import { displayFont, ledgerFont } from "@/styles/fonts";
+import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 // import FloatingAlerts from "@/components/shared/FloatingAlerts";
 import NavratriProvider from "@/components/navratri/NavratriProvider";
-import NavratriOfferBar from "@/components/navratri/NavratriOfferBar";
 
 export const metadata = {
   metadataBase: new URL("https://www.euroasias.com"),
@@ -43,7 +43,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN">
+    <html
+      lang="en-IN"
+      className={`${displayFont.variable} ${ledgerFont.variable}`}
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -106,8 +109,7 @@ export default function RootLayout({ children }) {
         {/* Seasonal layer; renders the children untouched outside Navratri (components/navratri/config.js). */}
         <NavratriProvider>
           <div className="fixed top-0 left-0 right-0 z-50">
-            {/* <AnnouncementBar /> */}
-                        <NavratriOfferBar />
+            <AnnouncementBar />
 
             <Navbar />
           </div>

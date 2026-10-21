@@ -14,7 +14,7 @@ const serviceData = {
     "Recognized startups get 3-year income tax exemption under Section 80-IAC, exemption from Angel Tax, fast-track patent applications, self-certification for compliance, and access to Fund of Funds.",
     "Euroasia Aquatic provides end-to-end assistance for Startup India recognition, from eligibility assessment to certificate issuance and beyond.",
   ],
-  image: "/images/services/startup-india.jpg",
+  image: "/images/services/startup-india.png",
   included: [
     "Eligibility assessment",
     "Company incorporation support",

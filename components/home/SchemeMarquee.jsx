@@ -17,14 +17,14 @@ export default function SchemeMarquee() {
   ];
 
   return (
-    <section className="bg-primary-navy py-4 marquee-strip">
+    <section className="bg-white border-y border-[#D5DDE9] py-4 marquee-strip marquee-light">
       <div className="marquee-track scroll">
         {[...schemes, ...schemes].map((scheme, index) => (
           <div key={index} className="flex items-center px-6">
-            <span className="text-white font-medium text-sm whitespace-nowrap">
+            <span className="font-ledger text-primary-navy text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] whitespace-nowrap">
               {scheme}
             </span>
-            <span className="ml-6 h-4 w-px bg-white/30"></span>
+            <span aria-hidden="true" className="ml-6 w-1.5 h-1.5 rotate-45 bg-accent"></span>
           </div>
         ))}
       </div>

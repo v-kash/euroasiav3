@@ -148,37 +148,44 @@ export default function ContactPage() {
         breadcrumbs={[{ label: "Contact" }]}
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-primary-navy mb-6">
-                Send Us a Message
-              </h2>
-              <ContactForm />
+            <div className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard overflow-hidden">
+              <div className="bg-primary-navy px-6 sm:px-8 py-5">
+                <h2 className="font-display font-extrabold text-white text-2xl md:text-3xl tracking-[-0.03em]">
+                  Send Us a Message
+                </h2>
+              </div>
+              <div className="p-6 sm:p-8">
+                <ContactForm />
+              </div>
             </div>
 
             {/* Contact Info & Map */}
             <div>
-              <h2 className="text-2xl font-bold text-primary-navy mb-6">
+              <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl leading-[1.02] tracking-[-0.035em] mb-8">
                 Get in Touch
               </h2>
 
-              <div className="grid sm:grid-cols-2 gap-6 mb-8">
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary-navy/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-primary-navy" />
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 bg-light-bg border border-[#D5DDE9] rounded-2xl p-5"
+                  >
+                    <div className="w-11 h-11 rounded-xl border-2 border-primary-navy flex items-center justify-center text-accent-text flex-shrink-0">
+                      <info.icon aria-hidden="true" className="w-5 h-5" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-1">
+                    <div className="min-w-0">
+                      <h3 className="font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-1.5">
                         {info.title}
                       </h3>
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="text-text-muted hover:text-accent transition-colors whitespace-pre-line"
+                          className="font-semibold text-primary-navy hover:text-accent-text transition-colors whitespace-pre-line break-words"
                         >
                           {info.content}
                         </a>
@@ -193,12 +200,12 @@ export default function ContactPage() {
               </div>
 
               {/* WhatsApp CTA */}
-              <div className="mt-8 bg-green-50 rounded-xl p-6 flex items-center justify-between">
+              <div className="bg-primary-navy rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
                 <div>
-                  <h3 className="font-semibold text-primary-navy mb-1">
+                  <h3 className="font-display font-bold text-white text-xl tracking-[-0.02em] mb-1">
                     Prefer WhatsApp?
                   </h3>
-                  <p className="text-text-muted text-sm">
+                  <p className="text-white/70 text-sm">
                     Chat with us directly for quick responses.
                   </p>
                 </div>
@@ -206,9 +213,10 @@ export default function ContactPage() {
                   href="https://wa.me/919898921290?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#25D366] text-primary-navy font-bold rounded-xl hover:bg-[#1fb857] transition-colors flex-shrink-0"
                 >
                   <svg
+                    aria-hidden="true"
                     className="w-5 h-5 mr-2"
                     fill="currentColor"
                     viewBox="0 0 24 24"

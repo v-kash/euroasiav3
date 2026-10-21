@@ -5,6 +5,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FiLinkedin } from "react-icons/fi";
 import SectionHeader from "@/components/shared/SectionHeader";
 
+// With reduced motion, both states stay fully visible (an empty variants
+// object would leave server-rendered content stuck at opacity 0).
+const noMotion = {
+  hidden: { opacity: 1, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+
 const team = [
   {
     name: "Shubham Zinzuwadiya",
@@ -40,20 +47,20 @@ export default function TeamSection() {
   const shouldReduceMotion = useReducedMotion();
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 16 },
     visible: (index) => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
         ease: "easeOut",
-        delay: index * 0.1,
+        delay: index * 0.08,
       },
     }),
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="team" className="py-12 lg:py-16 bg-white border-t border-[#D5DDE9] scroll-mt-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           tag="OUR TEAM"
@@ -61,19 +68,19 @@ export default function TeamSection() {
           description="Our experienced team is dedicated to helping your business succeed."
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
-              className="group text-center"
-              variants={shouldReduceMotion ? {} : cardVariants}
+              className="group"
+              variants={shouldReduceMotion ? noMotion : cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               custom={index}
             >
-              <div className="relative mb-6">
-                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-transparent group-hover:border-primary-navy transition-colors">
+              <div className="h-full flex flex-col items-center text-center bg-light-bg border border-[#D5DDE9] rounded-2xl p-6 group-hover:border-primary-navy transition-colors">
+                <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-primary-navy mb-5">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -83,20 +90,26 @@ export default function TeamSection() {
                     loading="lazy"
                   />
                 </div>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-0 right-1/2 translate-x-8 w-10 h-10 bg-primary-navy rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-accent"
-                  aria-label={`${member.name}'s LinkedIn`}
-                >
-                  <FiLinkedin className="w-5 h-5" />
-                </a>
+                <h3 className="font-display font-bold text-primary-navy text-lg tracking-[-0.02em] mb-1">
+                  {member.name}
+                </h3>
+                <p className="font-ledger text-xs uppercase tracking-[0.1em] text-text-muted">
+                  {member.role}
+                </p>
+
+                {/* LinkedIn — shown only once a real profile URL is set */}
+                {member.linkedin && member.linkedin !== "#" && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 w-11 h-11 rounded-full border-2 border-primary-navy flex items-center justify-center text-primary-navy hover:bg-primary-navy hover:text-white transition-colors"
+                    aria-label={`${member.name}'s LinkedIn`}
+                  >
+                    <FiLinkedin aria-hidden="true" className="w-5 h-5" />
+                  </a>
+                )}
               </div>
-              <h3 className="text-lg font-semibold text-primary-navy mb-1">
-                {member.name}
-              </h3>
-              <p className="text-text-muted text-sm">{member.role}</p>
             </motion.div>
           ))}
         </div>

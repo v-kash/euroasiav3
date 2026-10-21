@@ -41,7 +41,7 @@ export default async function BlogPreview() {
   const blogs = placeholderBlogs;
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           tag="BLOG"
@@ -49,7 +49,7 @@ export default async function BlogPreview() {
           description="Stay updated with the latest in business compliance, certifications, and growth strategies."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogs.map((blog, index) => (
             <BlogCard key={blog.id} blog={blog} index={index} />
           ))}
@@ -58,10 +58,11 @@ export default async function BlogPreview() {
         <div className="text-center mt-12">
           <Link
             href="/blog"
-            className="inline-flex items-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-semibold rounded-lg hover:bg-primary-navy hover:text-white transition-all duration-200"
+            className="inline-flex items-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors duration-200"
           >
             View All Articles
             <svg
+              aria-hidden="true"
               className="w-5 h-5 ml-2"
               fill="none"
               stroke="currentColor"

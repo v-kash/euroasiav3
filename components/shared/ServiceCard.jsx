@@ -3,6 +3,13 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
+// With reduced motion, both states stay fully visible (an empty variants
+// object would leave server-rendered content stuck at opacity 0).
+const noMotion = {
+  hidden: { opacity: 1, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+
 export default function ServiceCard({ service, index = 0 }) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -21,7 +28,7 @@ export default function ServiceCard({ service, index = 0 }) {
 
   return (
     <motion.div
-      variants={shouldReduceMotion ? {} : cardVariants}
+      variants={shouldReduceMotion ? noMotion : cardVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}

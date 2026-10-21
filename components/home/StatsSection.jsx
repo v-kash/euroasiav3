@@ -3,6 +3,13 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import AnimatedCounter from '@/components/shared/AnimatedCounter';
 
+// With reduced motion, both states stay fully visible (an empty variants
+// object would leave server-rendered content stuck at opacity 0).
+const noMotion = {
+  hidden: { opacity: 1, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0 },
+};
+
 const stats = [
   { value: 3, suffix: '+', label: 'Years in Business' },
   { value: 150, suffix: '+', label: 'Products' },
@@ -24,7 +31,7 @@ export default function StatsSection() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 16 },
     visible: {
       opacity: 1,
       y: 0,
@@ -36,11 +43,11 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="py-16 bg-light-bg">
+    <section className="py-12 lg:py-16 bg-white border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          variants={shouldReduceMotion ? {} : containerVariants}
+          className="grid grid-cols-2 md:grid-cols-4 border-t-2 border-primary-navy"
+          variants={shouldReduceMotion ? noMotion : containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
@@ -48,21 +55,17 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="relative text-center"
-              variants={shouldReduceMotion ? {} : itemVariants}
+              className={`pt-8 pb-6 px-4 md:px-8 border-[#D5DDE9] ${
+                index % 2 === 1 ? 'border-l' : ''
+              } ${index > 0 ? 'md:border-l' : ''} ${
+                index > 1 ? 'border-t md:border-t-0' : ''
+              }`}
+              variants={shouldReduceMotion ? noMotion : itemVariants}
             >
-              {/* Top accent bar */}
-              <div className="w-12 h-1 bg-primary-navy mx-auto mb-6" />
-              
-              <div className="text-4xl md:text-5xl font-extrabold text-primary-navy mb-2">
+              <div className="font-display text-5xl md:text-6xl font-extrabold text-primary-navy tracking-[-0.04em] leading-none mb-3">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-text-muted font-medium">{stat.label}</p>
-              
-              {/* Divider (not on last item) */}
-              {index < stats.length - 1 && (
-                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-border-color" />
-              )}
             </motion.div>
           ))}
         </motion.div>

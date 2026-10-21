@@ -2,170 +2,168 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FiShield, FiZap, FiTrendingUp, FiArrowRight } from "react-icons/fi";
+
+const ledgerRows = [
+  { code: "PMEGP", value: "₹25L avg" },
+  { code: "MUDRA", value: "₹10L avg" },
+  { code: "80-IAC", value: "100% tax" },
+  { code: "ZED", value: "₹5L subsidy" },
+];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] bg-hero-gradient overflow-hidden">
-      {/* Background Texture */}
-      <div className="absolute inset-0 hero-texture" />
-
-      {/* Subtle Glow Effects */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-16 lg:pt-32 pb-12 lg:pb-20">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center min-h-[calc(100svh-12rem)]">
-          {/* Left Content - 60% */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
-          >
+    <section className="relative bg-light-bg border-b border-[#D5DDE9] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 lg:pt-8 pb-8">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          {/* Left Content - 60%
+              Rendered visible on first paint (no fade-in) so the H1 counts
+              as the Largest Contentful Paint straight away. */}
+          <div className="lg:col-span-3">
             {/* Label Pill */}
-            <span className="inline-block px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
+            <span className="inline-flex items-center gap-2.5 px-3.5 py-2 mb-7 border-[1.5px] border-primary-navy rounded-full text-primary-navy font-ledger text-xs font-semibold tracking-[0.12em]">
+              <span aria-hidden="true" className="w-2 h-2 rounded-[2px] bg-accent" />
               PAN-INDIA MSME CONSULTING
             </span>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-h1 font-black text-white leading-tight mb-4 sm:mb-6">
+            <h1 className="font-display font-extrabold text-primary-navy text-[3.25rem] sm:text-7xl xl:text-[5.5rem] leading-[0.92] tracking-[-0.045em] mb-6 sm:mb-8">
               Making
               <br />
               Compliance
               <br />
-              <span className="text-accent">Effortless</span>
+              <span className="text-accent-text">Effortless</span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-base sm:text-lg text-white/70 mb-6 sm:mb-8 max-w-xl">
+            <p className="text-lg sm:text-xl text-text-muted leading-relaxed mb-8 max-w-xl">
               Expert consulting & processing for PMEGP, MUDRA, Startup India,
-              ZED & 80-IAC benefits. We help you access
-              <span className="text-accent font-semibold">
-                {" "}
+              ZED & 80-IAC benefits. We help you access{" "}
+              <span className="font-bold text-primary-navy bg-accent/30 px-1.5 py-0.5 rounded">
                 ₹10 Lakh – ₹1 Crore
               </span>{" "}
               in government schemes.
             </p>
 
             {/* Trust Pills */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
-              <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm">
-                ✓ 100% Secure
-              </span>
-              <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm">
-                ⚡ Fast Approvals
-              </span>
-              <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white text-xs sm:text-sm">
-                📈 Growth Focused
-              </span>
-            </div>
+         
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10">
               <Link
                 href="/schemes"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl shadow-hard-sm hover:bg-accent-dark hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150"
               >
                 Explore Grants
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+                <FiArrowRight aria-hidden="true" className="w-5 h-5" />
               </Link>
               <Link
                 href="/check-eligibility"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-navy transition-all duration-200 text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors duration-150"
               >
                 Check Eligibility
               </Link>
             </div>
 
+   <div className="flex flex-wrap gap-2.5 mb-9">
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full text-primary-navy text-sm font-medium">
+                <FiShield aria-hidden="true" className="w-4 h-4 text-success-green" />
+                100% Secure
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full text-primary-navy text-sm font-medium">
+                <FiZap aria-hidden="true" className="w-4 h-4 text-accent-text" />
+                Fast Approvals
+              </span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full text-primary-navy text-sm font-medium">
+                <FiTrendingUp aria-hidden="true" className="w-4 h-4 text-primary-navy" />
+                Growth Focused
+              </span>
+            </div>
+
             {/* Bottom Stats Line */}
-            <p className="text-white/60 text-xs sm:text-sm">
-              <span className="text-white font-semibold">₹100 Cr+</span> Funded
-              · <span className="text-white font-semibold">500+</span>{" "}
-              Businesses · <span className="text-white font-semibold">99%</span>{" "}
-              Success
-            </p>
-          </motion.div>
+            {/* <p className="grid grid-cols-3 max-w-lg border-t border-[#D5DDE9] pt-6">
+              <span className="flex flex-col pr-4">
+                <span className="font-display font-extrabold text-primary-navy text-3xl sm:text-4xl tracking-[-0.03em] leading-none">
+                  ₹100 Cr+
+                </span>
+                <span className="mt-2 text-sm text-text-muted">Funded</span>
+              </span>
+              <span className="flex flex-col px-4 border-l border-[#D5DDE9]">
+                <span className="font-display font-extrabold text-primary-navy text-3xl sm:text-4xl tracking-[-0.03em] leading-none">
+                  500+
+                </span>
+                <span className="mt-2 text-sm text-text-muted">Businesses</span>
+              </span>
+              <span className="flex flex-col pl-4 border-l border-[#D5DDE9]">
+                <span className="font-display font-extrabold text-primary-navy text-3xl sm:text-4xl tracking-[-0.03em] leading-none">
+                  99%
+                </span>
+                <span className="mt-2 text-sm text-text-muted">Success</span>
+              </span>
+            </p> */}
+          </div>
 
-          {/* Right Content - Floating Dashboard UI Card - 40% */}
+          {/* Right Content - Scheme Ledger Card - 40% */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 hidden lg:block"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-2 w-full max-w-md mx-auto lg:max-w-none lg:-mt-20"
           >
-            <div className="relative">
-              {/* Main Dashboard Card */}
-              <div className="bg-deep-navy rounded-2xl shadow-dashboard p-6 dashboard-float">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-white/70 text-sm font-medium">
-                    Schemes We Process
-                  </span>
-                  <span className="flex items-center text-xs text-success-green">
-                    <span className="w-2 h-2 bg-success-green rounded-full mr-1 live-pulse"></span>
-                    LIVE
-                  </span>
-                </div>
+            <div className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center justify-between gap-3 bg-primary-navy px-6 py-3.5">
+                <span className="font-ledger text-xs font-semibold tracking-[0.14em] uppercase text-white">
+                  Schemes We Process
+                </span>
+                <span className="flex items-center gap-1.5 font-ledger text-xs font-semibold text-green-300">
+                  <span className="w-2 h-2 bg-green-400 rounded-full live-pulse" />
+                  LIVE
+                </span>
+              </div>
 
+              <div className="p-6 sm:p-7">
                 {/* Big Amount */}
-                <div className="text-3xl font-bold text-white mb-6">
+                <div className="font-display font-extrabold text-primary-navy text-4xl sm:text-5xl tracking-[-0.03em] leading-none mb-6">
                   ₹10L – ₹1Cr
                 </div>
 
-                {/* Mini Bar Chart */}
-                <div className="flex items-end space-x-2 h-20 mb-6">
-                  <div className="flex-1 bg-accent rounded-t h-16"></div>
-                  <div className="flex-1 bg-primary-navy rounded-t h-12 border border-white/20"></div>
-                  <div className="flex-1 bg-accent/70 rounded-t h-20"></div>
-                  <div className="flex-1 bg-primary-navy rounded-t h-10 border border-white/20"></div>
-                  <div className="flex-1 bg-accent/50 rounded-t h-14"></div>
-                </div>
-
-                {/* Stat Chips Grid */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                    <p className="text-accent text-xs font-semibold">PMEGP</p>
-                    <p className="text-white font-bold">₹25L avg</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                    <p className="text-accent text-xs font-semibold">MUDRA</p>
-                    <p className="text-white font-bold">₹10L avg</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                    <p className="text-accent text-xs font-semibold">80-IAC</p>
-                    <p className="text-white font-bold">100% tax</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                    <p className="text-accent text-xs font-semibold">ZED</p>
-                    <p className="text-white font-bold">₹5L subsidy</p>
-                  </div>
-                </div>
+                {/* Ledger Rows */}
+                <ul className="border-t border-[#E6ECF4]">
+                  {ledgerRows.map((row, index) => (
+                    <li
+                      key={row.code}
+                      className="flex items-baseline gap-3 py-3.5 border-b border-[#E6ECF4]"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="font-ledger text-xs font-semibold text-accent-text"
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="font-bold text-primary-navy">{row.code}</span>
+                      <span
+                        aria-hidden="true"
+                        className="flex-1 border-b-2 border-dotted border-[#B8C4D6] -translate-y-1"
+                      />
+                      <span className="font-ledger font-semibold text-primary-navy">
+                        {row.value}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
 
                 {/* Progress Bar */}
-                <div>
-                  <div className="flex justify-between text-xs mb-2">
-                    <span className="text-white/70">Success Rate</span>
-                    <span className="text-success-green font-semibold">
-                      99%
-                    </span>
+                <div className="mt-6">
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-text-muted font-medium">Success Rate</span>
+                    <span className="text-success-green font-bold">99%</span>
                   </div>
-                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-2 bg-[#E6ECF4] rounded-full overflow-hidden">
                     <div
                       className="h-full bg-success-green rounded-full"
                       style={{ width: "99%" }}
-                    ></div>
+                    />
                   </div>
                 </div>
               </div>
@@ -173,17 +171,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-white rounded-full" />
-        </div>
-      </motion.div>
     </section>
   );
 }

@@ -13,7 +13,7 @@ const serviceData = {
     "The biggest advantage of MUDRA loans is that they are collateral-free, making it accessible for small entrepreneurs and first-time business owners to get working capital and term loans.",
     "Our team at Euroasia Aquatic assists you in preparing a strong application, connecting with the right bank, and ensuring smooth processing of your MUDRA loan.",
   ],
-  image: "/images/services/mudra.jpg",
+  image: "/images/services/mudra.png",
   included: [
     "Category assessment (Shishu/Kishore/Tarun)",
     "Business plan preparation",

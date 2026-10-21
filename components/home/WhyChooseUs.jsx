@@ -54,51 +54,55 @@ const comparisonData = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14"
         >
-          <span className="text-label uppercase text-accent-text tracking-widest">
-            WHY CHOOSE US
-          </span>
-          <h2 className="text-3xl md:text-h2 font-bold text-primary-navy mt-3 mb-4">
-            Euroasia vs Others
-          </h2>
-          <p className="text-text-muted max-w-2xl mx-auto">
+          <div className="max-w-2xl">
+            <span className="font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent-text">
+              WHY CHOOSE US
+            </span>
+            <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mt-4">
+              Euroasia vs Others
+            </h2>
+          </div>
+          <p className="text-text-muted text-lg max-w-md">
             See why 500+ MSMEs trust us over other consulting firms
           </p>
         </motion.div>
 
         {/* Feature Cards Row */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-x-8 gap-y-10 mb-16">
           {featureCards.map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-light-bg rounded-2xl p-6"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="border-t-2 border-primary-navy pt-6"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                <card.icon className="w-6 h-6 text-accent-text" />
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-11 h-11 rounded-xl border-2 border-primary-navy flex items-center justify-center text-accent-text flex-shrink-0">
+                  <card.icon aria-hidden="true" className="w-5 h-5" />
+                </span>
+                <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em]">
+                  {card.title}
+                </h3>
               </div>
-              <h3 className="text-lg font-semibold text-primary-navy mb-3">
-                {card.title}
-              </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {card.points.map((point, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center text-sm text-text-muted"
+                    className="flex items-center text-[15px] text-text-dark"
                   >
-                    <FiCheck className="w-4 h-4 text-success-green mr-2 flex-shrink-0" />
+                    <FiCheck aria-hidden="true" className="w-4 h-4 text-success-green mr-2.5 flex-shrink-0" />
                     {point}
                   </li>
                 ))}
@@ -109,49 +113,48 @@ export default function WhyChooseUs() {
 
         {/* Comparison Table */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden"
+          className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard overflow-hidden"
         >
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full min-w-[560px]">
               <thead>
                 <tr className="bg-primary-navy text-white">
-                  <th className="px-6 py-4 text-left font-semibold">Feature</th>
-                  <th className="px-6 py-4 text-center font-semibold">
+                  <th className="px-6 py-4 text-left font-ledger text-xs font-semibold uppercase tracking-[0.12em]">
+                    Feature
+                  </th>
+                  <th className="px-6 py-4 text-center font-ledger text-xs font-semibold uppercase tracking-[0.12em] bg-accent text-primary-navy">
                     <span className="flex items-center justify-center">
                       Euroasia
-                      <FiCheck className="w-5 h-5 ml-2 text-success-green" />
+                      <FiCheck aria-hidden="true" className="w-4 h-4 ml-2" />
                     </span>
                   </th>
-                  <th className="px-6 py-4 text-center font-semibold text-white/70">
+                  <th className="px-6 py-4 text-center font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
                     <span className="flex items-center justify-center">
                       Others
-                      <FiX className="w-5 h-5 ml-2 text-red-400" />
+                      <FiX aria-hidden="true" className="w-4 h-4 ml-2" />
                     </span>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr
-                    key={index}
-                    className={index % 2 === 0 ? "bg-white" : "bg-light-bg"}
-                  >
-                    <td className="px-6 py-4 font-medium text-primary-navy">
+                  <tr key={index} className="border-t border-[#E6ECF4]">
+                    <td className="px-6 py-4 font-semibold text-primary-navy">
                       {row.feature}
                     </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="inline-flex items-center text-primary-navy font-semibold">
-                        <FiCheck className="w-4 h-4 text-success-green mr-2" />
+                    <td className="px-6 py-4 text-center bg-accent/10">
+                      <span className="inline-flex items-center font-ledger font-semibold text-primary-navy">
+                        <FiCheck aria-hidden="true" className="w-4 h-4 text-success-green mr-2" />
                         {row.euroasia}
                       </span>
                     </td>
                     <td className="px-6 py-4 text-center text-text-muted">
                       <span className="inline-flex items-center">
-                        <FiX className="w-4 h-4 text-red-400 mr-2" />
+                        <FiX aria-hidden="true" className="w-4 h-4 text-red-500 mr-2" />
                         {row.others}
                       </span>
                     </td>
@@ -160,8 +163,8 @@ export default function WhyChooseUs() {
               </tbody>
             </table>
           </div>
-          <div className="bg-light-bg px-6 py-4 text-center">
-            <p className="text-primary-navy font-medium">
+          <div className="border-t-2 border-primary-navy bg-light-bg px-6 py-4 text-center">
+            <p className="text-primary-navy font-semibold">
               Join 500+ MSMEs who chose Euroasia for their growth journey
             </p>
           </div>

@@ -14,7 +14,7 @@ const serviceData = {
     "Our services cover bank loans, NBFC financing, government subsidy schemes, venture capital connections, and alternative funding options tailored to your business stage and needs.",
     "With relationships across 50+ banks and NBFCs, and expertise in 30+ government schemes, we ensure you get the best funding option with favorable terms.",
   ],
-  image: "/images/services/funding.jpg",
+  image: "/images/services/funding.png",
   included: [
     "Funding requirement assessment",
     "Business valuation",

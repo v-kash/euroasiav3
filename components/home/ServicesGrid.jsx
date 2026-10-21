@@ -71,7 +71,7 @@ export default function ServicesGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           tag="OUR SERVICES"
@@ -79,7 +79,7 @@ export default function ServicesGrid() {
           description="From startup registration to digital transformation, we provide comprehensive services to help your business thrive."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}

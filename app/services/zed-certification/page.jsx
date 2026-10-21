@@ -13,7 +13,7 @@ const serviceData = {
     "The scheme offers three levels - Bronze, Silver, and Gold certification. MSMEs get subsidies up to 80% on certification costs, plus additional benefits like technology upgradation support.",
     "Euroasia Aquatic guides you through the entire ZED certification process, from initial assessment to final certification, ensuring your business meets quality standards.",
   ],
-  image: "/images/services/zed.jpg",
+  image: "/images/services/zed.png",
   included: [
     "Initial gap assessment",
     "ZED portal registration",

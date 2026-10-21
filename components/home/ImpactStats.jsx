@@ -3,11 +3,18 @@
 import { useEffect, useRef, useState } from 'react';
 
 function AnimatedNumber({ value, suffix = '', prefix = '' }) {
-  const [count, setCount] = useState(0);
+  // Starts at the REAL value, so the server-rendered HTML (what Google and
+  // link previews read) shows "₹100 Cr+", not "₹0 Cr+". It counts up from 0
+  // only once the number scrolls into view in the browser.
+  const [count, setCount] = useState(value);
   const ref = useRef(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated.current) {
@@ -32,9 +39,7 @@ function AnimatedNumber({ value, suffix = '', prefix = '' }) {
       { threshold: 0.3 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(node);
 
     return () => observer.disconnect();
   }, [value]);
@@ -82,40 +87,36 @@ export default function ImpactStats() {
   ];
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-12 lg:py-16 border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-center lg:justify-between items-start gap-8 lg:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5 border-y-2 border-primary-navy">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center px-4 lg:px-6 relative"
+              className={`flex flex-col items-start py-8 px-4 lg:px-6 border-[#D5DDE9] ${
+                index % 2 === 1 ? 'border-l' : ''
+              } ${index > 0 ? 'lg:border-l' : ''} ${
+                index > 1 ? 'border-t lg:border-t-0' : ''
+              } ${index === stats.length - 1 ? 'col-span-2 lg:col-span-1' : ''}`}
             >
               {/* Verified Badge */}
-              <span className="inline-block px-2 py-1 bg-success-green/10 text-success-green text-xs font-semibold rounded mb-2">
+              <span className="inline-block px-2 py-1 bg-success-green/10 text-success-green font-ledger text-[11px] font-semibold tracking-[0.14em] rounded mb-4">
                 VERIFIED
               </span>
-              
-              {/* Icon + Number */}
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">{stat.icon}</span>
-                <span className="text-4xl lg:text-5xl font-bold text-primary-navy">
-                  <AnimatedNumber
-                    value={stat.value}
-                    prefix={stat.prefix || ''}
-                    suffix={stat.suffix || ''}
-                  />
-                </span>
-              </div>
-              
+
+              {/* Number */}
+              <span className="font-display text-4xl lg:text-5xl font-extrabold text-primary-navy tracking-[-0.035em] leading-none mb-3">
+                <AnimatedNumber
+                  value={stat.value}
+                  prefix={stat.prefix || ''}
+                  suffix={stat.suffix || ''}
+                />
+              </span>
+
               {/* Label */}
-              <p className="text-text-muted text-sm max-w-[150px]">
+              <p className="text-text-muted text-sm max-w-[180px]">
                 {stat.label}
               </p>
-
-              {/* Divider (hidden on last item and mobile) */}
-              {index < stats.length - 1 && (
-                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-16 w-px bg-border-color" />
-              )}
             </div>
           ))}
         </div>

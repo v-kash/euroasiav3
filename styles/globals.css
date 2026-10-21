@@ -1,8 +1,9 @@
+/* Must come before everything else, or browsers ignore it */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 :root {
   --primary-navy: #002152;
@@ -15,6 +16,9 @@
   --text-dark: #1a1a1a;
   --text-muted: #6b7280;
   --success-green: #10b981;
+
+  /* Redesign: colour of the solid offset shadows */
+  --ink: var(--primary-navy);
 }
 
 html {
@@ -35,6 +39,220 @@ h6 {
   font-family: "Bebas Neue", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+}
+
+/* ------------------------------------------------------------------
+   Redesign typography (home page components)
+   Fonts come from next/font in styles/fonts.js.
+   .font-display opts a heading out of the global Bebas/uppercase
+   rule above. Every public page now uses it.
+------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  text-transform: none;
+}
+
+.font-ledger {
+  font-family: var(--font-ledger), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
+}
+
+/* Solid offset shadows (hero ledger card, wizard, comparison table) */
+.shadow-hard {
+  box-shadow: 10px 10px 0 0 var(--ink);
+}
+
+.shadow-hard-sm {
+  box-shadow: 4px 4px 0 0 var(--ink);
+}
+
+/* ------------------------------------------------------------------
+   Blog article body (markdown rendered by ReactMarkdown).
+   Uses the redesign fonts and keeps headings in normal case.
+------------------------------------------------------------------- */
+.article-body {
+  color: var(--text-dark);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.article-body > :first-child {
+  margin-top: 0;
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  text-transform: none;
+  color: var(--primary-navy);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.article-body h1 {
+  font-size: 2.25rem;
+  letter-spacing: -0.035em;
+  margin: 2.5rem 0 1rem;
+}
+
+.article-body h2 {
+  font-size: 1.875rem;
+  letter-spacing: -0.03em;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--primary-navy);
+}
+
+.article-body h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.article-body p {
+  margin: 0 0 1.25rem;
+}
+
+.article-body strong {
+  color: var(--primary-navy);
+  font-weight: 700;
+}
+
+.article-body a {
+  color: var(--primary-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.article-body a:hover {
+  color: #1a7a9e;
+}
+
+.article-body ul,
+.article-body ol {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-body ul {
+  list-style: disc;
+}
+
+.article-body ol {
+  list-style: decimal;
+}
+
+.article-body li {
+  margin: 0.4rem 0;
+  padding-left: 0.25rem;
+}
+
+.article-body li::marker {
+  color: #1a7a9e;
+  font-weight: 600;
+}
+
+.article-body blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--accent);
+  background: var(--light-bg);
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: var(--primary-navy);
+}
+
+.article-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.article-body code {
+  font-family: var(--font-ledger), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+  font-size: 0.9em;
+  background: var(--light-bg);
+  border: 1px solid #d5dde9;
+  border-radius: 0.375rem;
+  padding: 0.1em 0.4em;
+}
+
+.article-body pre {
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  background: var(--deep-navy);
+  color: #e6ecf4;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.article-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.article-body img {
+  border-radius: 1rem;
+  border: 2px solid var(--primary-navy);
+  margin: 1.75rem 0;
+}
+
+.article-body hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px dashed #d5dde9;
+}
+
+.article-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.75rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.article-body th {
+  background: var(--primary-navy);
+  color: #ffffff;
+  font-family: var(--font-ledger), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+.article-body td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e6ecf4;
+}
+
+@media (min-width: 768px) {
+  .article-body h1 {
+    font-size: 2.75rem;
+  }
+
+  .article-body h2 {
+    font-size: 2.125rem;
+  }
 }
 
 /* Scheme Marquee Strip */
@@ -62,6 +280,15 @@ h6 {
 .marquee-strip::after {
   right: 0;
   background: linear-gradient(to left, var(--primary-navy), transparent);
+}
+
+/* White version of the strip (SchemeMarquee) fades to white, not navy */
+.marquee-strip.marquee-light::before {
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.marquee-strip.marquee-light::after {
+  background: linear-gradient(to left, #ffffff, transparent);
 }
 
 .marquee-track {
@@ -96,7 +323,6 @@ h6 {
   }
 }
 
-/* Custom Scrollbar */
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -127,7 +353,7 @@ h6 {
   max-height: 500px;
 }
 
-/* Hero Navy Texture Overlay */
+/* Hero Navy Texture Overlay (no longer used on the home page; kept for other pages) */
 .hero-texture {
   background-image:
     radial-gradient(
@@ -169,7 +395,7 @@ h6 {
   animation: livePulse 2s ease-in-out infinite;
 }
 
-/* Dashboard Card Float */
+/* Dashboard Card Float (no longer used on the home page; kept for other pages) */
 @keyframes dashboardFloat {
   0%,
   100% {
@@ -182,4 +408,19 @@ h6 {
 
 .dashboard-float {
   animation: dashboardFloat 4s ease-in-out infinite;
+}
+
+/* Respect users who turn motion off */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track.scroll,
+  .marquee-track.scroll-reverse,
+  .marquee-content,
+  .live-pulse,
+  .dashboard-float {
+    animation: none !important;
+  }
 }

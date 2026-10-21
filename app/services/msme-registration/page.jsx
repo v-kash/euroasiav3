@@ -13,7 +13,7 @@ const serviceData = {
     "MSME registration unlocks numerous benefits including priority sector lending, lower interest rates, collateral-free loans, tender preference, subsidy schemes, and protection against delayed payments.",
     "Euroasia Aquatic ensures quick and accurate Udyam registration, helping you classify your enterprise correctly and access all MSME benefits.",
   ],
-  image: "/images/services/msme.jpg",
+  image: "/images/services/msme.png",
   included: [
     "Enterprise classification assessment",
     "Udyam portal registration",

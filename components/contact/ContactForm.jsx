@@ -51,7 +51,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       {/* Honeypot field for spam protection */}
       <input
         type="text"
@@ -65,17 +65,17 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-text-dark mb-2"
+          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
-          Full Name <span className="text-accent">*</span>
+          Full Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
           id="name"
           {...register("name", { required: "Full name is required" })}
-          className={`w-full px-4 py-3 rounded-lg border ${
-            errors.name ? "border-red-500" : "border-border-color"
-          } focus:outline-none focus:ring-2 focus:ring-primary-navy focus:border-transparent transition-colors`}
+          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+            errors.name ? "border-red-500" : "border-[#D5DDE9]"
+          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
           placeholder="Enter your full name"
         />
         {errors.name && (
@@ -87,9 +87,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-text-dark mb-2"
+          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
-          Email Address <span className="text-accent">*</span>
+          Email Address <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
@@ -101,9 +101,9 @@ export default function ContactForm() {
               message: "Invalid email address",
             },
           })}
-          className={`w-full px-4 py-3 rounded-lg border ${
-            errors.email ? "border-red-500" : "border-border-color"
-          } focus:outline-none focus:ring-2 focus:ring-primary-navy focus:border-transparent transition-colors`}
+          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+            errors.email ? "border-red-500" : "border-[#D5DDE9]"
+          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
           placeholder="Enter your email"
         />
         {errors.email && (
@@ -115,9 +115,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="phone"
-          className="block text-sm font-medium text-text-dark mb-2"
+          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
-          Phone Number <span className="text-accent">*</span>
+          Phone Number <span className="text-red-500">*</span>
         </label>
         <input
           type="tel"
@@ -129,9 +129,9 @@ export default function ContactForm() {
               message: "Please enter a valid 10-digit phone number",
             },
           })}
-          className={`w-full px-4 py-3 rounded-lg border ${
-            errors.phone ? "border-red-500" : "border-border-color"
-          } focus:outline-none focus:ring-2 focus:ring-primary-navy focus:border-transparent transition-colors`}
+          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+            errors.phone ? "border-red-500" : "border-[#D5DDE9]"
+          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
           placeholder="Enter your phone number"
         />
         {errors.phone && (
@@ -143,14 +143,14 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="serviceInterest"
-          className="block text-sm font-medium text-text-dark mb-2"
+          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
           Service Interest
         </label>
         <select
           id="serviceInterest"
           {...register("serviceInterest")}
-          className="w-full px-4 py-3 rounded-lg border border-border-color focus:outline-none focus:ring-2 focus:ring-primary-navy focus:border-transparent transition-colors bg-white"
+          className="w-full min-h-[48px] px-4 py-3 rounded-xl border-2 border-[#D5DDE9] bg-white text-text-dark focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors"
         >
           <option value="">Select a service</option>
           {services.map((service) => (
@@ -165,17 +165,17 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-text-dark mb-2"
+          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
-          Message <span className="text-accent">*</span>
+          Message <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
           rows={4}
           {...register("message", { required: "Message is required" })}
-          className={`w-full px-4 py-3 rounded-lg border ${
-            errors.message ? "border-red-500" : "border-border-color"
-          } focus:outline-none focus:ring-2 focus:ring-primary-navy focus:border-transparent transition-colors resize-none`}
+          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+            errors.message ? "border-red-500" : "border-[#D5DDE9]"
+          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors resize-none`}
           placeholder="Tell us about your requirements"
         />
         {errors.message && (
@@ -187,12 +187,12 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full px-8 py-4 bg-primary-navy text-white font-semibold rounded-lg hover:bg-secondary-navy transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+        className="w-full px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl shadow-hard-sm hover:bg-accent-dark hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-hard-sm flex items-center justify-center"
       >
         {isSubmitting ? (
           <>
             <svg
-              className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+              className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary-navy"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -219,9 +219,10 @@ export default function ContactForm() {
 
       {/* Status Messages */}
       {submitStatus === "success" && (
-        <div className="flex items-center space-x-2 text-green-600 bg-green-50 p-4 rounded-lg">
+        <div className="flex items-start gap-3 text-green-700 bg-green-50 border border-green-200 p-4 rounded-xl">
           <svg
-            className="w-5 h-5"
+            aria-hidden="true"
+            className="w-5 h-5 flex-shrink-0 mt-0.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -241,9 +242,10 @@ export default function ContactForm() {
       )}
 
       {submitStatus === "error" && (
-        <div className="flex items-center space-x-2 text-red-600 bg-red-50 p-4 rounded-lg">
+        <div className="flex items-start gap-3 text-red-700 bg-red-50 border border-red-200 p-4 rounded-xl">
           <svg
-            className="w-5 h-5"
+            aria-hidden="true"
+            className="w-5 h-5 flex-shrink-0 mt-0.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

@@ -14,7 +14,7 @@ const serviceData = {
     "To avail this benefit, startups must be recognized by DPIIT and obtain clearance from the Inter-Ministerial Board (IMB). The startup must be incorporated as a Private Limited Company or LLP.",
     "Euroasia Aquatic handles the complete 80-IAC application process, from DPIIT recognition to IMB clearance, maximizing your chances of approval.",
   ],
-  image: "/images/services/tax-exemption.jpg",
+  image: "/images/services/tax-exemption.png",
   included: [
     "DPIIT recognition assistance",
     "Eligibility assessment",

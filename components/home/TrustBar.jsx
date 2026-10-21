@@ -19,10 +19,12 @@ export default function TrustBar() {
           {[...partners, ...partners].map((partner, index) => (
             <div
               key={index}
-              className="flex items-center space-x-2 mx-8 text-white"
+              className="flex items-center gap-3 mx-7 text-white"
             >
-              <span className="text-xl">{partner.icon}</span>
-              <span className="font-medium whitespace-nowrap">{partner.name}</span>
+              <span aria-hidden="true" className="w-1.5 h-1.5 rotate-45 bg-accent" />
+              <span className="font-ledger text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] whitespace-nowrap">
+                {partner.name}
+              </span>
             </div>
           ))}
         </div>

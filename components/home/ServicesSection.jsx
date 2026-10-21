@@ -322,48 +322,54 @@ export default function ServicesSection() {
       : services.filter((service) => service.category === activeTab);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 lg:py-16 bg-white border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-label uppercase text-accent-text tracking-widest">
-            OUR EXPERT SERVICES
-          </span>
-          <h2 className="text-3xl md:text-h2 font-bold text-primary-navy mt-3 mb-4">
-            Complete Solutions for Your Business Growth
-          </h2>
-          <p className="text-text-muted max-w-2xl mx-auto mb-6">
-            From registration to funding, compliance to expansion — end-to-end
-            consulting.
-          </p>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+          <div className="max-w-2xl">
+            <span className="font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent-text">
+              OUR EXPERT SERVICES
+            </span>
+            <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mt-4">
+              Complete Solutions for Your Business Growth
+            </h2>
+          </div>
+          <div className="max-w-md">
+            <p className="text-text-muted text-lg mb-5">
+              From registration to funding, compliance to expansion — end-to-end
+              consulting.
+            </p>
 
-          {/* Trust Bar */}
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-primary-navy">
-            <span className="flex items-center">
-              <FiCheck className="w-4 h-4 text-success-green mr-1" />
-              500+ Clients Served
-            </span>
-            <span className="flex items-center">
-              <FiCheck className="w-4 h-4 text-success-green mr-1" />
-              48-Hour Processing
-            </span>
-            <span className="flex items-center">
-              <FiCheck className="w-4 h-4 text-success-green mr-1" />
-              99% Success Rate
-            </span>
+            {/* Trust Bar */}
+            <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-primary-navy">
+              <span className="flex items-center">
+                <FiCheck aria-hidden="true" className="w-4 h-4 text-success-green mr-1.5" />
+                500+ Clients Served
+              </span>
+              <span className="flex items-center">
+                <FiCheck aria-hidden="true" className="w-4 h-4 text-success-green mr-1.5" />
+                48-Hour Processing
+              </span>
+              <span className="flex items-center">
+                <FiCheck aria-hidden="true" className="w-4 h-4 text-success-green mr-1.5" />
+                99% Success Rate
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-[#D5DDE9]">
           {tabs.map((tab) => (
             <button
               key={tab}
+              type="button"
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 ${
+              aria-pressed={activeTab === tab}
+              className={`min-h-[44px] px-5 rounded-full border-2 font-semibold text-sm transition-colors duration-150 ${
                 activeTab === tab
-                  ? "bg-primary-navy text-white"
-                  : "bg-light-bg text-text-dark hover:bg-gray-200"
+                  ? "bg-primary-navy border-primary-navy text-white"
+                  : "border-[#D5DDE9] text-primary-navy hover:border-primary-navy"
               }`}
             >
               {tab}
@@ -375,56 +381,59 @@ export default function ServicesSection() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {filteredServices.map((service) => (
               <div
                 key={service.id}
-                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+                className="group flex flex-col bg-white border border-[#D5DDE9] rounded-2xl p-6 hover:border-primary-navy transition-colors duration-200"
               >
                 {/* Top Row: Icon + Success Badge */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-primary-navy">{service.icon}</div>
-                  <span className="inline-flex items-center px-2 py-1 bg-success-green/10 text-success-green text-xs font-semibold rounded">
-                    ✓ {service.successRate}%
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-14 h-14 rounded-xl bg-light-bg flex items-center justify-center text-primary-navy">
+                    {service.icon}
+                  </div>
+                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-success-green/10 text-success-green font-ledger text-xs font-semibold rounded">
+                    <FiCheck aria-hidden="true" className="w-3.5 h-3.5" />
+                    {service.successRate}%
                   </span>
                 </div>
 
                 {/* Funding Badge */}
-                <div className="text-accent-text font-bold text-xl mb-2">
+                <div className="font-display font-extrabold text-accent-text text-2xl tracking-[-0.02em] mb-1">
                   {service.badge}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-primary-navy mb-2 group-hover:text-accent-text transition-colors">
+                <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] leading-snug mb-2">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-text-muted text-sm mb-4 line-clamp-2">
+                <p className="text-text-muted text-sm mb-5 line-clamp-2">
                   {service.description}
                 </p>
 
                 {/* Bullet List */}
-                <ul className="space-y-2 mb-5">
+                <ul className="space-y-2 mb-6">
                   {service.bullets.map((bullet, idx) => (
                     <li
                       key={idx}
                       className="flex items-center text-sm text-text-dark"
                     >
-                      <FiCheck className="w-4 h-4 text-accent-text mr-2 flex-shrink-0" />
+                      <FiCheck aria-hidden="true" className="w-4 h-4 text-accent-text mr-2 flex-shrink-0" />
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
                 {/* Timeline */}
-                <div className="flex items-center justify-end mb-5 pb-5 border-b border-gray-100">
-                  <span className="px-3 py-1 bg-blue-50 text-primary-navy text-xs font-medium rounded-full">
+                <div className="mt-auto flex items-center justify-end pt-4 mb-5 border-t border-dashed border-[#D5DDE9]">
+                  <span className="px-3 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-xs font-semibold rounded-full">
                     {service.timeline}
                   </span>
                 </div>
@@ -433,13 +442,13 @@ export default function ServicesSection() {
                 <div className="flex gap-3">
                   <Link
                     href={service.href}
-                    className="flex-1 text-center py-2.5 border border-primary-navy text-primary-navy font-medium rounded-lg hover:bg-primary-navy hover:text-white transition-colors text-sm"
+                    className="flex-1 inline-flex items-center justify-center min-h-[44px] border-2 border-primary-navy text-primary-navy font-semibold rounded-lg hover:bg-primary-navy hover:text-white transition-colors text-sm"
                   >
                     Learn More
                   </Link>
                   <Link
                     href="/contact"
-                    className="flex-1 text-center py-2.5 bg-accent text-white font-medium rounded-lg hover:bg-accent-dark transition-colors text-sm"
+                    className="flex-1 inline-flex items-center justify-center min-h-[44px] bg-accent text-primary-navy font-semibold rounded-lg hover:bg-accent-dark transition-colors text-sm"
                   >
                     Apply Now
                   </Link>
@@ -453,10 +462,10 @@ export default function ServicesSection() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center px-8 py-3 border-2 border-primary-navy text-primary-navy font-semibold rounded-lg hover:bg-primary-navy hover:text-white transition-colors"
+            className="inline-flex items-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors"
           >
             View All Services
-            <FiArrowRight className="w-5 h-5 ml-2" />
+            <FiArrowRight aria-hidden="true" className="w-5 h-5 ml-2" />
           </Link>
         </div>
       </div>
