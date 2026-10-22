@@ -227,7 +227,7 @@ export default function Navbar() {
               Get Free Consultation
             </Link>
           </div>
-
+              
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-primary-navy"

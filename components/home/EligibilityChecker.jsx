@@ -135,8 +135,8 @@ export default function EligibilityChecker() {
     <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl leading-[1.05] tracking-[-0.035em] mb-4">
+        <div className="text-center mb-8">
+          <h2 className="font-display font-extrabold text-primary-navy text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] mb-3">
             Check Your Eligibility in 60 Seconds
           </h2>
           <p className="text-text-muted text-lg max-w-xl mx-auto">

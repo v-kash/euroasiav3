@@ -39,13 +39,13 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 lg:mb-16"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8"
         >
           <div className="max-w-2xl">
             <span className="font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent-text">
               HOW IT WORKS
             </span>
-            <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mt-4">
+            <h2 className="font-display font-extrabold text-primary-navy text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] mt-3">
               Get Started in 4 Simple Steps
             </h2>
           </div>
@@ -56,7 +56,7 @@ export default function ProcessSection() {
         </motion.div>
 
         {/* Steps */}
-        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
           {steps.map((step, index) => (
             <motion.li
               key={step.number}
@@ -66,19 +66,20 @@ export default function ProcessSection() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="flex flex-col"
             >
-              {/* Step Number */}
-              <span className="font-display font-extrabold text-accent-text text-7xl leading-none tracking-[-0.05em] mb-5">
-                {step.number}
-              </span>
-              <div aria-hidden="true" className="h-0.5 bg-primary-navy mb-5" />
+              {/* Step Number + Timeline */}
+              <div className="flex items-center justify-between gap-3 pb-4 mb-4 border-b-2 border-primary-navy">
+                <span className="font-display font-extrabold text-accent-text text-4xl leading-none tracking-[-0.04em]">
+                  {step.number}
+                </span>
+                <span className="px-3 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-xs font-semibold rounded-full">
+                  {step.timeline}
+                </span>
+              </div>
 
-              <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] mb-2">
+              <h3 className="font-display font-bold text-primary-navy text-xl tracking-[-0.02em] mb-1.5">
                 {step.title}
               </h3>
-              <p className="text-text-muted mb-4">{step.description}</p>
-              <span className="mt-auto self-start px-3 py-1 bg-light-bg border border-[#D5DDE9] text-primary-navy font-ledger text-xs font-semibold rounded-full">
-                {step.timeline}
-              </span>
+              <p className="text-text-muted">{step.description}</p>
             </motion.li>
           ))}
         </ol>

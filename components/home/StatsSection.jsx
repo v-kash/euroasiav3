@@ -43,7 +43,7 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-white border-t border-[#D5DDE9]">
+    <section className="py-8 lg:py-8 bg-white border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-2 md:grid-cols-4 border-t-2 border-primary-navy"

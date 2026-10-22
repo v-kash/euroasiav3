@@ -20,6 +20,7 @@ export default function SectionHeader({
   description,
   centered = false,
   light = false,
+  compact = false, // smaller heading + spacing (home page sections)
 }) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -36,8 +37,8 @@ export default function SectionHeader({
     <motion.div
       className={
         centered
-          ? "max-w-3xl mx-auto text-center mb-10"
-          : "flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
+          ? `max-w-3xl mx-auto text-center ${compact ? "mb-8" : "mb-10"}`
+          : `flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 ${compact ? "mb-8" : "mb-10"}`
       }
       variants={shouldReduceMotion ? noMotion : fadeIn}
       initial="hidden"
@@ -55,9 +56,11 @@ export default function SectionHeader({
           </span>
         )}
         <h2
-          className={`font-display font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] ${
-            tag ? "mt-4" : ""
-          } ${light ? "text-white" : "text-primary-navy"}`}
+          className={`font-display font-extrabold ${
+            compact
+              ? "text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em]"
+              : "text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em]"
+          } ${tag ? (compact ? "mt-3" : "mt-4") : ""} ${light ? "text-white" : "text-primary-navy"}`}
         >
           {title}
         </h2>

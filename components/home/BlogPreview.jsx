@@ -44,18 +44,22 @@ export default async function BlogPreview() {
     <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
+          compact
           tag="BLOG"
           title="Read Our Latest News & Articles"
           description="Stay updated with the latest in business compliance, certifications, and growth strategies."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* One swipeable row on mobile, grid from md up */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-4 sm:scroll-px-6 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 pb-2 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {blogs.map((blog, index) => (
-            <BlogCard key={blog.id} blog={blog} index={index} />
+            <div key={blog.id} className="snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto">
+              <BlogCard blog={blog} index={index} />
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <Link
             href="/blog"
             className="inline-flex items-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors duration-200"

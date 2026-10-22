@@ -1,6 +1,8 @@
 "use client";
 
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const featuredTestimonial = {
   quote:
@@ -11,134 +13,6 @@ const featuredTestimonial = {
   source: "Google Review",
 };
 
-// const testimonials = [
-//   {
-//     quote:
-//       "We are very satisfied with the professional support provided for our Startup India certification process.",
-//     name: "Shaurya Enterprise",
-//     rating: 5,
-//     scheme: "Startup India",
-//   },
-//   {
-//     quote:
-//       "Very smooth process and very humble and cooperative staff.",
-//     name: "Riddhish Naik",
-//     rating: 5,
-//     scheme: "Certification",
-//   },
-//   {
-//     quote:
-//       "Excellent work done by entire team with genuine and prosperity.",
-//     name: "HB E",
-//     rating: 5,
-//     scheme: "Consulting",
-//   },
-//   {
-//     quote:
-//       "Best company for all the documentation related work for startups.",
-//     name: "Nagesh Rabari",
-//     rating: 5,
-//     scheme: "Documentation",
-//   },
-//   {
-//     quote:
-//       "Best company for all the documentation related work. Provides end-to-end solutions with proper follow-up and complete assistance.",
-//     name: "Ronit Khasbhage",
-//     rating: 5,
-//     scheme: "Documentation",
-//   },
-//   {
-//     quote:
-//       "I had a great experience working with EUROASIA AQUATIC PRIVATE LIMITED. They provided excellent support in obtaining my certification.",
-//     name: "Priyanka Chavda",
-//     rating: 5,
-//     scheme: "Certification",
-//   },
-//   {
-//     quote:
-//       "Great work. Excellent quick response.",
-//     name: "Sidharth Aggarwal",
-//     rating: 5,
-//     scheme: "Consulting",
-//   },
-//   {
-//     quote:
-//       "EUROASIA AQUATIC PVT LTD provides outstanding service with a very professional approach. Their team is efficient.",
-//     name: "Vivek Gadhavi",
-//     rating: 5,
-//     scheme: "Professional Service",
-//   },
-//   {
-//     quote:
-//       "We had a very smooth and professional experience. The entire process was handled efficiently.",
-//     name: "Chiranjibi Das",
-//     rating: 5,
-//     scheme: "Consulting",
-//   },
-//   {
-//     quote:
-//       "I recently used Euroasia Aquatic Pvt Ltd for Startup India certificate services and had a very positive experience.",
-//     name: "Day of Judgment",
-//     rating: 5,
-//     scheme: "Startup India",
-//   },
-//   {
-//     quote:
-//       "Good service for Startup Certificates.",
-//     name: "Dharam Raj",
-//     rating: 5,
-//     scheme: "Startup India",
-//   },
-//   {
-//     quote:
-//       "Connected to Euroasia Aquatic Pvt Ltd for MSME certification and they resolved my query within 30 minutes.",
-//     name: "Deepan Unadkat",
-//     rating: 5,
-//     scheme: "MSME",
-//   },
-//   {
-//     quote:
-//       "I got my Startup India certificate within 2 days without any hassle. Thanks Euroasia for your service.",
-//     name: "Sukhwant Singh",
-//     rating: 5,
-//     scheme: "Startup India",
-//   },
-//   {
-//     quote:
-//       "The startup certification process was handled smoothly and quickly. The entire process was clear, efficient, and completed without unnecessary delays.",
-//     name: "Ridheswar Nath",
-//     rating: 5,
-//     scheme: "Startup India",
-//   },
-//   {
-//     quote:
-//       "Communication was clear, response was quick, and the quality exceeded expectations. I would definitely recommend it to others.",
-//     name: "Daimora World",
-//     rating: 5,
-//     scheme: "Consulting",
-//   },
-//   {
-//     quote:
-//       "Exceptional guidance and incredibly fast service for our startup certification.",
-//     name: "Vijay Mahajan",
-//     rating: 5,
-//     scheme: "Startup India",
-//   },
-//   {
-//     quote:
-//       "Euroasia Aquatic Pvt. Ltd. has delivered exceptional service with the highest level of professionalism and efficiency.",
-//     name: "Dr. A. R. Bhasker",
-//     rating: 5,
-//     scheme: "Professional Service",
-//   },
-//   {
-//     quote:
-//       "We took services for tender search and bid submission — the team gave proper guidance and documents were handled with expertise. Good for companies looking to expand through government tenders.",
-//     name: "Shubham Zinzuwadiya",
-//     rating: 5,
-//     scheme: "Tender Services",
-//   },
-// ];
 
 
 const testimonials = [
@@ -198,7 +72,113 @@ const GoogleG = ({ className }) => (
   </svg>
 );
 
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/search?q=euroasia+aquatic+pvt+ltd+reviews";
+
+// One review card. Long quotes are clamped to 3 lines with a Read more toggle.
+function ReviewCard({ testimonial }) {
+  const [expanded, setExpanded] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+  const quoteRef = useRef(null);
+
+  // Measure only while collapsed: expanded text never overflows, but the
+  // "Show less" button still has to stay visible.
+  useEffect(() => {
+    if (expanded) return;
+    const el = quoteRef.current;
+    if (!el) return;
+    const check = () => setIsClamped(el.scrollHeight > el.clientHeight + 1);
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [expanded]);
+
+  return (
+    <div className="snap-start shrink-0 w-[85%] sm:w-[calc((100%_-_1.25rem)/2)] lg:w-[calc((100%_-_2.5rem)/3)] flex flex-col bg-white border border-[#D5DDE9] rounded-2xl p-5 hover:border-primary-navy transition-colors">
+      <div className="flex items-start justify-between mb-3">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-light-bg border border-[#D5DDE9] rounded-xl flex items-center justify-center text-sm font-bold text-primary-navy">
+            {testimonial.name.charAt(0)}
+          </div>
+          <div>
+            <p className="font-bold text-primary-navy text-sm">
+              {testimonial.name}
+            </p>
+            <div className="flex items-center gap-0.5 mt-0.5" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
+              {[...Array(testimonial.rating)].map((_, i) => (
+                <svg
+                  key={i}
+                  aria-hidden="true"
+                  className="w-3 h-3 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <StarPath />
+                </svg>
+              ))}
+            </div>
+          </div>
+        </div>
+        <GoogleG className="w-5 h-5 flex-shrink-0" />
+      </div>
+      <p
+        ref={quoteRef}
+        className={`text-text-dark text-[15px] leading-relaxed ${expanded ? "" : "line-clamp-3"}`}
+      >
+        &ldquo;{testimonial.quote}&rdquo;
+      </p>
+      {isClamped && (
+        <button
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          className="self-start mt-1 py-1 text-sm font-semibold text-accent-text hover:text-primary-navy hover:underline underline-offset-4 transition-colors"
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+      )}
+      <div className="mt-auto pt-4">
+        <span className="inline-block px-2.5 py-1 bg-light-bg text-primary-navy rounded font-ledger text-[11px] font-semibold uppercase tracking-[0.1em]">
+          {testimonial.scheme}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function TestimonialsSection() {
+  const trackRef = useRef(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+
+  const updateArrows = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    setCanPrev(el.scrollLeft > 4);
+    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    updateArrows();
+    window.addEventListener("resize", updateArrows);
+    return () => window.removeEventListener("resize", updateArrows);
+  }, [updateArrows]);
+
+  // Scroll by exactly one card (card width + gap)
+  const scrollByCard = (direction) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.firstElementChild;
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+    const step = card ? card.getBoundingClientRect().width + gap : el.clientWidth;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el.scrollBy({ left: direction * step, behavior: reduceMotion ? "auto" : "smooth" });
+  };
+
+  const arrowClass =
+    "w-11 h-11 rounded-full border-2 border-primary-navy text-primary-navy flex items-center justify-center hover:bg-primary-navy hover:text-white transition-colors disabled:opacity-30 disabled:pointer-events-none";
+
   return (
     <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -208,24 +188,60 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8"
         >
           <div className="max-w-2xl">
             <span className="font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent-text">
               SUCCESS STORIES
             </span>
-            <h2 className="font-display font-extrabold text-primary-navy text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mt-4">
+            <h2 className="font-display font-extrabold text-primary-navy text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] mt-3">
               Real Businesses, Real Results
             </h2>
           </div>
-          <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-primary-navy lg:justify-end lg:max-w-md">
-            <span>500+ Success Stories</span>
-            <span aria-hidden="true" className="text-[#B8C4D6]">/</span>
-            <span>₹100Cr+ Funded</span>
-            <span aria-hidden="true" className="text-[#B8C4D6]">/</span>
-            <span>99% Satisfaction</span>
-            <span aria-hidden="true" className="text-[#B8C4D6]">/</span>
-            <span>20+ Industries</span>
+          <div className="flex items-center justify-between gap-6">
+            {/* Google rating */}
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Rated 4.8 out of 5 from 100+ Google reviews. View all reviews (opens in a new tab)"
+              className="group flex items-center gap-2.5"
+            >
+              <GoogleG className="w-6 h-6" />
+              <span className="font-display text-xl font-extrabold text-primary-navy leading-none">4.8</span>
+              <span className="flex" aria-hidden="true">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <StarPath />
+                  </svg>
+                ))}
+              </span>
+              <span className="text-sm text-text-muted underline decoration-accent decoration-2 underline-offset-4 group-hover:text-primary-navy transition-colors">
+                100+ reviews
+              </span>
+            </a>
+
+            {/* Carousel arrows (mobile users swipe) */}
+            <div className="hidden sm:flex gap-2">
+              <button
+                type="button"
+                onClick={() => scrollByCard(-1)}
+                disabled={!canPrev}
+                aria-label="Previous reviews"
+                className={arrowClass}
+              >
+                <FiChevronLeft aria-hidden="true" className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByCard(1)}
+                disabled={!canNext}
+                aria-label="Next reviews"
+                className={arrowClass}
+              >
+                <FiChevronRight aria-hidden="true" className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </motion.div>
 
@@ -280,85 +296,22 @@ export default function TestimonialsSection() {
           </div>
         </motion.div> */}
 
-        {/* Testimonial Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {testimonials.slice(0, 9).map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.04 }}
-              className="flex flex-col bg-white border border-[#D5DDE9] rounded-2xl p-6 hover:border-primary-navy transition-colors"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-light-bg border border-[#D5DDE9] rounded-xl flex items-center justify-center text-sm font-bold text-primary-navy">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-primary-navy text-sm">
-                      {testimonial.name}
-                    </p>
-                    <div className="flex items-center gap-0.5 mt-0.5" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <svg
-                          key={i}
-                          aria-hidden="true"
-                          className="w-3 h-3 text-yellow-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <StarPath />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <GoogleG className="w-5 h-5 flex-shrink-0" />
-              </div>
-              <p className="text-text-dark text-[15px] leading-relaxed mb-5 line-clamp-4">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-              <span className="mt-auto self-start px-2.5 py-1 bg-light-bg text-primary-navy rounded font-ledger text-[11px] font-semibold uppercase tracking-[0.1em]">
-                {testimonial.scheme}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Google Reviews Badge */}
+        {/* Reviews carousel — swipe on mobile, arrows on larger screens */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center items-center gap-6 mt-12 pt-12 border-t border-[#D5DDE9]"
         >
-          <div className="flex items-center gap-3 bg-white border-2 border-primary-navy px-6 py-4 rounded-xl shadow-hard-sm">
-            <GoogleG className="w-8 h-8" />
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-display text-2xl font-extrabold text-primary-navy leading-none">4.8</span>
-                <div className="flex" aria-hidden="true">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <StarPath />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <p className="text-sm text-text-muted">Based on 100+ Google Reviews</p>
-            </div>
-          </div>
-          <a
-            href="https://www.google.com/search?q=euroasia+aquatic+pvt+ltd+reviews"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-primary-navy underline decoration-accent decoration-2 underline-offset-[6px] hover:text-accent-text transition-colors"
+          <div
+            ref={trackRef}
+            onScroll={updateArrows}
+            className="flex items-start gap-5 overflow-x-auto snap-x snap-mandatory scroll-px-4 sm:scroll-px-6 lg:scroll-px-8 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            View all reviews →
-          </a>
+            {testimonials.map((testimonial, index) => (
+              <ReviewCard key={index} testimonial={testimonial} />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

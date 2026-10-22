@@ -14,7 +14,7 @@ const ledgerRows = [
 export default function HeroSection() {
   return (
     <section className="relative bg-light-bg border-b border-[#D5DDE9] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 lg:pt-8 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 lg:pt-8 pb-8 ">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           {/* Left Content - 60%
               Rendered visible on first paint (no fade-in) so the H1 counts

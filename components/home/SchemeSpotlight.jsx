@@ -72,13 +72,13 @@ export default function SchemeSpotlight() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8"
         >
           <div className="max-w-2xl">
             <span className="font-ledger text-xs font-semibold uppercase tracking-[0.14em] text-accent">
               GOVERNMENT SCHEMES
             </span>
-            <h2 className="font-display font-extrabold text-white text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mt-4">
+            <h2 className="font-display font-extrabold text-white text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] mt-3">
               Popular Government Schemes We Help You Access
             </h2>
           </div>
@@ -87,7 +87,7 @@ export default function SchemeSpotlight() {
           </p>
         </motion.div>
 
-        {/* Schemes Grid — ruled ledger cells */}
+        {/* Schemes Grid — ruled ledger cells. Mobile shows the first 4, all 8 from sm up */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 border border-white/15 rounded-2xl overflow-hidden">
           {schemes.map((scheme, index) => (
             <motion.div
@@ -96,28 +96,20 @@ export default function SchemeSpotlight() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.04 }}
-              className="flex flex-col bg-primary-navy p-6 lg:p-7"
+              className={`${index >= 4 ? "hidden sm:flex" : "flex"} flex-col bg-primary-navy p-5 lg:p-6`}
             >
-              {/* Index */}
-              <span
-                aria-hidden="true"
-                className="font-ledger text-xs font-semibold text-white/50 mb-8"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
               {/* Name */}
-              <h3 className="font-display font-bold text-white text-xl tracking-[-0.02em] mb-2">
+              <h3 className="font-display font-bold text-white text-lg tracking-[-0.02em] mb-1">
                 {scheme.name}
               </h3>
 
               {/* Amount */}
-              <p className="font-display font-extrabold text-accent text-2xl lg:text-[1.65rem] leading-tight tracking-[-0.02em] mb-3">
+              <p className="font-display font-extrabold text-accent text-xl lg:text-2xl leading-tight tracking-[-0.02em] mb-2">
                 {scheme.amount}
               </p>
 
               {/* Description */}
-              <p className="text-white/65 text-sm mb-6">{scheme.description}</p>
+              <p className="text-white/65 text-sm mb-4">{scheme.description}</p>
 
               {/* Link */}
               <Link
@@ -145,7 +137,7 @@ export default function SchemeSpotlight() {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <Link
             href="/schemes"
             className="inline-flex items-center px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors"

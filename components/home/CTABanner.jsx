@@ -17,7 +17,7 @@ export default function CTABanner() {
               transition={{ duration: 0.5 }}
               className="text-center lg:text-left"
             >
-              <h2 className="font-display font-extrabold text-white text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.035em] mb-6">
+              <h2 className="font-display font-extrabold text-white text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] mb-5">
                 Ready to Unlock Government Funding?
               </h2>
               <p className="text-lg text-white/75 mb-8 max-w-xl mx-auto lg:mx-0">

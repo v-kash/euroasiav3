@@ -87,25 +87,20 @@ export default function ImpactStats() {
   ];
 
   return (
-    <section className="bg-white py-12 lg:py-16 border-t border-[#D5DDE9]">
+    <section className="bg-white py-8 lg:py-10 border-t border-[#D5DDE9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-5 border-y-2 border-primary-navy">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex flex-col items-start py-8 px-4 lg:px-6 border-[#D5DDE9] ${
+              className={`flex flex-col items-start py-6 px-4 lg:px-6 border-[#D5DDE9] ${
                 index % 2 === 1 ? 'border-l' : ''
               } ${index > 0 ? 'lg:border-l' : ''} ${
                 index > 1 ? 'border-t lg:border-t-0' : ''
               } ${index === stats.length - 1 ? 'col-span-2 lg:col-span-1' : ''}`}
             >
-              {/* Verified Badge */}
-              <span className="inline-block px-2 py-1 bg-success-green/10 text-success-green font-ledger text-[11px] font-semibold tracking-[0.14em] rounded mb-4">
-                VERIFIED
-              </span>
-
               {/* Number */}
-              <span className="font-display text-4xl lg:text-5xl font-extrabold text-primary-navy tracking-[-0.035em] leading-none mb-3">
+              <span className="font-display text-4xl lg:text-5xl font-extrabold text-primary-navy tracking-[-0.035em] leading-none mb-2">
                 <AnimatedNumber
                   value={stat.value}
                   prefix={stat.prefix || ''}

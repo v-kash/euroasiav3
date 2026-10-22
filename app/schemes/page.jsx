@@ -255,7 +255,7 @@ export default function SchemesPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="bg-white py-12 lg:py-16">
+      {/* <section className="bg-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 border-t-2 border-primary-navy">
             {[
@@ -280,7 +280,7 @@ export default function SchemesPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Schemes Grid */}
       <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">
