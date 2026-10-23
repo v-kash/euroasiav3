@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import ContactButton from "@/components/contact/ContactButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiArrowLeft, FiCheck } from "react-icons/fi";
 
@@ -323,25 +323,26 @@ export default function EligibilityChecker() {
                             {scheme.amount}
                           </p>
                         </div>
-                        <Link
-                          href="/contact"
+                        <ContactButton
+                          service={scheme.name}
+                          title={`Apply for ${scheme.name}`}
                           className="text-primary-navy font-semibold text-sm underline decoration-accent decoration-2 underline-offset-4 hover:text-accent-text"
                         >
                           Apply →
-                        </Link>
+                        </ContactButton>
                       </div>
                     ))}
                   </div>
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
+                  <ContactButton
+                    title="Book Your Free Consultation"
                     className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors"
                   >
                     Book Free Consultation
                     <FiArrowRight aria-hidden="true" className="w-5 h-5 ml-2" />
-                  </Link>
+                  </ContactButton>
                   <a
                     href="https://wa.me/919898921290?text=Hi%2C%20I%20checked%20my%20eligibility%20and%20want%20to%20know%20more%20about%20government%20schemes"
                     target="_blank"

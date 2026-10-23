@@ -2,13 +2,14 @@
 
 import { FaWhatsapp } from "react-icons/fa";
 
+// Desktop only: on phones WhatsApp lives in the bottom bar (MobileActionBar).
 export default function WhatsAppButton() {
   return (
     <a
       href="https://wa.me/919898921290?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20services"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-6 z-[9999] group"
+      className="fixed bottom-4 right-6 z-[9999] group hidden lg:block"
       aria-label="Chat with us on WhatsApp"
     >
       {/* Pulse Ring */}

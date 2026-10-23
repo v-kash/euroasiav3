@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FiCheck, FiArrowRight } from "react-icons/fi";
 import CTABanner from "@/components/home/CTABanner";
+import ContactButton from "@/components/contact/ContactButton";
 
 export const metadata = {
   title: {
@@ -272,12 +273,13 @@ export default function ServicesPage() {
                   >
                     Learn More
                   </Link>
-                  <Link
-                    href="/contact"
+                  <ContactButton
+                    service={service.title}
+                    title={`Apply for ${service.title}`}
                     className="flex-1 inline-flex items-center justify-center min-h-[44px] bg-accent text-primary-navy font-semibold rounded-lg hover:bg-accent-dark transition-colors text-sm"
                   >
                     Apply Now
-                  </Link>
+                  </ContactButton>
                 </div>
               </div>
             ))}

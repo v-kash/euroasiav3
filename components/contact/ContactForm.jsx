@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { rememberLeadSent } from "@/components/contact/leadMemory";
 
 const services = [
   "Business Certifications",
@@ -13,16 +14,34 @@ const services = [
   "Other",
 ];
 
-export default function ContactForm() {
+/*
+  Used on the /contact page and inside the site-wide contact popup.
+  - idPrefix keeps field ids unique when both are on screen at once.
+  - defaultService preselects the dropdown (added as an option if it isn't one).
+  - onSuccess lets the popup swap the form for its own thank-you view.
+  - source records where the lead came from (see lib/leadSources.js).
+*/
+export default function ContactForm({
+  idPrefix = "",
+  defaultService = "",
+  source = "contact-page",
+  onSuccess,
+  compact = false,
+}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  const serviceOptions =
+    defaultService && !services.includes(defaultService)
+      ? [defaultService, ...services]
+      : services;
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues: { serviceInterest: defaultService } });
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -34,12 +53,14 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, source }),
       });
 
       if (response.ok) {
         setSubmitStatus("success");
         reset();
+        rememberLeadSent();
+        onSuccess?.(data);
       } else {
         setSubmitStatus("error");
       }
@@ -51,7 +72,11 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={compact ? "space-y-4" : "space-y-5"}
+      noValidate
+    >
       {/* Honeypot field for spam protection */}
       <input
         type="text"
@@ -64,14 +89,14 @@ export default function ContactForm() {
       {/* Full Name */}
       <div>
         <label
-          htmlFor="name"
+          htmlFor={`${idPrefix}name`}
           className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
           Full Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
-          id="name"
+          id={`${idPrefix}name`}
           {...register("name", { required: "Full name is required" })}
           className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
             errors.name ? "border-red-500" : "border-[#D5DDE9]"
@@ -83,77 +108,82 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Email */}
-      <div>
-        <label
-          htmlFor="email"
-          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-        >
-          Email Address <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          {...register("email", {
-            required: "Email is required",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Invalid email address",
-            },
-          })}
-          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
-            errors.email ? "border-red-500" : "border-[#D5DDE9]"
-          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
-          placeholder="Enter your email"
-        />
-        {errors.email && (
-          <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
-        )}
-      </div>
+      {/* Email + Phone: side by side in the popup, stacked on the page */}
+      <div className={compact ? "grid gap-4 sm:grid-cols-2" : "space-y-5"}>
+        {/* Email */}
+        <div>
+          <label
+            htmlFor={`${idPrefix}email`}
+            className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
+          >
+            Email Address <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            id={`${idPrefix}email`}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address",
+              },
+            })}
+            className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+              errors.email ? "border-red-500" : "border-[#D5DDE9]"
+            } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
+            placeholder="Enter your email"
+          />
+          {errors.email && (
+            <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+          )}
+        </div>
 
-      {/* Phone */}
-      <div>
-        <label
-          htmlFor="phone"
-          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-        >
-          Phone Number <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          {...register("phone", {
-            required: "Phone number is required",
-            pattern: {
-              value: /^[0-9]{10}$/,
-              message: "Please enter a valid 10-digit phone number",
-            },
-          })}
-          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
-            errors.phone ? "border-red-500" : "border-[#D5DDE9]"
-          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
-          placeholder="Enter your phone number"
-        />
-        {errors.phone && (
-          <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>
-        )}
+        {/* Phone */}
+        <div>
+          <label
+            htmlFor={`${idPrefix}phone`}
+            className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
+          >
+            Phone Number <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="tel"
+            id={`${idPrefix}phone`}
+            {...register("phone", {
+              required: "Phone number is required",
+              pattern: {
+                value: /^[0-9]{10}$/,
+                message: "Please enter a valid 10-digit phone number",
+              },
+            })}
+            className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+              errors.phone ? "border-red-500" : "border-[#D5DDE9]"
+            } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
+            placeholder={
+              compact ? "10-digit mobile" : "Enter your phone number"
+            }
+          />
+          {errors.phone && (
+            <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>
+          )}
+        </div>
       </div>
 
       {/* Service Interest */}
       <div>
         <label
-          htmlFor="serviceInterest"
+          htmlFor={`${idPrefix}serviceInterest`}
           className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
           Service Interest
         </label>
         <select
-          id="serviceInterest"
+          id={`${idPrefix}serviceInterest`}
           {...register("serviceInterest")}
           className="w-full min-h-[48px] px-4 py-3 rounded-xl border-2 border-[#D5DDE9] bg-white text-text-dark focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors"
         >
           <option value="">Select a service</option>
-          {services.map((service) => (
+          {serviceOptions.map((service) => (
             <option key={service} value={service}>
               {service}
             </option>
@@ -164,15 +194,18 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label
-          htmlFor="message"
+          htmlFor={`${idPrefix}message`}
           className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
         >
-          Message <span className="text-red-500">*</span>
+          Message{" "}
+          <span className="normal-case tracking-normal font-sans font-normal text-text-muted">
+            (optional)
+          </span>
         </label>
         <textarea
-          id="message"
-          rows={4}
-          {...register("message", { required: "Message is required" })}
+          id={`${idPrefix}message`}
+          rows={compact ? 3 : 4}
+          {...register("message")}
           className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
             errors.message ? "border-red-500" : "border-[#D5DDE9]"
           } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors resize-none`}

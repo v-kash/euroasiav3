@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FiCheck, FiArrowRight } from "react-icons/fi";
+import ContactButton from "@/components/contact/ContactButton";
 
 export const metadata = {
   title: "Government Schemes for MSMEs | PMEGP, MUDRA, Startup India",
@@ -243,12 +244,12 @@ export default function SchemesPage() {
                 Check Your Eligibility
                 <FiArrowRight aria-hidden="true" className="w-5 h-5" />
               </Link>
-              <Link
-                href="/contact"
+              <ContactButton
+                title="Talk to a Scheme Expert"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-navy text-primary-navy font-bold rounded-xl hover:bg-primary-navy hover:text-white transition-colors duration-150"
               >
                 Talk to Expert
-              </Link>
+              </ContactButton>
             </div>
           </div>
         </div>
@@ -381,13 +382,12 @@ export default function SchemesPage() {
                 schemes you qualify for.
               </p>
             </div>
-            <Link
-              href="/contact"
+            <ContactButton
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors flex-shrink-0"
             >
               Get Free Expert Consultation
               <FiArrowRight aria-hidden="true" />
-            </Link>
+            </ContactButton>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import ContactButton from "@/components/contact/ContactButton";
 import { motion } from "framer-motion";
 
 export default function CTABanner() {
@@ -25,12 +25,11 @@ export default function CTABanner() {
                 success rate.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link
-                  href="/contact"
+                <ContactButton
                   className="inline-flex items-center justify-center px-8 py-4 bg-accent text-primary-navy font-bold rounded-xl hover:bg-accent-dark transition-colors duration-200"
                 >
                   Get Free Consultation
-                </Link>
+                </ContactButton>
                 <a
                   href="https://wa.me/919898921290?text=Hi%2C%20I%20want%20to%20know%20about%20government%20funding%20schemes"
                   target="_blank"

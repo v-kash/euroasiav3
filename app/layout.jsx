@@ -6,6 +6,9 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 // import FloatingAlerts from "@/components/shared/FloatingAlerts";
 import NavratriProvider from "@/components/navratri/NavratriProvider";
+import ContactModalProvider from "@/components/contact/ContactModal";
+import LeadTriggers from "@/components/contact/LeadTriggers";
+import MobileActionBar from "@/components/layout/MobileActionBar";
 
 export const metadata = {
   metadataBase: new URL("https://www.euroasias.com"),
@@ -106,6 +109,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans antialiased">
+        {/* Site-wide contact popup, opened by <ContactButton> and <LeadTriggers>. */}
+        <ContactModalProvider>
         {/* Seasonal layer; renders the children untouched outside Navratri (components/navratri/config.js). */}
         <NavratriProvider>
           <div className="fixed top-0 left-0 right-0 z-50">
@@ -117,9 +122,13 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <Footer />
+          <MobileActionBar />
           <WhatsAppButton />
+          {/* Keep off: its "approved/sanctioned" alerts are made up, which counts as a dark pattern. */}
           {/* <FloatingAlerts /> */}
+          <LeadTriggers />
         </NavratriProvider>
+        </ContactModalProvider>
       </body>
     </html>
   );

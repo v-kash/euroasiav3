@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import ContactButton from "@/components/contact/ContactButton";
 import { FiX } from "react-icons/fi";
 
 export default function AnnouncementBar() {
@@ -14,15 +14,15 @@ export default function AnnouncementBar() {
       <div className="max-w-7xl mx-auto flex items-center justify-center text-sm">
         <span className="mr-2">🎉</span>
         <span className="hidden sm:inline">
-          Limited Time: Free Consultation for First 50 MSMEs This Month
+          Free Consultation for MSMEs &amp; Startups, No Obligation
         </span>
         <span className="sm:hidden">Free Consultation Available</span>
-        <Link
-          href="/contact"
+        <ContactButton
+          title="Book Your Free Consultation"
           className="ml-2 font-semibold text-accent hover:underline"
         >
           → Book Now
-        </Link>
+        </ContactButton>
         <button
           onClick={() => setIsVisible(false)}
           className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-white/10 rounded transition-colors"

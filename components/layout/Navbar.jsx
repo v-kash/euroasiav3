@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX, FiChevronDown, FiPhone, FiSearch } from "react-icons/fi";
 import AISearchModal from "@/components/shared/AISearchModal";
+import ContactButton from "@/components/contact/ContactButton";
 
 const schemes = [
   { name: "PMEGP", href: "/services/pmegp" },
@@ -220,12 +221,11 @@ export default function Navbar() {
               <FiPhone className="w-4 h-4 mr-2" />
               +91-9898921290
             </a> */}
-            <Link
-              href="/contact"
+            <ContactButton
               className="px-6 py-3 bg-primary-navy text-white font-semibold rounded-lg hover:bg-secondary-navy transition-colors"
             >
               Get Free Consultation
-            </Link>
+            </ContactButton>
           </div>
               
           {/* Mobile Menu Button */}
@@ -366,12 +366,12 @@ export default function Navbar() {
                   <FiPhone className="w-4 h-4 mr-2" />
                   +91-9898921290
                 </a>
-                <Link
-                  href="/contact"
+                <ContactButton
+                  onClick={() => setIsOpen(false)}
                   className="block text-center px-6 py-4 bg-primary-navy text-white font-semibold rounded-lg"
                 >
                   Get Free Consultation
-                </Link>
+                </ContactButton>
               </div>
             </div>
           </div>

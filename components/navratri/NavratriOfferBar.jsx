@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import ContactButton from "@/components/contact/ContactButton";
 import { FiArrowUpRight, FiX } from "react-icons/fi";
 import { HiSparkles } from "react-icons/hi2";
 import { useState } from "react";
@@ -52,8 +52,9 @@ export default function NavratriOfferBar() {
           </p>
 
           {/* CTA */}
-          <Link
-            href="/contact"
+          <ContactButton
+            service="Digital Marketing"
+            title="Claim Your Navratri Offer"
             className="group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-[#FFE9A8] via-[#FFD166] to-[#FFB84D] px-4 py-1.5 text-xs font-bold text-[#3A001F] shadow-[0_4px_16px_rgba(255,170,60,0.45)] transition-all hover:scale-[1.04] hover:shadow-[0_6px_22px_rgba(255,170,60,0.65)]"
           >
             {/* Shine sweep */}
@@ -63,7 +64,7 @@ export default function NavratriOfferBar() {
               size={14}
               className="relative transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             />
-          </Link>
+          </ContactButton>
         </div>
 
         {/* Close */}

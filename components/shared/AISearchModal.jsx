@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import ContactButton from '@/components/contact/ContactButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiX, FiArrowRight, FiZap, FiSend } from 'react-icons/fi';
 
@@ -337,7 +338,7 @@ export default function AISearchModal({ isOpen, onClose }) {
           {/* Footer */}
           <div className="px-6 py-3 bg-light-bg border-t border-border-color">
             <p className="text-xs text-text-muted text-center">
-              Can&apos;t find what you need? <Link href="/contact" onClick={onClose} className="text-primary-navy font-medium hover:underline">Talk to our experts</Link>
+              Can&apos;t find what you need? <ContactButton onClick={onClose} className="text-primary-navy font-medium hover:underline">Talk to our experts</ContactButton>
             </p>
           </div>
         </motion.div>
