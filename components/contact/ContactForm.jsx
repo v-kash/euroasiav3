@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { rememberLeadSent } from "@/components/contact/leadMemory";
 
@@ -213,6 +214,38 @@ export default function ContactForm({
         />
         {errors.message && (
           <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+        )}
+      </div>
+
+      {/* Consent: unticked by default and required (DPDP Act) */}
+      <div>
+        <label
+          htmlFor={`${idPrefix}consent`}
+          className="flex items-start gap-3 text-sm text-text-muted cursor-pointer"
+        >
+          <input
+            type="checkbox"
+            id={`${idPrefix}consent`}
+            {...register("consent", {
+              required: "Please agree to be contacted so we can respond",
+            })}
+            className="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer accent-primary-navy"
+          />
+          <span>
+            I agree to be contacted by Euroasia Business Solutions by call,
+            WhatsApp or email about this enquiry, as described in the{" "}
+            <Link
+              href="/privacy-policy"
+              target="_blank"
+              className="font-semibold text-primary-navy underline hover:text-accent-text"
+            >
+              Privacy Policy
+            </Link>
+            .
+          </span>
+        </label>
+        {errors.consent && (
+          <p className="mt-1 text-sm text-red-500">{errors.consent.message}</p>
         )}
       </div>
 

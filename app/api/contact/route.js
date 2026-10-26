@@ -53,6 +53,12 @@ export async function POST(request) {
     return fail('Missing or invalid fields', 400);
   }
 
+  // DPDP: contact only with an explicit, recorded consent.
+  if (data.consent !== true) {
+    return fail('Consent is required', 400);
+  }
+  const consentNote = `Agreed to be contacted about this enquiry via the website form, ${new Date().toISOString()}`;
+
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error('Contact form: RESEND_API_KEY is not set, enquiry not sent.');
@@ -65,6 +71,7 @@ export async function POST(request) {
     ['Phone', phone],
     ['Service', service || 'Not specified'],
     ['Came from', leadSourceLabel(source)],
+    ['Consent', consentNote],
   ];
 
   const html = `
