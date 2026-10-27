@@ -23,7 +23,7 @@ const searchableContent = [
   {
     title: "MUDRA Loan",
     description:
-      "Collateral-free loans up to ₹10 Lakhs under Shishu, Kishore, Tarun categories",
+      "Collateral-free loans up to ₹20 Lakhs under Shishu, Kishore, Tarun and Tarun Plus categories",
     href: "/services/mudra",
     keywords: [
       "mudra",
@@ -57,7 +57,7 @@ const searchableContent = [
   {
     title: "CGTMSE Loan",
     description:
-      "Credit guarantee scheme for collateral-free loans up to ₹5 Crore",
+      "Credit guarantee scheme for collateral-free loans up to ₹10 Crore",
     href: "/services/cgtmse",
     keywords: ["cgtmse", "credit guarantee", "collateral free", "loan"],
   },

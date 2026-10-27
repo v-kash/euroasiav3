@@ -6,21 +6,21 @@ import { motion } from "framer-motion";
 const schemes = [
   {
     name: "PMEGP",
-    amount: "Up to ₹25 Lakhs",
+    amount: "Up to ₹50 Lakhs",
     description: "Prime Minister's Employment Generation Programme",
     icon: "💰",
     href: "/services/pmegp",
   },
   {
     name: "MUDRA Loan",
-    amount: "Up to ₹10 Lakhs",
+    amount: "Up to ₹20 Lakhs",
     description: "Micro Units Development & Refinance Agency",
     icon: "🏦",
     href: "/services/mudra",
   },
   {
     name: "CGTMSE",
-    amount: "Up to ₹2 Crore",
+    amount: "Up to ₹10 Crore",
     description: "Credit Guarantee Fund Trust for Micro & Small",
     icon: "🛡️",
     href: "/services/cgtmse",
@@ -83,7 +83,7 @@ export default function SchemeSpotlight() {
             </h2>
           </div>
           <p className="text-white/70 text-lg max-w-md">
-            We have helped 500+ businesses unlock crores in government funding
+            We help you find, apply for and track the schemes your business qualifies for
           </p>
         </motion.div>
 

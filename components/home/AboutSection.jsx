@@ -33,9 +33,9 @@ export default function AboutSection() {
   };
 
   const stats = [
-    { value: "3+", label: "Years" },
-    { value: "150+", label: "Products" },
-    { value: "55+", label: "Team Members" },
+    { value: "2023", label: "Founded" },
+    { value: "18", label: "Services" },
+    { value: "2", label: "Offices" },
   ];
 
   return (

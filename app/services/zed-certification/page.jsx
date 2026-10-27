@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "ZED Certification",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "How long is ZED certification valid?",
       answer: "ZED certification is valid for 3 years from the date of issue. Renewal assessment is required before expiry to maintain certification status.",
     },
+    ...seoFaqs("zed-certification"),
   ],
   relatedServices: [
     {

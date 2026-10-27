@@ -5,9 +5,12 @@ import ContactButton from "@/components/contact/ContactButton";
 export const metadata = {
   title: "Government Schemes for MSMEs | PMEGP, MUDRA, Startup India",
   description:
-    "Explore 50+ government schemes for your business. PMEGP up to ₹25 Lakhs, MUDRA up to ₹10 Lakhs, CGTMSE up to ₹2 Crore, 80-IAC tax exemption, and more. Check eligibility now.",
+    "Explore government schemes for your business: PMEGP subsidy on projects up to ₹50 Lakhs, MUDRA loans up to ₹20 Lakhs, CGTMSE guarantee up to ₹10 Crore, 80-IAC tax exemption, and more. Check eligibility now.",
   keywords:
     "PMEGP scheme, MUDRA loan, CGTMSE, Startup India, 80-IAC, ZED certification, Stand-Up India, GEM registration, government grants",
+  alternates: {
+    canonical: "/schemes",
+  },
 };
 
 const schemeCategories = [
@@ -26,7 +29,7 @@ const schemes = [
     name: "PMEGP",
     fullName: "Prime Minister's Employment Generation Programme",
     category: "Funding",
-    amount: "Up to ₹25 Lakhs",
+    amount: "Up to ₹50 Lakhs",
     subsidy: "15-35% Subsidy",
     timeline: "2-3 Months",
     eligibility: [
@@ -46,8 +49,8 @@ const schemes = [
     name: "MUDRA Loan",
     fullName: "Micro Units Development & Refinance Agency",
     category: "Funding",
-    amount: "Up to ₹10 Lakhs",
-    subsidy: "Shishu/Kishore/Tarun",
+    amount: "Up to ₹20 Lakhs",
+    subsidy: "Shishu/Kishore/Tarun/Tarun Plus",
     timeline: "7-15 Days",
     eligibility: [
       "Non-corporate small businesses",
@@ -66,7 +69,7 @@ const schemes = [
     name: "CGTMSE",
     fullName: "Credit Guarantee Fund Trust for Micro & Small",
     category: "Funding",
-    amount: "Up to ₹2 Crore",
+    amount: "Up to ₹10 Crore",
     subsidy: "Collateral-free",
     timeline: "15-30 Days",
     eligibility: [
@@ -96,7 +99,7 @@ const schemes = [
     ],
     benefits: [
       "100% tax exemption for 3 years",
-      "Angel tax exemption",
+      "Claim in any 3 of first 10 years",
       "Self-certification for labor laws",
     ],
     href: "/services/80-iac",
@@ -255,33 +258,6 @@ export default function SchemesPage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      {/* <section className="bg-white py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 border-t-2 border-primary-navy">
-            {[
-              { value: "₹100 Cr+", label: "Funding Secured" },
-              { value: "500+", label: "Businesses Helped" },
-              { value: "50+", label: "Schemes Available" },
-              { value: "99%", label: "Success Rate" },
-            ].map((stat, index) => (
-              <div
-                key={stat.label}
-                className={`pt-8 pb-6 px-4 md:px-8 border-[#D5DDE9] ${
-                  index % 2 === 1 ? "border-l" : ""
-                } ${index > 0 ? "md:border-l" : ""} ${
-                  index > 1 ? "border-t md:border-t-0" : ""
-                }`}
-              >
-                <p className="font-display text-4xl md:text-5xl font-extrabold text-primary-navy tracking-[-0.04em] leading-none mb-3">
-                  {stat.value}
-                </p>
-                <p className="text-text-muted font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Schemes Grid */}
       <section className="py-12 lg:py-16 bg-light-bg border-t border-[#D5DDE9]">

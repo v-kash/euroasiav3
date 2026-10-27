@@ -8,7 +8,7 @@ import CTABanner from "@/components/home/CTABanner";
 export const metadata = {
   title: "About Us - Your Trusted MSME Funding Consultancy",
   description:
-    "Euroasia Aquatic Pvt Ltd helps MSMEs access ₹10L-₹1Cr government grants. 99% success rate, 500+ businesses funded, ₹100Cr+ disbursed. Expert PMEGP, MUDRA, Startup India consultants in Ahmedabad.",
+    "Euroasia Aquatic Pvt Ltd, founded in 2023, helps MSMEs and startups with PMEGP, MUDRA, Startup India, certifications and compliance. Offices in Ahmedabad and Pune, online support across India.",
   keywords: [
     "MSME consultancy",
     "government grants consultant",
@@ -22,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: "About Euroasia - MSME Funding & Government Grants Experts",
     description:
-      "99% success rate in government funding. 500+ businesses funded with ₹100Cr+ in grants.",
+      "MSME funding, government scheme and compliance consultants with offices in Ahmedabad and Pune.",
   },
 };
 
@@ -111,24 +111,24 @@ const values = [
 
 const milestones = [
   {
-    year: "2021",
-    title: "Company Founded",
-    description: "Started with a vision to simplify business compliance.",
-  },
-  {
-    year: "2022",
-    title: "Expanded Services",
-    description: "Added digital marketing and tender assistance services.",
-  },
-  {
     year: "2023",
-    title: "100+ Clients",
-    description: "Crossed 100 satisfied clients across Gujarat.",
+    title: "Company Founded",
+    description: "Started in Ahmedabad with a vision to simplify business compliance.",
   },
   {
-    year: "2024",
-    title: "Team Growth",
-    description: "Expanded to 55+ team members serving diverse industries.",
+    year: "18",
+    title: "Services",
+    description: "Funding, registrations, certifications, tenders, compliance and digital marketing.",
+  },
+  {
+    year: "Pune",
+    title: "Second Office",
+    description: "Opened our Shivajinagar, Pune office to serve clients in Maharashtra.",
+  },
+  {
+    year: "India",
+    title: "Online Support",
+    description: "Online consultations for businesses across India.",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="About Euroasia"
-        description="Your trusted partner for business certifications, compliance, and growth solutions since 2021."
+        description="Your trusted partner for business certifications, compliance, and growth solutions since 2023."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -166,7 +166,7 @@ export default function AboutPage() {
             <div>
               <span className={eyebrow}>OUR STORY</span>
               <h2 className={`${sectionTitle} mt-4 mb-6`}>
-                Making Compliance Effortless Since 2021
+                Making Compliance Effortless Since 2023
               </h2>
               <div className="space-y-4 text-text-muted text-lg leading-relaxed">
                 <p>
@@ -185,11 +185,11 @@ export default function AboutPage() {
                   and strategic advisory services.
                 </p>
                 <p>
-                  With over 150+ products and a 99% client satisfaction rate, we
-                  continue to expand our services while maintaining the
-                  personalized attention that sets us apart. Our team of 55+
-                  professionals brings diverse expertise to help your business
-                  succeed.
+                  With offices in Ahmedabad and Pune and online consultations
+                  across India, we continue to expand our services while
+                  maintaining the personalized attention that sets us apart.
+                  Every engagement starts with a free consultation and a fixed
+                  fee quoted upfront.
                 </p>
               </div>
             </div>

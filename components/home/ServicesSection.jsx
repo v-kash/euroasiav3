@@ -12,7 +12,6 @@ const services = [
     category: "Funding",
     href: "/services/government-grants",
     badge: "Up to ₹1 Crore",
-    successRate: 98,
     price: "₹2,999",
     timeline: "2–3 Months",
     description:
@@ -39,7 +38,6 @@ const services = [
     category: "Registration",
     href: "/services/msme-registration",
     badge: "Same Day",
-    successRate: 100,
     price: "₹999",
     timeline: "48 Hours",
     description:
@@ -66,7 +64,6 @@ const services = [
     category: "Funding",
     href: "/services/business-funding",
     badge: "₹10L – ₹50L",
-    successRate: 95,
     price: "₹1,999",
     timeline: "7–15 Days",
     description:
@@ -93,11 +90,10 @@ const services = [
     category: "Registration",
     href: "/services/startup-india",
     badge: "Tax Free 3 Yrs",
-    successRate: 99,
     price: "₹2,499",
     timeline: "7–10 Days",
     description:
-      "DPIIT recognition with 80-IAC tax exemption and angel tax relief benefits.",
+      "DPIIT recognition with 80-IAC tax exemption support and Startup India benefits.",
     icon: (
       <svg
         className="w-6 h-6"
@@ -120,7 +116,6 @@ const services = [
     category: "Compliance",
     href: "/services/gst-compliance",
     badge: "Same Day",
-    successRate: 100,
     price: "₹999/mo",
     timeline: "Ongoing",
     description: "Complete GST registration, filing and tax planning services.",
@@ -146,7 +141,6 @@ const services = [
     category: "Growth",
     href: "/services/tender-assistance",
     badge: "Win Tenders",
-    successRate: 92,
     price: "₹3,999",
     timeline: "Project-Based",
     description:
@@ -173,7 +167,6 @@ const services = [
     category: "Registration",
     href: "/services/zed-certification",
     badge: "₹5L Subsidy",
-    successRate: 96,
     price: "₹4,999",
     timeline: "30–45 Days",
     description:
@@ -200,7 +193,6 @@ const services = [
     category: "Growth",
     href: "/services/iec-registration",
     badge: "Go Global",
-    successRate: 100,
     price: "₹1,499",
     timeline: "5–7 Days",
     description:
@@ -227,7 +219,6 @@ const services = [
     category: "Digital",
     href: "/services/digital-marketing",
     badge: "3x ROI Avg",
-    successRate: 95,
     price: "₹9,999/mo",
     timeline: "Ongoing",
     description:
@@ -329,7 +320,7 @@ export default function ServicesSection() {
                   </div>
                   <span className="inline-flex items-center gap-1 px-2 py-1 bg-success-green/10 text-success-green font-ledger text-xs font-semibold rounded">
                     <FiCheck aria-hidden="true" className="w-3.5 h-3.5" />
-                    {service.successRate}%
+                    Online
                   </span>
                 </div>
 

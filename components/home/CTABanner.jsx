@@ -21,8 +21,8 @@ export default function CTABanner() {
                 Ready to Unlock Government Funding?
               </h2>
               <p className="text-lg text-white/75 mb-8 max-w-xl mx-auto lg:mx-0">
-                Join 500+ businesses. Free consultation. No hidden charges. 99%
-                success rate.
+                Free consultation. Fixed fees quoted upfront. Offices in
+                Ahmedabad &amp; Pune, online support across India.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <ContactButton
@@ -67,15 +67,15 @@ export default function CTABanner() {
                 <div className="border-t border-white/15">
                   <div className="flex items-center gap-3 py-4 border-b border-white/15 text-white/85">
                     <span aria-hidden="true" className="w-1.5 h-1.5 rotate-45 bg-accent flex-shrink-0"></span>
-                    PMEGP up to ₹25 Lakhs
+                    PMEGP projects up to ₹50 Lakhs
                   </div>
                   <div className="flex items-center gap-3 py-4 border-b border-white/15 text-white/85">
                     <span aria-hidden="true" className="w-1.5 h-1.5 rotate-45 bg-accent flex-shrink-0"></span>
-                    MUDRA up to ₹10 Lakhs
+                    MUDRA up to ₹20 Lakhs
                   </div>
                   <div className="flex items-center gap-3 py-4 border-b border-white/15 text-white/85">
                     <span aria-hidden="true" className="w-1.5 h-1.5 rotate-45 bg-accent flex-shrink-0"></span>
-                    CGTMSE up to ₹2 Crore
+                    CGTMSE up to ₹10 Crore
                   </div>
                 </div>
               </div>

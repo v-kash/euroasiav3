@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "GEM Portal Registration",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "How long does GEM registration take?",
       answer: "Basic registration takes 1-2 days. Complete profile with product cataloguing and brand approval may take 1-2 weeks depending on document verification.",
     },
+    ...seoFaqs("gem-registration"),
   ],
   relatedServices: [
     {

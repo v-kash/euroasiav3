@@ -12,7 +12,7 @@ const serviceData = {
   overviewContent: [
     "The Indian government offers numerous grant and subsidy schemes for MSMEs, startups, and entrepreneurs. From PMEGP to State-specific schemes, there's significant funding available for eligible businesses.",
     "Our expert team identifies the best schemes for your business, prepares winning applications, and liaises with authorities to maximize your chances of securing government grants.",
-    "We have helped 500+ businesses secure over ₹100 Crore in government funding across various schemes including PMEGP, MUDRA, State subsidies, and sector-specific grants.",
+    "We identify suitable schemes such as PMEGP, MUDRA, state subsidies and sector-specific grants, and prepare complete, accurate applications.",
   ],
   image: "/images/services/grants.png",
   included: [
@@ -71,12 +71,12 @@ const serviceData = {
     },
     {
       title: "MUDRA Loan",
-      description: "Collateral-free loans up to ₹10L",
+      description: "Collateral-free loans up to ₹20L",
       href: "/services/mudra",
     },
     {
       title: "CGTMSE",
-      description: "Credit guarantee up to ₹5 Cr",
+      description: "Credit guarantee up to ₹10 Cr",
       href: "/services/cgtmse",
     },
   ],

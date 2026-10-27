@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { FiShield, FiZap, FiTrendingUp, FiArrowRight } from "react-icons/fi";
 
 const ledgerRows = [
-  { code: "PMEGP", value: "₹25L avg" },
-  { code: "MUDRA", value: "₹10L avg" },
+  { code: "PMEGP", value: "35% subsidy" },
+  { code: "MUDRA", value: "₹20L max" },
   { code: "80-IAC", value: "100% tax" },
   { code: "ZED", value: "₹5L subsidy" },
 ];
@@ -80,27 +80,6 @@ export default function HeroSection() {
               </span>
             </div>
 
-            {/* Bottom Stats Line */}
-            {/* <p className="grid grid-cols-3 max-w-lg border-t border-[#D5DDE9] pt-6">
-              <span className="flex flex-col pr-4">
-                <span className="font-display font-extrabold text-primary-navy text-3xl sm:text-4xl tracking-[-0.03em] leading-none">
-                  ₹100 Cr+
-                </span>
-                <span className="mt-2 text-sm text-text-muted">Funded</span>
-              </span>
-              <span className="flex flex-col px-4 border-l border-[#D5DDE9]">
-                <span className="font-display font-extrabold text-primary-navy text-3xl sm:text-4xl tracking-[-0.03em] leading-none">
-                  500+
-                </span>
-                <span className="mt-2 text-sm text-text-muted">Businesses</span>
-              </span>
-              <span className="flex flex-col pl-4 border-l border-[#D5DDE9]">
-                <span className="font-display font-extrabold text-primary-navy text-3xl sm:text-4xl tracking-[-0.03em] leading-none">
-                  99%
-                </span>
-                <span className="mt-2 text-sm text-text-muted">Success</span>
-              </span>
-            </p> */}
           </div>
 
           {/* Right Content - Scheme Ledger Card - 40% */}
@@ -156,13 +135,13 @@ export default function HeroSection() {
                 {/* Progress Bar */}
                 <div className="mt-6">
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-text-muted font-medium">Success Rate</span>
-                    <span className="text-success-green font-bold">99%</span>
+                    <span className="text-text-muted font-medium">Example: Step 3 of 4 · Documentation</span>
+                    <span className="text-success-green font-bold">75%</span>
                   </div>
                   <div className="h-2 bg-[#E6ECF4] rounded-full overflow-hidden">
                     <div
                       className="h-full bg-success-green rounded-full"
-                      style={{ width: "99%" }}
+                      style={{ width: "75%" }}
                     />
                   </div>
                 </div>

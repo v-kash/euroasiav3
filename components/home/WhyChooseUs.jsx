@@ -4,13 +4,25 @@ import { motion } from "framer-motion";
 import { FiCheck, FiX } from "react-icons/fi";
 
 const comparisonData = [
-  { feature: "Processing Time", euroasia: "48–72 Hours", others: "7–15 Days" },
-  { feature: "Success Rate", euroasia: "99%", others: "70–80%" },
-  { feature: "Hidden Charges", euroasia: "Zero", others: "Multiple" },
   {
-    feature: "Post-Service Support",
-    euroasia: "Lifetime",
-    others: "Limited Period",
+    feature: "Choosing a Scheme",
+    euroasia: "Checked for you",
+    others: "Many portals",
+  },
+  {
+    feature: "Documents / DPR",
+    euroasia: "Prepared for you",
+    others: "On your own",
+  },
+  {
+    feature: "Bank / Portal Follow-up",
+    euroasia: "Tracked to decision",
+    others: "You chase it",
+  },
+  {
+    feature: "Fees",
+    euroasia: "Fixed, upfront",
+    others: "Unclear costs",
   },
 ];
 
@@ -31,10 +43,10 @@ export default function WhyChooseUs() {
             WHY CHOOSE US
           </span>
           <h2 className="font-display font-extrabold text-primary-navy text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] mt-3">
-            Euroasia vs Others
+            Doing It Yourself vs With Euroasia
           </h2>
           <p className="text-text-muted text-lg mt-4 max-w-md">
-            How we compare with typical consulting firms.
+            What changes when we handle your application.
           </p>
         </motion.div>
 
@@ -55,13 +67,13 @@ export default function WhyChooseUs() {
                   </th>
                   <th className="px-3 sm:px-6 py-4 text-center font-ledger text-xs font-semibold uppercase tracking-[0.12em] bg-accent text-primary-navy">
                     <span className="flex items-center justify-center">
-                      Euroasia
+                      With Euroasia
                       <FiCheck aria-hidden="true" className="w-4 h-4 ml-2" />
                     </span>
                   </th>
                   <th className="px-3 sm:px-6 py-4 text-center font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-white/70">
                     <span className="flex items-center justify-center">
-                      Others
+                      Doing It Yourself
                       <FiX aria-hidden="true" className="w-4 h-4 ml-2" />
                     </span>
                   </th>

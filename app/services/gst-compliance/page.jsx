@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "GST & Tax Compliance",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "How can I claim input tax credit?",
       answer: "ITC can be claimed on business purchases if you have valid tax invoice, goods/services received, supplier has filed return, and payment made within 180 days.",
     },
+    ...seoFaqs("gst-compliance"),
   ],
   relatedServices: [
     {

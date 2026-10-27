@@ -73,7 +73,7 @@ const GoogleG = ({ className }) => (
 );
 
 const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/search?q=euroasia+aquatic+pvt+ltd+reviews";
+  "https://www.google.com/maps/place/EUROASIA+AQUATIC+PRIVATE+LIMITED/@23.109681,72.5375612,1061m/data=!3m2!1e3!4b1!4m6!3m5!1s0x44bab6b89e296a55:0xa926f5b90801b247!8m2!3d23.109681!4d72.5375612!16s%2Fg%2F11yq4sgjj2";
 
 // One review card. Long quotes are clamped to 3 lines with a Read more toggle.
 function ReviewCard({ testimonial }) {

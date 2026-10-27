@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 function AnimatedNumber({ value, suffix = '', prefix = '' }) {
   // Starts at the REAL value, so the server-rendered HTML (what Google and
-  // link previews read) shows "₹100 Cr+", not "₹0 Cr+". It counts up from 0
+  // link previews read) shows "₹10 Cr", not "₹0 Cr". It counts up from 0
   // only once the number scrolls into view in the browser.
   const [count, setCount] = useState(value);
   const ref = useRef(null);
@@ -55,34 +55,33 @@ export default function ImpactStats() {
   const stats = [
     {
       icon: '💰',
-      value: 100,
+      value: 10,
       prefix: '₹',
-      suffix: ' Cr+',
-      label: 'Funding Secured For MSMEs Growth',
+      suffix: ' Cr',
+      label: 'CGTMSE Guarantee Cover Per Borrower',
     },
     {
       icon: '🏆',
-      value: 99,
+      value: 35,
       suffix: '%',
-      label: 'Success Rate, Proven Track Record',
+      label: 'Maximum PMEGP Subsidy',
     },
     {
       icon: '📋',
-      value: 500,
-      suffix: '+',
-      label: 'Registrations Completed Successfully',
+      value: 20,
+      prefix: '₹',
+      suffix: ' L',
+      label: 'MUDRA Loan Limit (Tarun Plus)',
     },
     {
       icon: '🏛️',
-      value: 50,
-      suffix: '+',
-      label: 'Govt Schemes Access Enabled',
+      value: 18,
+      label: 'Services Under One Roof',
     },
     {
       icon: '⚡',
-      value: 24,
-      suffix: '/7',
-      label: 'Expert Support Always Available',
+      value: 2,
+      label: 'Offices: Ahmedabad & Pune',
     },
   ];
 

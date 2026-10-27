@@ -11,7 +11,7 @@ const serviceData = {
   overviewTitle: "What is Startup India?",
   overviewContent: [
     "Startup India is a flagship initiative by the Government of India to build a strong ecosystem for nurturing innovation and startups. DPIIT recognition under this scheme opens doors to numerous benefits.",
-    "Recognized startups get 3-year income tax exemption under Section 80-IAC, exemption from Angel Tax, fast-track patent applications, self-certification for compliance, and access to Fund of Funds.",
+    "Recognized startups can apply for a 3-year income tax exemption under Section 80-IAC and get fast-track patent applications, self-certification for compliance, and access to Fund of Funds.",
     "Euroasia Aquatic provides end-to-end assistance for Startup India recognition, from eligibility assessment to certificate issuance and beyond.",
   ],
   image: "/images/services/startup-india.png",
@@ -51,7 +51,7 @@ const serviceData = {
     },
     {
       question: "What tax benefits do recognized startups get?",
-      answer: "Startups can apply for 3-year income tax exemption under Section 80-IAC. They also get exemption from Angel Tax under Section 56(2)(viib) after obtaining DPIIT recognition.",
+      answer: "Startups can apply for 3-year income tax exemption under Section 80-IAC. The former angel-tax provisions under Section 56(2)(viib) were removed with effect from 1 April 2025, so a separate angel-tax exemption is no longer needed.",
     },
     {
       question: "How long does Startup India registration take?",

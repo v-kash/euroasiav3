@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "IEC Code Registration",
@@ -50,7 +51,7 @@ const serviceData = {
     },
     {
       question: "What is the validity of IEC?",
-      answer: "IEC is valid for lifetime. No renewal is required. However, you need to update details on the portal if there are changes in business information.",
+      answer: "IEC is valid for lifetime and does not need renewal. However, DGFT requires IEC holders to review and update their details on the portal every year to keep the IEC active.",
     },
     {
       question: "How long does IEC registration take?",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "Can I export without IEC?",
       answer: "For most goods and services, IEC is mandatory. However, exemptions exist for personal gifts, samples, and certain services. Service exporters below ₹5 Lakhs annually are exempt.",
     },
+    ...seoFaqs("iec-registration"),
   ],
   relatedServices: [
     {

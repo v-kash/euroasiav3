@@ -6,12 +6,12 @@ import { seoFaqs } from "@/lib/seo/services";
 const serviceData = {
   title: "PMEGP Scheme",
   shortTitle: "PMEGP",
-  subtitle: "Prime Minister's Employment Generation Programme - Get up to ₹50 Lakhs subsidy for your business",
+  subtitle: "Prime Minister's Employment Generation Programme - 15–35% margin-money subsidy for new units with project cost up to ₹50 Lakhs (manufacturing) or ₹20 Lakhs (service)",
   tag: "GOVERNMENT SCHEME",
   overviewTitle: "What is PMEGP?",
   overviewContent: [
     "PMEGP (Prime Minister's Employment Generation Programme) is a flagship credit-linked subsidy scheme by the Government of India for generating employment opportunities through establishment of micro-enterprises.",
-    "Under this scheme, you can get a subsidy of up to 35% for manufacturing units and 25% for service units, depending on your category and location. The maximum project cost is ₹50 Lakhs for manufacturing and ₹20 Lakhs for service sector.",
+    "Under this scheme, you can get a margin-money subsidy of 15% to 35% of the project cost, depending on your category (general or special) and location (urban or rural). The maximum project cost is ₹50 Lakhs for manufacturing and ₹20 Lakhs for service sector.",
     "Euroasia Aquatic helps you navigate the entire PMEGP application process, from documentation to bank liaison, ensuring maximum chances of approval.",
   ],
   image: "/images/services/pmegp.png",
@@ -59,14 +59,14 @@ const serviceData = {
     },
     {
       question: "Can I apply for PMEGP if I already have a business?",
-      answer: "No, PMEGP is only for new units. However, you can apply for PMEGP for a new unit if your existing business is not registered under any government scheme.",
+      answer: "No. The PMEGP margin-money subsidy is only for setting up new units, so existing units are not eligible. Units already set up under PMEGP or MUDRA can be considered separately for a second loan for upgradation, subject to scheme rules.",
     },
     ...seoFaqs("pmegp"),
   ],
   relatedServices: [
     {
       title: "MUDRA Loan",
-      description: "Get collateral-free loans up to ₹10 Lakhs",
+      description: "Get collateral-free loans up to ₹20 Lakhs",
       href: "/services/mudra",
     },
     {

@@ -1,21 +1,22 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "MUDRA Loan Assistance",
   shortTitle: "MUDRA Loan",
-  subtitle: "Collateral-free business loans from ₹50,000 to ₹10 Lakhs under Pradhan Mantri MUDRA Yojana",
+  subtitle: "Collateral-free business loans up to ₹20 Lakhs under Pradhan Mantri MUDRA Yojana",
   tag: "GOVERNMENT SCHEME",
   overviewTitle: "What is MUDRA Loan?",
   overviewContent: [
-    "MUDRA (Micro Units Development and Refinance Agency) provides loans to micro and small enterprises through banks and NBFCs. The scheme offers three categories: Shishu (up to ₹50,000), Kishore (₹50,000 to ₹5 Lakhs), and Tarun (₹5 Lakhs to ₹10 Lakhs).",
+    "MUDRA (Micro Units Development and Refinance Agency) provides loans to micro and small enterprises through banks and NBFCs. The scheme offers four categories: Shishu (up to ₹50,000), Kishore (₹50,000 to ₹5 Lakhs), Tarun (₹5 Lakhs to ₹10 Lakhs), and Tarun Plus (₹10 Lakhs to ₹20 Lakhs, for borrowers who have availed and successfully repaid a previous Tarun loan).",
     "The biggest advantage of MUDRA loans is that they are collateral-free, making it accessible for small entrepreneurs and first-time business owners to get working capital and term loans.",
     "Our team at Euroasia Aquatic assists you in preparing a strong application, connecting with the right bank, and ensuring smooth processing of your MUDRA loan.",
   ],
   image: "/images/services/mudra.png",
   included: [
-    "Category assessment (Shishu/Kishore/Tarun)",
+    "Category assessment (Shishu/Kishore/Tarun/Tarun Plus)",
     "Business plan preparation",
     "Bank application documentation",
     "MUDRA card assistance",
@@ -45,8 +46,8 @@ const serviceData = {
   ],
   faqs: [
     {
-      question: "What are the three categories of MUDRA loans?",
-      answer: "Shishu: Up to ₹50,000 for startups. Kishore: ₹50,000 to ₹5 Lakhs for established businesses. Tarun: ₹5 Lakhs to ₹10 Lakhs for expansion needs.",
+      question: "What are the categories of MUDRA loans?",
+      answer: "Shishu: Up to ₹50,000 for startups. Kishore: ₹50,000 to ₹5 Lakhs for established businesses. Tarun: ₹5 Lakhs to ₹10 Lakhs for expansion needs. Tarun Plus: ₹10 Lakhs to ₹20 Lakhs for borrowers who have availed and successfully repaid a previous Tarun loan.",
     },
     {
       question: "Is collateral required for MUDRA loans?",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "Can I get MUDRA loan if I have low CIBIL score?",
       answer: "Yes, MUDRA focuses more on business viability than credit score. However, having a good CIBIL score increases approval chances and may get you better rates.",
     },
+    ...seoFaqs("mudra"),
   ],
   relatedServices: [
     {

@@ -1,3 +1,5 @@
+import { placeholderBlogs } from "@/lib/blog/placeholderPosts";
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.euroasias.com";
 
 async function getBlogSlugs() {
@@ -17,186 +19,64 @@ async function getBlogSlugs() {
   }
 }
 
+// Static pages carry no lastModified: a build-time date on every URL is ignored by search engines.
+// /search is intentionally excluded (it is noindex).
+const staticPages = [
+  ["", "weekly", 1],
+  ["/about", "monthly", 0.8],
+  ["/services", "monthly", 0.9],
+  ["/schemes", "weekly", 0.9],
+  ["/services/pmegp", "monthly", 0.85],
+  ["/services/mudra", "monthly", 0.85],
+  ["/services/startup-india", "monthly", 0.85],
+  ["/services/zed-certification", "monthly", 0.85],
+  ["/services/gem-registration", "monthly", 0.85],
+  ["/services/80-iac", "monthly", 0.85],
+  ["/services/cgtmse", "monthly", 0.85],
+  ["/services/msme-registration", "monthly", 0.85],
+  ["/services/iec-registration", "monthly", 0.85],
+  ["/services/government-grants", "monthly", 0.85],
+  ["/services/business-funding", "monthly", 0.85],
+  ["/services/gst-compliance", "monthly", 0.85],
+  ["/services/business-certifications", "monthly", 0.8],
+  ["/services/compliance-legal", "monthly", 0.8],
+  ["/services/tender-assistance", "monthly", 0.8],
+  ["/services/digital-marketing", "monthly", 0.8],
+  ["/services/tax-exemption", "monthly", 0.8],
+  ["/services/business-advisory", "monthly", 0.8],
+  ["/blog", "daily", 0.7],
+  ["/contact", "monthly", 0.7],
+  ["/check-eligibility", "monthly", 0.7],
+  ["/privacy-policy", "yearly", 0.3],
+  ["/terms-conditions", "yearly", 0.3],
+];
+
 export default async function sitemap() {
-  const blogSlugs = await getBlogSlugs();
+  const dbBlogs = await getBlogSlugs();
 
-  const staticPages = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/schemes`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/pmegp`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/mudra`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/startup-india`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/zed-certification`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/gem-registration`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/80-iac`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/cgtmse`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/msme-registration`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/iec-registration`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/government-grants`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/business-funding`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/gst-compliance`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/business-certifications`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/compliance-legal`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/tender-assistance`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/digital-marketing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/tax-exemption`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/business-advisory`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/check-eligibility`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/search`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms-conditions`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-  ];
+  // Built-in posts are served by /blog/[slug] when the database has no match, so list them too.
+  const blogs = new Map(
+    Object.values(placeholderBlogs).map((blog) => [
+      blog.slug,
+      blog.updatedAt || blog.publishedAt,
+    ])
+  );
+  for (const { slug, lastModified } of dbBlogs) {
+    blogs.set(slug, lastModified);
+  }
 
-  const blogPages = blogSlugs.map(({ slug, lastModified }) => ({
+  const pages = staticPages.map(([path, changeFrequency, priority]) => ({
+    url: `${baseUrl}${path}`,
+    changeFrequency,
+    priority,
+  }));
+
+  const blogPages = [...blogs].map(([slug, lastModified]) => ({
     url: `${baseUrl}/blog/${slug}`,
-    lastModified: lastModified || new Date(),
+    ...(lastModified && { lastModified: new Date(lastModified) }),
     changeFrequency: "weekly",
     priority: 0.6,
   }));
 
-  return [...staticPages, ...blogPages];
+  return [...pages, ...blogPages];
 }

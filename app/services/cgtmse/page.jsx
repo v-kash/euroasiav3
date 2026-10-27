@@ -6,11 +6,11 @@ import { seoFaqs } from "@/lib/seo/services";
 const serviceData = {
   title: "CGTMSE Loan Scheme",
   shortTitle: "CGTMSE",
-  subtitle: "Collateral-Free Credit Guarantee up to ₹5 Crore for MSMEs",
+  subtitle: "Collateral-Free Credit Guarantee up to ₹10 Crore for MSEs",
   tag: "CREDIT GUARANTEE",
   overviewTitle: "What is CGTMSE?",
   overviewContent: [
-    "CGTMSE (Credit Guarantee Fund Trust for Micro and Small Enterprises) provides credit guarantee to banks and financial institutions for collateral-free loans to MSMEs up to ₹5 Crore.",
+    "CGTMSE (Credit Guarantee Fund Trust for Micro and Small Enterprises) provides credit guarantee to banks and financial institutions for collateral-free loans to micro and small enterprises up to ₹10 Crore (raised from ₹5 Crore with effect from 1 April 2025).",
     "Under this scheme, banks can lend to MSMEs without demanding collateral security or third-party guarantee. The guarantee covers up to 85% of the sanctioned amount for micro enterprises.",
     "Euroasia Aquatic helps you prepare a strong loan application and connects you with CGTMSE-enrolled banks for maximum loan approval chances.",
   ],
@@ -47,7 +47,7 @@ const serviceData = {
   faqs: [
     {
       question: "What is the maximum loan amount under CGTMSE?",
-      answer: "The maximum credit guarantee coverage is ₹5 Crore per borrower. Banks can sanction higher amounts, but guarantee coverage is limited to ₹5 Crore.",
+      answer: "The ceiling for credit guarantee coverage is ₹10 Crore per eligible borrower, raised from ₹5 Crore with effect from 1 April 2025. Banks can sanction higher amounts, but guarantee coverage is limited to the ceiling.",
     },
     {
       question: "What is the guarantee coverage percentage?",

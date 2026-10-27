@@ -27,7 +27,6 @@ const services = [
     category: "Funding",
     href: "/services/government-grants",
     badge: "Up to ₹1 Crore",
-    successRate: 98,
     price: "₹2,999",
     timeline: "2–3 Months",
     description:
@@ -44,7 +43,6 @@ const services = [
     category: "Registration",
     href: "/services/msme-registration",
     badge: "Same Day",
-    successRate: 100,
     price: "₹999",
     timeline: "48 Hours",
     description:
@@ -61,7 +59,6 @@ const services = [
     category: "Funding",
     href: "/services/business-funding",
     badge: "₹10L – ₹50L",
-    successRate: 95,
     price: "₹1,999",
     timeline: "7–15 Days",
     description:
@@ -78,15 +75,14 @@ const services = [
     category: "Registration",
     href: "/services/startup-india",
     badge: "Tax Free 3 Yrs",
-    successRate: 99,
     price: "₹2,499",
     timeline: "7–10 Days",
     description:
-      "DPIIT recognition with 80-IAC tax exemption and angel tax relief benefits.",
+      "DPIIT recognition with 80-IAC tax exemption support and Startup India benefits.",
     bullets: [
       "DPIIT Recognition",
       "80-IAC Tax Exemption",
-      "Angel Tax Relief",
+      "Startup India Benefits",
       "Startup Certificate",
     ],
   },
@@ -95,7 +91,6 @@ const services = [
     category: "Compliance",
     href: "/services/gst-compliance",
     badge: "From ₹999/mo",
-    successRate: 100,
     price: "₹999/mo",
     timeline: "Ongoing",
     description: "Complete GST registration, filing and tax planning services.",
@@ -111,7 +106,6 @@ const services = [
     category: "Growth",
     href: "/services/tender-assistance",
     badge: "Win Tenders",
-    successRate: 92,
     price: "₹3,999",
     timeline: "Project-Based",
     description:
@@ -128,7 +122,6 @@ const services = [
     category: "Registration",
     href: "/services/zed-certification",
     badge: "₹5L Subsidy",
-    successRate: 96,
     price: "₹4,999",
     timeline: "30–45 Days",
     description:
@@ -145,7 +138,6 @@ const services = [
     category: "Growth",
     href: "/services/iec-registration",
     badge: "Go Global",
-    successRate: 100,
     price: "₹1,499",
     timeline: "5–7 Days",
     description:
@@ -162,7 +154,6 @@ const services = [
     category: "Digital",
     href: "/services/digital-marketing",
     badge: "3x ROI Avg",
-    successRate: 95,
     price: "₹9,999/mo",
     timeline: "Ongoing",
     description:
@@ -194,17 +185,17 @@ export default function ServicesPage() {
             </h1>
             <p className="text-lg sm:text-xl text-text-muted leading-relaxed max-w-2xl mb-8">
               From registration to funding, compliance to expansion — end-to-end
-              consulting with 99% success rate.
+              consulting for MSMEs and startups across India.
             </p>
             <div className="flex flex-wrap gap-2.5 text-sm font-medium text-primary-navy">
               <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full">
-                <FiCheck aria-hidden="true" className="text-success-green" /> 500+ Clients
+                <FiCheck aria-hidden="true" className="text-success-green" /> Free Consultation
               </span>
               <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full">
-                <FiCheck aria-hidden="true" className="text-success-green" /> 48-Hour Processing
+                <FiCheck aria-hidden="true" className="text-success-green" /> Fixed Upfront Fees
               </span>
               <span className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#D5DDE9] rounded-full">
-                <FiCheck aria-hidden="true" className="text-success-green" /> 99% Success Rate
+                <FiCheck aria-hidden="true" className="text-success-green" /> Ahmedabad &amp; Pune Offices
               </span>
             </div>
           </div>
@@ -226,7 +217,7 @@ export default function ServicesPage() {
                     {service.category}
                   </span>
                   <span className="px-2 py-1 bg-success-green/10 text-success-green font-ledger text-xs font-semibold rounded">
-                    ✓ {service.successRate}%
+                    ✓ Online
                   </span>
                 </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
+import { seoFaqs } from "@/lib/seo/services";
 
 const serviceData = {
   title: "MSME / Udyam Registration",
@@ -46,7 +47,7 @@ const serviceData = {
   faqs: [
     {
       question: "What is the classification criteria for MSME?",
-      answer: "Micro: Investment up to ₹1 Cr, Turnover up to ₹5 Cr. Small: Investment up to ₹10 Cr, Turnover up to ₹50 Cr. Medium: Investment up to ₹50 Cr, Turnover up to ₹250 Cr.",
+      answer: "From 1 April 2025: Micro: Investment up to ₹2.5 Cr, Turnover up to ₹10 Cr. Small: Investment up to ₹25 Cr, Turnover up to ₹100 Cr. Medium: Investment up to ₹125 Cr, Turnover up to ₹500 Cr.",
     },
     {
       question: "Is Udyam registration mandatory?",
@@ -60,6 +61,7 @@ const serviceData = {
       question: "How long is Udyam registration valid?",
       answer: "Udyam registration is permanent and doesn't require renewal. However, you should update details if there are changes in investment or turnover affecting classification.",
     },
+    ...seoFaqs("msme-registration"),
   ],
   relatedServices: [
     {

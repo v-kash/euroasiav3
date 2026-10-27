@@ -2,8 +2,8 @@ import ServicePageTemplate from '@/components/services/ServicePageTemplate';
 
 export const metadata = {
   title: 'Tax Exemption & Incentive Services in Ahmedabad',
-  description: 'Expert assistance for 80-IAC benefits, angel tax exemption, startup tax benefits, and government incentive schemes in Gujarat.',
-  keywords: ['80-IAC benefits', 'tax exemption startup', 'angel tax exemption', 'government subsidies Gujarat'],
+  description: 'Expert assistance for 80-IAC benefits, startup tax benefits, and government incentive schemes in Gujarat.',
+  keywords: ['80-IAC benefits', 'tax exemption startup', 'government subsidies Gujarat'],
   alternates: {
     canonical: '/services/tax-exemption',
   },
@@ -26,7 +26,6 @@ const serviceData = {
   ],
   included: [
     '80-IAC Tax Exemption Application',
-    'Angel Tax Exemption (Section 56)',
     'DPIIT Startup Recognition',
     'State Startup Policy Benefits',
     'Capital Gains Tax Exemption',
@@ -62,8 +61,8 @@ const serviceData = {
       answer: '80-IAC provides eligible startups with income tax exemption for 3 consecutive years out of 10 years from incorporation. The startup must be DPIIT recognized and meet certain criteria.',
     },
     {
-      question: 'Who is eligible for angel tax exemption?',
-      answer: 'DPIIT recognized startups can apply for angel tax exemption under Section 56(2)(viib). This exempts investments received from investors from being treated as income, subject to aggregate investment limits.',
+      question: 'Is angel tax exemption still available?',
+      answer: 'No separate exemption is needed any more. The angel-tax provisions under Section 56(2)(viib) were removed with effect from 1 April 2025, so share premium received by startups is no longer taxed under that section.',
     },
     {
       question: 'What subsidies are available under Gujarat Industrial Policy?',

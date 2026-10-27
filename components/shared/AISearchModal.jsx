@@ -20,7 +20,7 @@ const allSchemes = [
     name: 'MUDRA Loan', 
     fullName: 'Micro Units Development & Refinance Agency',
     category: 'Funding', 
-    amount: 'Up to ₹10 Lakhs', 
+    amount: 'Up to ₹20 Lakhs', 
     keywords: ['small business', 'working capital', 'shishu', 'kishore', 'tarun', 'loan', 'mudra'],
     description: 'Collateral-free loans for micro enterprises',
     href: '/services/mudra'
@@ -47,7 +47,7 @@ const allSchemes = [
     name: 'CGTMSE', 
     fullName: 'Credit Guarantee Fund Trust for MSEs',
     category: 'Funding', 
-    amount: 'Up to ₹5 Crore', 
+    amount: 'Up to ₹10 Crore', 
     keywords: ['collateral free', 'guarantee', 'loan', 'credit', 'bank', 'cgtmse'],
     description: 'Collateral-free credit facility for MSMEs',
     href: '/services/cgtmse'
