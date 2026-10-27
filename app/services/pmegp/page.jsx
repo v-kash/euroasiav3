@@ -11,7 +11,7 @@ const serviceData = {
   overviewTitle: "What is PMEGP?",
   overviewContent: [
     "PMEGP (Prime Minister's Employment Generation Programme) is a flagship credit-linked subsidy scheme by the Government of India for generating employment opportunities through establishment of micro-enterprises.",
-    "Under this scheme, you can get a margin-money subsidy of 15% to 35% of the project cost, depending on your category (general or special) and location (urban or rural). The maximum project cost is ₹50 Lakhs for manufacturing and ₹20 Lakhs for service sector.",
+    "Under this scheme, you can get a margin-money subsidy of 15% to 35% of the project cost, depending on your category (general or special) and location (urban or rural). The maximum project cost for new units is ₹50 Lakhs for manufacturing and ₹20 Lakhs for service/business.",
     "Euroasia Aquatic helps you navigate the entire PMEGP application process, from documentation to bank liaison, ensuring maximum chances of approval.",
   ],
   image: "/images/services/pmegp.png",
