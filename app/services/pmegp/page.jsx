@@ -6,7 +6,7 @@ import { seoFaqs } from "@/lib/seo/services";
 const serviceData = {
   title: "PMEGP Scheme",
   shortTitle: "PMEGP",
-  subtitle: "Prime Minister's Employment Generation Programme - 15–35% margin-money subsidy for new units with project cost up to ₹50 Lakhs (manufacturing) or ₹20 Lakhs (service)",
+  subtitle: "Prime Minister's Employment Generation Programme (PMEGP) – 15–35% margin-money subsidy for new units with project costs up to ₹50 lakh for manufacturing and ₹20 lakh for service/business activities.",
   tag: "GOVERNMENT SCHEME",
   overviewTitle: "What is PMEGP?",
   overviewContent: [
