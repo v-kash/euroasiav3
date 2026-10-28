@@ -1,4 +1,4 @@
-import { placeholderBlogs } from "@/lib/blog/placeholderPosts";
+import { allPosts } from "@/lib/blog/posts";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.euroasias.com";
 
@@ -56,7 +56,7 @@ export default async function sitemap() {
 
   // Built-in posts are served by /blog/[slug] when the database has no match, so list them too.
   const blogs = new Map(
-    Object.values(placeholderBlogs).map((blog) => [
+    allPosts.map((blog) => [
       blog.slug,
       blog.updatedAt || blog.publishedAt,
     ])

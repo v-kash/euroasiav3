@@ -104,10 +104,16 @@ console.log(hash);
 ├── lib/
 │   ├── db.js                   # Database connection
 │   ├── auth.js                 # Auth configuration
+│   ├── blog/posts/             # Blog posts, one file per post
 │   └── models/                 # Sequelize models
+├── docs/                       # Guides (see docs/BLOG_GUIDE.md)
 ├── public/                     # Static assets
 └── styles/                     # Global styles
 ```
+
+## Writing Blog Posts
+
+See **[docs/BLOG_GUIDE.md](docs/BLOG_GUIDE.md)** for how to add a new post and which Claude Code skills we use to plan and write them.
 
 ## Features
 

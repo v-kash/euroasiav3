@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm";
 import { FiCalendar, FiUser, FiClock, FiArrowLeft } from "react-icons/fi";
 import ShareButtons from "@/components/blog/ShareButtons";
 import RelatedPosts from "@/components/blog/RelatedPosts";
-import { placeholderBlogs } from "@/lib/blog/placeholderPosts";
+import { allPosts, getPost, getRelatedPosts } from "@/lib/blog/posts";
 
 export const revalidate = 3600;
 
@@ -53,7 +53,7 @@ export async function generateStaticParams() {
     });
     return blogs.map((blog) => ({ slug: blog.slug }));
   } catch (error) {
-    return Object.keys(placeholderBlogs).map((slug) => ({ slug }));
+    return allPosts.map(({ slug }) => ({ slug }));
   }
 }
 
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }) {
   let blog = await getBlog(slug);
 
   if (!blog) {
-    blog = placeholderBlogs[slug];
+    blog = getPost(slug);
   }
 
   if (!blog) {
@@ -115,14 +115,17 @@ export default async function BlogDetailPage({ params }) {
   let blog = await getBlog(slug);
 
   if (!blog) {
-    blog = placeholderBlogs[slug];
+    blog = getPost(slug);
   }
 
   if (!blog) {
     notFound();
   }
 
-  const relatedBlogs = await getRelatedBlogs(blog.category, slug);
+  let relatedBlogs = await getRelatedBlogs(blog.category, slug);
+  if (relatedBlogs.length === 0) {
+    relatedBlogs = getRelatedPosts(slug, blog.category);
+  }
   const readTime = estimateReadTime(blog.content);
 
   const articleSchema = {
