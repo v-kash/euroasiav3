@@ -1,0 +1,33 @@
+name: Deploy
+
+# Runs on every push to main; "Run workflow" in the Actions tab redeploys by hand.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# A second push waits for the running deploy instead of overlapping it.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+# Lets the temporary token read the repo, nothing more.
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    # Skip forks (e.g. the personal "vikas" remote), which don't have the server secrets.
+    if: github.repository == 'euroasiaspl/euroasiav2'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          envs: GH_TOKEN
+          script: bash ~/deploy-euroasia.sh

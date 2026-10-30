@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FiLinkedin, FiInstagram, FiFacebook } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { NavratriGreeting } from "@/components/navratri/NavratriAccents";
+import DiwaliGreeting from "@/components/diwali/DiwaliGreeting";
 
 const services = [
   {
@@ -188,6 +189,7 @@ export default function Footer() {
             . All rights reserved.
           </p>
           <NavratriGreeting />
+          <DiwaliGreeting />
         </div>
       </div>
     </footer>

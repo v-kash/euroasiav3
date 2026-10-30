@@ -1,11 +1,16 @@
+import Script from "next/script";
 import "@/styles/globals.css";
 import { displayFont, ledgerFont } from "@/styles/fonts";
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 // import FloatingAlerts from "@/components/shared/FloatingAlerts";
 import NavratriProvider from "@/components/navratri/NavratriProvider";
+import { DIWALI } from "@/components/diwali/config";
+import { diwaliHeadScript } from "@/components/diwali/headScript";
+import DiwaliIntro from "@/components/diwali/DiwaliIntro";
+import DiwaliLayer from "@/components/diwali/DiwaliLayer";
+import DiwaliOfferBar from "@/components/diwali/DiwaliOfferBar";
 import ContactModalProvider from "@/components/contact/ContactModal";
 import LeadTriggers from "@/components/contact/LeadTriggers";
 import MobileActionBar from "@/components/layout/MobileActionBar";
@@ -48,9 +53,28 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en-IN"
+      // The Diwali head script adds attributes to <html> before React loads.
+      suppressHydrationWarning
       className={`${displayFont.variable} ${ledgerFont.variable}`}
     >
       <head>
+        {DIWALI.enabled && (
+          <script dangerouslySetInnerHTML={{ __html: diwaliHeadScript() }} />
+        )}
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-72MEWT6M66"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-72MEWT6M66');
+          `}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -109,16 +133,18 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans antialiased">
+        <DiwaliIntro />
         {/* Site-wide contact popup, opened by <ContactButton> and <LeadTriggers>. */}
         <ContactModalProvider>
         {/* Seasonal layer; renders the children untouched outside Navratri (components/navratri/config.js). */}
         <NavratriProvider>
-          <div className="fixed top-0 left-0 right-0 z-50">
-            <AnnouncementBar />
+          {/* Sticky, not fixed: the header keeps its own space, so the page sits right whether the offer bar is showing or not. */}
+          <div className="sticky top-0 z-50">
+            <DiwaliOfferBar />
 
             <Navbar />
           </div>
-          <main className="min-h-screen pt-28 md:pt-32">
+          <main className="min-h-screen">
             {children}
           </main>
           <Footer />
@@ -127,6 +153,7 @@ export default function RootLayout({ children }) {
           {/* Keep off: its "approved/sanctioned" alerts are made up, which counts as a dark pattern. */}
           {/* <FloatingAlerts /> */}
           <LeadTriggers />
+          <DiwaliLayer />
         </NavratriProvider>
         </ContactModalProvider>
       </body>
