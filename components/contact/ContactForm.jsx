@@ -21,12 +21,15 @@ const services = [
   - defaultService preselects the dropdown (added as an option if it isn't one).
   - onSuccess lets the popup swap the form for its own thank-you view.
   - source records where the lead came from (see lib/leadSources.js).
+  - onActivity tells the mascot what's happening: "focus", "typing",
+    "invalid", "submitting", "success" or "error".
 */
 export default function ContactForm({
   idPrefix = "",
   defaultService = "",
   source = "contact-page",
   onSuccess,
+  onActivity,
   compact = false,
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,6 +50,7 @@ export default function ContactForm({
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
+    onActivity?.("submitting");
 
     try {
       const response = await fetch("/api/contact", {
@@ -61,12 +65,15 @@ export default function ContactForm({
         setSubmitStatus("success");
         reset();
         rememberLeadSent();
+        onActivity?.("success");
         onSuccess?.(data);
       } else {
         setSubmitStatus("error");
+        onActivity?.("error");
       }
     } catch (error) {
       setSubmitStatus("error");
+      onActivity?.("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -74,7 +81,9 @@ export default function ContactForm({
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit, () => onActivity?.("invalid"))}
+      onFocus={() => onActivity?.("focus")}
+      onInput={() => onActivity?.("typing")}
       className={compact ? "space-y-4" : "space-y-5"}
       noValidate
     >

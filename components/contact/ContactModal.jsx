@@ -12,7 +12,6 @@ import {
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
-  FiCheck,
   FiClock,
   FiMail,
   FiMapPin,
@@ -21,6 +20,8 @@ import {
 } from "react-icons/fi";
 import ContactForm from "@/components/contact/ContactForm";
 import { rememberOpenedThisVisit } from "@/components/contact/leadMemory";
+import Mascot, { MascotBubble } from "@/components/mascot/Mascot";
+import { useFormMascot } from "@/components/mascot/useFormMascot";
 
 const ContactModalContext = createContext(null);
 
@@ -81,13 +82,13 @@ const OFFICES = [
     mapUrl:
       "https://www.google.com/maps/place/EUROASIA+AQUATIC+PRIVATE+LIMITED/@23.109681,72.5375612,1061m/data=!3m2!1e3!4b1!4m6!3m5!1s0x44bab6b89e296a55:0xa926f5b90801b247!8m2!3d23.109681!4d72.5375612!16s%2Fg%2F11yq4sgjj2",
   },
-  {
-    label: "Branch Office · Pune",
-    address:
-      "201, D Gold House, Fergusson College Rd, Shivajinagar, Pune, Maharashtra 411005",
-    mapUrl:
-      "https://www.google.com/maps/place/EUROASIA+AQUATIC+PRIVATE+LIMITED+-+PUNE/@18.5273393,73.8428431,1094m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bc2c1a4ecc5d497:0xa6cf2e5a9522527f!8m2!3d18.5273393!4d73.8428431!16s%2Fg%2F11zh6qbvb5",
-  },
+  // {
+  //   label: "Branch Office · Pune",
+  //   address:
+  //     "201, D Gold House, Fergusson College Rd, Shivajinagar, Pune, Maharashtra 411005",
+  //   mapUrl:
+  //     "https://www.google.com/maps/place/EUROASIA+AQUATIC+PRIVATE+LIMITED+-+PUNE/@18.5273393,73.8428431,1094m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bc2c1a4ecc5d497:0xa6cf2e5a9522527f!8m2!3d18.5273393!4d73.8428431!16s%2Fg%2F11zh6qbvb5",
+  // },
 ];
 
 const label =
@@ -116,6 +117,7 @@ function ContactDialog({ options, onClose }) {
   const panelRef = useRef(null);
   const reduceMotion = useReducedMotion();
   const [sentName, setSentName] = useState(null);
+  const mascot = useFormMascot({ greetOnMount: true });
 
   const title = options.title || "Get a Free Consultation";
 
@@ -225,6 +227,18 @@ function ContactDialog({ options, onClose }) {
 
             {/* Intro */}
             <div className="relative bg-primary-navy px-6 pb-6 pt-7 pr-16 text-white sm:px-8 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:px-10 lg:pb-8 lg:pt-10">
+              {/* Mascot: peeks over the header's bottom edge on phones; sits
+                  above the title with a speech bubble on desktop. Hidden after
+                  sending, when the thank-you view shows its own. */}
+              {!sentName && (
+                <div className="absolute -bottom-8 right-4 z-10 lg:static lg:mb-6 lg:flex lg:items-center lg:gap-5">
+                  <Mascot
+                    mood={mascot.mood}
+                    className="h-14 w-14 flex-shrink-0 lg:h-20 lg:w-20"
+                  />
+                  <MascotBubble line={mascot.line} className="hidden lg:block" />
+                </div>
+              )}
               <p className="font-ledger text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
                 {options.eyebrow || options.service || "Free consultation"}
               </p>
@@ -244,9 +258,7 @@ function ContactDialog({ options, onClose }) {
             <div className="px-6 py-7 sm:px-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-10 lg:py-10">
               {sentName ? (
                 <div className="flex h-full flex-col items-center justify-center py-10 text-center">
-                  <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-success-green/10 text-success-green">
-                    <FiCheck aria-hidden="true" className="h-8 w-8" />
-                  </div>
+                  <Mascot mood="celebrate" className="mb-6 h-24 w-24" />
                   <p className="font-display text-2xl font-bold text-primary-navy">
                     Thank you, {sentName.split(" ")[0]}!
                   </p>
@@ -276,6 +288,7 @@ function ContactDialog({ options, onClose }) {
                     defaultService={options.service}
                     source={options.source || "popup"}
                     onSuccess={(data) => setSentName(data.name || "there")}
+                    onActivity={mascot.onActivity}
                     compact
                   />
                 </>

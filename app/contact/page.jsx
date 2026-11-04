@@ -1,5 +1,5 @@
 import PageHero from "@/components/shared/PageHero";
-import ContactForm from "@/components/contact/ContactForm";
+import ContactFormCard from "@/components/contact/ContactFormCard";
 import OfficesSection from "@/components/shared/OfficesSection";
 import { FiMapPin, FiPhone, FiMail, FiClock } from "react-icons/fi";
 
@@ -152,16 +152,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Contact Form */}
-            <div className="bg-white border-2 border-primary-navy rounded-2xl shadow-hard overflow-hidden">
-              <div className="bg-primary-navy px-6 sm:px-8 py-5">
-                <h2 className="font-display font-extrabold text-white text-2xl md:text-3xl tracking-[-0.03em]">
-                  Send Us a Message
-                </h2>
-              </div>
-              <div className="p-6 sm:p-8">
-                <ContactForm />
-              </div>
-            </div>
+            <ContactFormCard />
 
             {/* Contact Info & Map */}
             <div>
