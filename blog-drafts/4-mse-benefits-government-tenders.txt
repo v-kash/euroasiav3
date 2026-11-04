@@ -1,0 +1,170 @@
+STATUS: DRAFT - NOT READY TO PUBLISH. A qualified professional must check it first (see the list at the end).
+Planned publish date: 24 November 2026
+Facts checked up to: 31 October 2026
+
+POST FIELDS
+title: MSME Benefits in Government Tenders: EMD Exemption, Purchase Preference and Who Qualifies
+slug: msme-benefits-government-tenders-emd-exemption
+excerpt: Micro and small enterprises can get real advantages in central government tenders, but not every MSME or trader qualifies. Here is how EMD exemption and the L1+15% rule work.
+category: Tenders
+author: Euroasia Team
+publishedAt: 2026-11-24
+featuredImage: /images/blog/msme-benefits-government-tenders-emd-exemption.webp
+metaTitle: MSME Benefits in Government Tenders: EMD Exemption & L1+15%
+metaDescription: How do MSMEs benefit in government tenders? Learn how EMD exemption, the L1+15% rule and the 25% procurement target work, and who is not eligible for them.
+keywords: MSME benefits in government tenders, EMD exemption for MSME, L1 plus 15 percent MSE, public procurement policy for MSEs, Udyam tender benefits, bid security declaration
+
+Title options:
+  A (recommended): MSME Benefits in Government Tenders: EMD Exemption, Purchase Preference and Who Qualifies
+  B: EMD Exemption for MSMEs: Who Really Qualifies in Government Tenders?
+  C: Public Procurement Policy for MSEs Explained: 25% Target, L1+15% and More
+
+
+## ARTICLE
+
+Micro and small enterprises (MSEs) with Udyam registration can get real advantages in central government tenders. These include exemption from the Earnest Money Deposit (EMD) and a chance to match the lowest price and win part of an order. These benefits do not apply to every business: traders, medium enterprises and works contracts are key exceptions.
+
+This guide is for small manufacturers and service businesses who want to bid for government work. It explains how the benefits work, who qualifies, and why you should always read the tender document. Facts are as of November 2026.
+
+## Quick Summary
+
+- **25% target:** Central ministries, departments and public sector enterprises must buy at least 25% of their yearly procurement from MSEs.
+- **Sub-targets:** 4% from MSEs owned by SC/ST entrepreneurs and 3% from women-owned MSEs. These are part of the 25%.
+- **L1+15%:** MSEs within 15% of the lowest price from a non-MSE may match it, and can supply up to 25% of the tender.
+- **EMD:** MSEs can be exempt from paying bid security, but may need to sign a declaration.
+- **Who is left out:** Traders and distributors, medium enterprises and works contracts under this policy.
+- **Where it applies:** The central policy does not automatically apply to state government tenders.
+
+## What Is the Public Procurement Policy for MSEs?
+
+The Public Procurement Policy for Micro and Small Enterprises came into effect in 2012 and became mandatory from 1 April 2015. The 2018 amendment set the target at 25% of annual procurement by central government ministries, departments and public sector enterprises. A total of 358 items are reserved for exclusive purchase from MSEs.
+
+The system is being used at scale. Government data for 2024-25 shows ₹93,017.08 crore, or 43.58% of procurement by participating central public sector enterprises and departments, came from MSEs, as on 19 December 2025.
+
+**The important point is that the 25% is a yearly target for the buyer.** It does not reserve 25% of each tender for you. The same applies to the 4% and 3% sub-targets. You still have to meet the tender's conditions and quote a competitive price.
+
+## Who Qualifies for These Benefits?
+
+| Business | Qualifies under this policy? | Why |
+|---|---|---|
+| Micro or small manufacturer with Udyam | Generally yes | The policy is aimed at this group |
+| Micro or small service provider with Udyam | Generally yes, for services it offers itself | Check the tender conditions |
+| Medium enterprise | No | The policy covers micro and small enterprises |
+| Trader, distributor or sole agent | No | The FAQ excludes them |
+| Works contract bidder | No | The FAQ excludes works contracts |
+| Business with no Udyam registration | Not without registration | Udyam is the basis for claiming the benefit |
+
+Tenders can also require more. One public sector tender, for example, required the MSE to hold valid Udyam registration and be the manufacturer of the product offered. So having a certificate may not be enough on its own.
+
+You can learn more in our guide to [Udyam registration](/blog/msme-udyam-registration-benefits).
+
+## How Does the L1+15% Rule Work?
+
+L1 means the lowest price quoted in a tender. If the L1 bidder is not an MSE, then MSEs quoting within 15% of that price may be allowed to bring their price down to match L1. Those MSEs can then supply up to 25% of the tender value.
+
+**Here is a simple example.** These numbers are our own illustration:
+
+| Bidder | Type | Quoted price per unit |
+|---|---|---|
+| Company A | Non-MSE | ₹100 (L1) |
+| Your business | MSE | ₹112 |
+| Another firm | MSE | ₹120 |
+
+The 15% band goes up to ₹115. Your quote of ₹112 is inside it, so you may be asked to match ₹100. If you agree, you may supply up to 25% of the order at that price. The firm at ₹120 is outside the band.
+
+**So the real question is: can you make money at L1?** This benefit gives you a chance to match, and it does not raise the price you are paid. Work out your lowest acceptable price before you bid.
+
+## How Does EMD Exemption Work?
+
+Earnest Money Deposit, also called bid security, is an amount bidders may have to pay to show that they are serious. Under Rule 170 of the General Financial Rules, 2017, micro and small enterprises are among those exempted from submitting it.
+
+Here is what to keep in mind:
+
+- **You may have to sign a declaration.** Buyers can ask for a Bid Security Declaration in place of the deposit. It usually sets out what happens if you withdraw or change your bid during its validity period.
+- **Bids can have consequences.** A declaration is not a free pass. Backing out of a bid can lead to a suspension from future tenders, depending on the terms.
+- **Upload your proof.** Provide your Udyam certificate with the bid, if asked.
+- **Read the tender's conditions.** Some tenders specify which MSEs qualify, for example only the manufacturer of the offered product.
+- **Performance security is separate.** Being exempt from EMD does not automatically mean you are exempt from any security required after you win.
+
+GeM's seller FAQ also says registered MSMEs get EMD exemption in bids, subject to prerequisites. Check the conditions shown on the bid itself. Read our guide to [GeM seller fees](/blog/gem-seller-fees-charges-2026) to see the costs of selling on GeM.
+
+## Does This Apply to State Government Tenders?
+
+Not automatically. The ministry's FAQ says the central policy does not apply to state government ministries, departments or public sector enterprises. Many states have their own procurement rules and MSME benefits.
+
+So if you are in Gujarat or Maharashtra and bidding for a state department tender, check that state's procurement rules and the tender document. Do not assume that the central policy's benefits will apply.
+
+## Before You Bid: A Simple Checklist
+
+- [ ] Does your Udyam certificate show the right activity (NIC code) for this product or service?
+- [ ] Is your business micro or small under the current limits?
+- [ ] Are you the manufacturer or service provider, or only a trader?
+- [ ] Is this a central government buyer or a state one?
+- [ ] What does the tender say about EMD and MSE preference?
+- [ ] Do you need to sign a Bid Security Declaration?
+- [ ] Do you meet the turnover, experience and quality conditions?
+- [ ] What is the lowest price at which you can profitably match L1?
+- [ ] Can you deliver on time if you win?
+
+## Common Mistakes to Avoid
+
+1. **Thinking Udyam guarantees orders.** It helps you claim benefits, but you must still meet the tender's conditions.
+2. **Bidding as a trader and claiming MSE benefits.** Traders are excluded under this policy.
+3. **Not updating your Udyam details.** Your activity codes should match what you are offering.
+4. **Treating 25% as your reserved share.** It is the buyer's yearly target.
+5. **Matching L1 without doing your costing.** Winning at a loss does not help you.
+6. **Assuming all tenders work the same way.** Always read the specific tender document.
+
+## Frequently Asked Questions
+
+**Are all MSMEs exempt from EMD in government tenders?**
+No. The exemption is for micro and small enterprises, not medium enterprises. Traders may also fall outside it, and individual tenders can set further conditions. You may need to sign a Bid Security Declaration in place of paying the deposit. Check the tender document before you bid.
+
+**What is the L1+15% rule for MSEs?**
+If the lowest bidder is not an MSE, MSEs quoting within 15% of that lowest price may be allowed to match it. They can then supply up to 25% of the tender value. You must accept the lowest price, so this does not mean you are paid more.
+
+**Can traders claim benefits under the procurement policy?**
+No. The Ministry of MSME's FAQ says traders, distributors and sole agents are excluded, along with works contracts. A trading business with Udyam registration should not assume it can claim this policy's benefits. Read the tender and the current FAQ.
+
+**Does the policy apply to state government tenders?**
+Not automatically. The ministry's FAQ says the central policy does not apply to state government ministries, departments or public sector enterprises. Many states have their own rules and benefits, so check the relevant state's procurement policy and tender conditions.
+
+**What is the 25% procurement target?**
+Central ministries, departments and public sector enterprises must buy at least 25% of their yearly procurement from micro and small enterprises, including 4% from SC/ST-owned and 3% from women-owned MSEs. This is a yearly target for the buyer, and it does not reserve a share of each tender.
+
+## Conclusion
+
+MSME benefits in government tenders are useful, but they work only if you truly qualify and can deliver at the winning price. Get your Udyam details right, confirm that the tender applies to you, and work out your lowest price before you bid.
+
+Want help finding and preparing for government tenders? See our [tender assistance](/services/tender-assistance), [GeM registration](/services/gem-registration) and [MSME registration](/services/msme-registration) services, or [contact us for a free consultation](/contact).
+
+*This article is general information as of November 2026, not legal or procurement advice. Procurement rules and tender conditions vary and can change. Check the tender document and the latest official rules before bidding.*
+
+**Sources**
+
+- Ministry of MSME FAQs on the Public Procurement Policy: https://www.dcmsme.gov.in/FAQs-PPP_25032022.pdf
+- MSME Public Procurement Policy portal: https://ppp.msme.gov.in/PPP_about.aspx/PPP_MSEs_SCST_Procurement.aspx
+- PIB, Year End Review 2025, Ministry of MSME: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2209712&reg=3&lang=2
+- Department of Expenditure, Bid Security/EMD: https://doe.gov.in/files/circulars_document/Bid_Security_Earnest_Money_Deposit.pdf
+- Oil India tender corrigendum, example of tender conditions: https://www.oil-india.com/files/oldtender/national/CORR1_SSI5004P24.pdf
+- GeM seller FAQ: https://gem.gov.in/userFaqs/seller
+
+
+================================================================
+REMOVE EVERYTHING BELOW BEFORE PUBLISHING
+================================================================
+
+WHAT THE REVIEWER MUST CHECK
+1. Procurement policy facts: these come from search results of the Ministry of MSME FAQ, which I could not open directly. Please read the FAQ and the 2018 order.
+2. Service providers: I said "generally yes". Please confirm this, along with the traders exclusion, as these rules can vary. Also check whether later guidance changed the treatment of retail or wholesale traders with Udyam.
+3. EMD exemption: Rule 170 of GFR 2017 was amended later, and I could not read the current wording. Confirm who is covered, including startups. Please also check the Manual for Procurement and any 2026 update.
+4. Bid Security Declaration consequences, including suspension: confirm the wording.
+5. Performance security comment: from my general knowledge. Please confirm.
+6. Procurement data of ₹93,017.08 crore and 43.58%: confirm against the PIB review.
+7. Gujarat and Maharashtra state rules: if you can check them, add one line on each. Your customers are mostly in these states, so this would make the post more useful.
+8. L1+15% example: this is my own illustration of the rule. Confirm that it reflects how tender evaluation works in practice, including the case where several MSEs are in the band.
+
+BEFORE IT GOES LIVE
+- Keep "Euroasia Team" as author unless a named expert reviewed it.
+- Make the image: public/images/blog/msme-benefits-government-tenders-emd-exemption.webp
+- Publish Blog 3 first, because this post links to it.

@@ -1,0 +1,171 @@
+STATUS: DRAFT - NOT READY TO PUBLISH. A qualified professional must check it first (see the list at the end).
+Planned publish date: 17 November 2026
+Facts checked up to: 31 October 2026
+
+POST FIELDS
+title: GeM Seller Fees in 2026: What You Really Pay to Sell on Government e-Marketplace
+slug: gem-seller-fees-charges-2026
+excerpt: GeM registration is free, and caution money has been discontinued. Here is what sellers can still pay, including vendor assessment and transaction charges, with worked examples.
+category: Tenders
+author: Euroasia Team
+publishedAt: 2026-11-17
+featuredImage: /images/blog/gem-seller-fees-charges-2026.webp
+metaTitle: GeM Seller Fees 2026: Caution Money, Vendor Assessment & Charges
+metaDescription: GeM registration is free, but what else do sellers pay? See the 2026 position on caution money, vendor assessment and transaction charges.
+keywords: GeM registration fee, GeM caution money, GeM vendor assessment fee, GeM transaction charges, GeM annual milestone charge, GeM seller charges 2026
+
+Title options:
+  A (recommended): GeM Seller Fees in 2026: What You Really Pay to Sell on Government e-Marketplace
+  B: Is GeM Registration Free? Caution Money, Vendor Assessment and Other Charges
+  C: GeM Caution Money Discontinued: What Sellers Still Pay in 2026
+
+
+## ARTICLE
+
+Registering as a seller on the Government e-Marketplace (GeM) is free, and GeM's own FAQ says the caution money deposit was discontinued in 2025. Depending on what you sell and how much you sell, you may still pay vendor assessment fees, transaction charges on larger orders, and an annual milestone charge.
+
+This guide is for small manufacturers, traders and service providers who are thinking about selling to government buyers and have heard conflicting numbers. It separates what GeM charges from what a consultant might charge you. Facts are as of November 2026.
+
+If you are new to GeM, first read our [step-by-step GeM registration guide](/blog/gem-portal-registration-guide).
+
+## Quick Summary
+
+- **Registration:** Free.
+- **Caution money:** Discontinued in 2025, and earlier deposits can be withdrawn from your dashboard.
+- **Vendor assessment:** Applies mainly to original equipment manufacturers (OEMs), unless they are exempt.
+- **Transaction charge:** Nil on orders up to ₹10 lakh, and 0.30% above this, with a ₹3 lakh cap.
+- **Annual milestone charge:** ₹10,000 plus GST, once you cross ₹20 lakh of sales in a financial year.
+
+## GeM Fees at a Glance
+
+| Charge | Who pays | Amount | When |
+|---|---|---|---|
+| Seller registration | All sellers | Free | At registration |
+| Caution money | No one, now | Discontinued in 2025 | Withdraw any earlier deposit from your dashboard |
+| Vendor assessment | OEMs that are not exempt | As per GeM's current policy | Before you can sell as an OEM |
+| Transaction charge | Sellers | Nil up to ₹10 lakh, 0.30% above, capped at ₹3 lakh | On eligible orders |
+| Annual milestone charge | Sellers crossing ₹20 lakh in a financial year | ₹10,000 plus GST | Once the sales threshold is reached |
+
+Many older blogs still list caution money slabs of ₹5,000, ₹10,000 and ₹25,000. Those were the earlier rules. If someone tells you to pay caution money now, check GeM's seller FAQ and your own dashboard first.
+
+## Did GeM Really Remove Caution Money?
+
+Yes, according to GeM's seller FAQ, which says the provision was discontinued in 2025. A Press Information Bureau release on GeM's 9th Foundation Day also lists the removal of caution money among its reforms.
+
+**If you paid caution money earlier,** the FAQ says you can withdraw it through Dashboard, then Manage Caution Money Account. It is worth checking, as you may have forgotten about it.
+
+## Do You Need a Vendor Assessment?
+
+Vendor assessment is a check of a seller's capacity and credentials by a third-party agency, which the GeM FAQ names as RITES Limited. It matters mainly if you are registering as an OEM, which means you make the product under your own brand.
+
+| Your role | Vendor assessment |
+|---|---|
+| OEM, not exempt | Generally required |
+| OEM in an exempt category | You can request an exemption from your profile |
+| Reseller with OEM authorisation | Often not needed. Check your category |
+| Service provider | Check the service category rules |
+
+The FAQ says exemption requests are validated within 2 working days, and an exemption is valid for 3 years by default, or until the supporting document expires. The exempt categories include OEMs with turnover of ₹500 crore or more, among others.
+
+**How much does it cost?** Check the latest Vendor Validation Policy on GeM for current slabs. Government releases say assessment fees have been reduced significantly, and many websites still quote old figures, including ₹11,200 plus GST. Do not budget from an old number. The FAQ also says the fee may be refunded if your case turns out to need an exemption only.
+
+## How Much Are GeM Transaction Charges?
+
+Government releases say that the charge fell from 0.50% to 0.30%, and that 97% of orders now attract no transaction fee. Here is what that means in practice:
+
+| Order value | Charge | Worked example |
+|---|---|---|
+| Up to ₹10 lakh | Nil | ₹8 lakh order: ₹0 |
+| Above ₹10 lakh and up to ₹10 crore | 0.30% of order value | ₹25 lakh order: ₹7,500 |
+| Above ₹10 crore | Flat ₹3 lakh | ₹15 crore order: ₹3,00,000 |
+
+The examples are our own illustrations, and GST and other details can apply. So include this cost when you price a large bid.
+
+**The annual milestone charge is separate.** GeM's FAQ says it is ₹10,000 plus GST, once your sales reach ₹20 lakh in a financial year. Transaction charges are payable in addition to it, where they apply. It also says 2% TDS applies once the combined value of these charges exceeds ₹30,000 in a financial year.
+
+## What Do You Need to Register?
+
+Sellers are usually asked for these details:
+
+- [ ] PAN of the business, and of the authorised person
+- [ ] GST registration details, where they apply
+- [ ] Bank account details
+- [ ] Udyam certificate, if you are an MSME
+- [ ] Business address proof
+- [ ] Brand or OEM authorisation documents, if they apply
+- [ ] Income tax return details, if you want turnover-based features
+
+GeM's FAQ says Aadhaar is no longer mandatory for seller registration, and that you can use personal PAN to verify your identity.
+
+## What About Consultant Fees?
+
+GeM does not require you to use a consultant. Many businesses do hire one for catalogue work, bid preparation and training, and that is a legitimate choice, as it saves time. But it should be clear what you are paying for.
+
+Before you pay anyone, ask:
+
+- Which part of this goes to GeM, and which part is your service fee?
+- What exactly will you do: registration only, cataloguing or bid support?
+- Can you show me the GeM rule for this charge?
+
+Our view is that an honest consultant, including us, should be happy to answer these questions.
+
+## Common Mistakes to Avoid
+
+1. **Paying caution money after it was discontinued.** Check first.
+2. **Forgetting to withdraw an older deposit.** It may still be sitting in your account.
+3. **Registering as an OEM when you are a reseller.** Choose the correct role, as it changes your requirements.
+4. **Pricing a large bid without charges.** Include transaction charges in your margin.
+5. **Using old fee tables.** Check GeM's current policy.
+6. **Stopping at registration.** You also need an accurate catalogue and a good bid process to get orders.
+
+## Frequently Asked Questions
+
+**Is GeM registration free?**
+Yes. GeM's seller FAQ says there are no charges for getting registered. Other charges can apply later, such as vendor assessment, transaction charges and the annual milestone charge. A consultant's fee is separate, and it does not go to GeM.
+
+**Is caution money still required on GeM?**
+No. GeM's seller FAQ says the provision was discontinued in 2025. If you deposited money earlier, you can withdraw it through Dashboard, then Manage Caution Money Account. Check your own dashboard if anyone tells you otherwise.
+
+**What is the GeM transaction charge?**
+Orders up to ₹10 lakh have no transaction charge. Orders above that attract 0.30% of order value, and the charge is capped at ₹3 lakh for orders above ₹10 crore. Government releases say 97% of orders attract no fee. Check GeM's current revenue policy.
+
+**Who needs a vendor assessment on GeM?**
+It mainly applies to original equipment manufacturers unless they fall into an exempt category. RITES Limited is the agency named in GeM's FAQ. Resellers with OEM authorisation often do not need one, but check the current Vendor Validation Policy for your category.
+
+**What is the annual milestone charge on GeM?**
+It is a flat ₹10,000 plus GST, charged once a seller crosses ₹20 lakh of sales in a financial year, according to GeM's FAQ. Transaction charges are payable in addition to it, where they apply. Check your own dashboard for your position.
+
+## Conclusion
+
+Selling on GeM costs less than many older articles suggest. Registration is free, caution money has gone, and most orders carry no transaction fee. Your real costs depend on your role and order size, so check the current GeM policy and include any charges in your bid price.
+
+Want help getting started on GeM? See our [GeM registration services](/services/gem-registration) or [tender assistance](/services/tender-assistance), or [contact us for a free consultation](/contact).
+
+*This article is general information as of November 2026, not legal or procurement advice. GeM policies can change. Check the latest terms on gem.gov.in before relying on any figure.*
+
+**Sources**
+
+- GeM seller FAQ: https://gem.gov.in/userFaqs/seller
+- PIB, GeM 9th Foundation Day: https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2154136&reg=48&lang=2
+- PIB, GeM completes a decade: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2296138&reg=48&lang=2
+- PIB, GeM factsheet: https://www.pib.gov.in/FactsheetDetails.aspx?id=150812&NoteId=150812&ModuleId=16&reg=3&lang=1
+- GeM fees and documents, Udyog Growth: https://udyoggrowth.com/gem-registration-fees-documents/
+
+
+================================================================
+REMOVE EVERYTHING BELOW BEFORE PUBLISHING
+================================================================
+
+WHAT THE REVIEWER MUST CHECK
+1. Vendor assessment fees: sources conflict heavily, so I left the amounts out. Check the latest Vendor Validation Policy. If you can get the current slabs, add them, because this is what readers want most.
+2. Transaction charge slabs: the exact bands come from one commercial page citing Revenue Policy v1.5 and from PIB. Check the latest revenue policy, including whether the charge applies to the whole order value, and any exempt sellers.
+3. Exempt categories, including the ₹500 crore turnover example and reliefs for startups and MSEs: confirm against the current policy.
+4. Reseller and service provider rows: based on a commercial page. Confirm them.
+5. Annual milestone charge and 2% TDS: from GeM's FAQ. Confirm they are still current.
+6. Documents list: combines GeM's FAQ with a commercial page. Note the FAQ says Aadhaar is no longer mandatory, which differs from the other page.
+7. The "Fees at a glance" row for caution money: GeM's FAQ also mentions older slabs elsewhere, so please read the current wording.
+
+BEFORE IT GOES LIVE
+- YOUR OLD BLOG, gem-portal-registration-guide, dates from 2024 and has only about 330 words. The project rule says not to edit older posts, and your SEO audit says to rewrite them. Someone must decide which rule wins. Please check that it does not conflict with the facts here.
+- Keep "Euroasia Team" as author unless a named expert reviewed it.
+- Make the image: public/images/blog/gem-seller-fees-charges-2026.webp

@@ -1,0 +1,157 @@
+STATUS: DRAFT - NOT READY TO PUBLISH. A qualified professional must check it first (see the list at the end).
+Planned publish date: 12 November 2026
+Facts checked up to: 31 October 2026
+
+POST FIELDS
+title: IEC Code in 2026: Who Needs It, Fee, Documents and the Yearly Update
+slug: iec-code-registration-guide-2026
+excerpt: An Import Export Code is a one-time registration for ₹500, but it needs a free update every year. Here is who needs one, how to apply, and what happens if you miss the update.
+category: Certifications
+author: Euroasia Team
+publishedAt: 2026-11-12
+featuredImage: /images/blog/iec-code-registration-guide-2026.webp
+metaTitle: IEC Code in 2026: Who Needs It, Fee, Documents & Yearly Update
+metaDescription: Need an IEC code in 2026? Learn who needs an Import Export Code, the ₹500 DGFT fee, the documents, how to apply, and what happens if you miss the yearly update.
+keywords: IEC code, Import Export Code registration, IEC registration fee, IEC annual update, DGFT IEC, IEC deactivated, IEC for service exporters
+
+Title options:
+  A (recommended): IEC Code in 2026: Who Needs It, Fee, Documents and the Yearly Update
+  B: How to Get an Import Export Code in India: A Simple 2026 Guide
+  C: IEC Deactivated? How the Yearly Update Works and How to Fix It
+
+
+## ARTICLE
+
+An Importer Exporter Code (IEC) is a registration from the Directorate General of Foreign Trade (DGFT), and most businesses need it to import or export goods from India. The government fee is ₹500, and it is a one-time fee. The code has no expiry date, but you must confirm your details on the DGFT portal every year between 1 April and 30 June.
+
+This guide is for small manufacturers, traders, service exporters and new exporters who want to go global without paperwork surprises. It explains who needs an IEC, what to prepare, how to apply and how to avoid deactivation. Facts are as of November 2026.
+
+## Quick Summary
+
+- **What it is:** A code from DGFT that identifies your business for import and export.
+- **Government fee:** ₹500, once.
+- **Validity:** No expiry, but it needs a yearly update.
+- **Yearly update:** 1 April to 30 June every year, even if nothing has changed. There is no charge during this window.
+- **If you miss it:** Your IEC can be deactivated, which can stop your shipments at customs.
+
+## Who Needs an IEC?
+
+| Your situation | Do you need an IEC? |
+|---|---|
+| Importing goods for your business | Generally yes |
+| Exporting goods from your business | Generally yes |
+| Importing goods only for personal use | Generally no |
+| Central or State Government departments | Exempt categories apply |
+| Exporting services | Depends on your situation (see below) |
+
+**Service exporters:** Rules for service exporters often confuse people. Many software, design and consulting businesses receive foreign payments and ask whether they need an IEC. An IEC is typically needed to claim certain foreign trade benefits, and some banks ask for it. Check with your bank and adviser for your specific case.
+
+**Does your bank need it?** Even when the rules allow you to go without one, your bank may ask for it when processing foreign payments. It is worth asking early.
+
+## What Documents Do You Need?
+
+Keep these ready before you start:
+
+- [ ] PAN of the business or proprietor
+- [ ] Proof of business address, such as a rent agreement or utility bill
+- [ ] Bank details, with a cancelled cheque or bank certificate
+- [ ] Entity documents, such as a Certificate of Incorporation or partnership deed, where they apply
+- [ ] Digital Signature Certificate, or Aadhaar-based verification, for signing the application
+
+A single PAN can have only one IEC, so check whether your business already has one. If you need a digital signature, our guide on the [Digital Signature Certificate](/blog/digital-signature-certificate-dsc-guide) explains who needs one and how to get it.
+
+## How Do You Apply for an IEC?
+
+1. **Register on the DGFT portal.** Create a user account at dgft.gov.in.
+2. **Choose the option to apply for an IEC.** Enter your business and bank details.
+3. **Upload your documents.** Make sure your names and addresses match your PAN and bank records.
+4. **Pay the ₹500 fee online.**
+5. **Sign the application.** Use your digital signature or Aadhaar-based verification.
+6. **Download your IEC.** Keep a copy with your business records.
+
+Processing can be quick when your details match, though no one should promise a fixed time for every case.
+
+## How Does the Yearly IEC Update Work?
+
+Every IEC holder must confirm or update their details on the DGFT portal between 1 April and 30 June each year, even when nothing has changed. If you have no changes, you still need to confirm this.
+
+**This is the part many businesses forget.** People hear "lifetime registration" and assume there is nothing more to do. Add this to your yearly compliance calendar now.
+
+### What happens if you miss the update?
+
+Your IEC can be deactivated. Published guidance warns that customs may not clear your shipments, and pending export benefit applications can be held up. The window for 2026 closed on 30 June 2026. If you missed it, log in to the DGFT portal now and check your IEC status.
+
+The IEC can generally be activated again once you complete the update. Sources differ on whether a late update carries a ₹200 charge, so check what the portal shows you.
+
+**Check your IEC before you need it.** The worst time to find out it was deactivated is when a shipment is waiting.
+
+## What Comes After the IEC?
+
+An IEC alone does not make your business ready to export. Depending on what you do, you may also need:
+
+- **GST registration and related filings.** Exports have their own GST treatment. See our [GST and tax compliance services](/services/gst-compliance).
+- **An Authorised Dealer (AD) code.** Exporters of goods generally register this bank code with customs.
+- **Export promotion council membership (RCMC).** This helps if you want to claim certain benefits.
+- **Product-specific approvals.** Food, medicine and other regulated goods may need other licences.
+- **Udyam registration.** It can help you access MSME benefits. See our guide on [Udyam registration](/blog/msme-udyam-registration-benefits).
+
+## Common Mistakes to Avoid
+
+1. **Treating IEC as a once-only job.** The yearly update is required, even if nothing has changed.
+2. **Mismatched details.** Your name, address and bank details should match across records.
+3. **Using an old email or mobile number.** You may miss DGFT messages or be unable to log in.
+4. **Not updating after a change.** If your address, bank or partners change, update your IEC too.
+5. **Thinking IEC replaces other licences.** Some goods need separate approvals.
+6. **Paying well above the fee without asking why.** The government fee is ₹500. Ask what any extra charge covers. Consultants charge for their own service, and this should be clearly shown separately.
+
+## Frequently Asked Questions
+
+**What is the government fee for an IEC?**
+The DGFT application fee for a new IEC is ₹500, paid once. There is no yearly fee for confirming your details during the April to June window. A consultant's charges are separate from this, and they should be clearly explained to you.
+
+**Does an IEC expire?**
+No, the code has no expiry date. But you must confirm or update your details on the DGFT portal between 1 April and 30 June each year. If you miss this, the code can be deactivated until you complete the update.
+
+**Can I export without an IEC?**
+Most businesses exporting goods need one. Some exempt categories exist, such as government departments, and the position for service exporters can differ. Check your situation with your bank or adviser before your first shipment or foreign payment, as the answer may depend on your facts.
+
+**How do I reactivate a deactivated IEC?**
+Log in to the DGFT portal and complete the pending update. The code can generally be activated again after this. Sources differ on whether a charge applies for a late update, so check what the portal shows when you file.
+
+**Can one business have more than one IEC?**
+No. An IEC is linked to a PAN, so one PAN can have only one IEC. If your business operates from several locations, these are usually added as branches. Check the DGFT portal for how to add a branch.
+
+## Conclusion
+
+Getting an IEC is usually simple, and the cost is low. The real risk comes later, when a business forgets the yearly update and finds out at customs. Apply with matching details, keep your login current, and add 1 April to 30 June to your calendar every year.
+
+Want help with your IEC application or a deactivated code? See our [IEC registration services](/services/iec-registration), or [contact us for a free consultation](/contact).
+
+*This article is general information as of November 2026, not legal or trade advice. DGFT rules can change. Check the latest notices at dgft.gov.in before you apply.*
+
+**Sources**
+
+- Directorate General of Foreign Trade: https://www.dgft.gov.in/
+- IEC fee, Skydo: https://www.skydo.com/blog/iec-code-charges
+- IEC fee, Xflow: https://www.xflowpay.com/blog/iec-code-fees
+- IEC yearly update and deactivation, Targo Legal: https://targolegal.com/blog/import-export-code-iec-2026-who-needs-it-how-to-apply-on-dgft-the-annual-update-rule-2/
+- IEC annual update, JustStart: https://juststart.co.in/blog/iec-annual-update/
+
+
+================================================================
+REMOVE EVERYTHING BELOW BEFORE PUBLISHING
+================================================================
+
+WHAT THE REVIEWER MUST CHECK
+1. Official DGFT rules: I could not open DGFT's own pages. Every fact here comes from secondary sources, which goes against the Euroasia content rule on official sources. Please check the Foreign Trade Policy, the Handbook of Procedures (reported as para 2.05 and 2.07), and replace the sources.
+2. Service exporters: this is the least clear point. Sources disagree, so I kept the wording general. Please write the exact position if you can.
+3. Late update charge: sources conflict on ₹200 or nothing. Please confirm it.
+4. Reactivation: confirm the steps, and whether customs really stops clearance.
+5. Exempt categories list, including personal use: confirm the list.
+6. One IEC per PAN, and branch details: from my own knowledge. Please confirm.
+7. AD code, RCMC and the digital signature or Aadhaar route: from my own knowledge. Please confirm each one.
+
+BEFORE IT GOES LIVE
+- YOUR SERVICE PAGE says "Receive IEC certificate (same day possible)". Make sure this is accurate, because the blog does not promise a timeline.
+- Keep "Euroasia Team" as author unless a named expert reviewed it.
+- Make the image: public/images/blog/iec-code-registration-guide-2026.webp

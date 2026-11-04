@@ -1,0 +1,166 @@
+STATUS: DRAFT - NOT READY TO PUBLISH. A qualified CA must check it first (see the list at the end).
+Planned publish date: 3 November 2026
+Facts checked up to: 31 October 2026
+
+POST FIELDS
+title: GSTR-9 for FY 2025-26: Who Must File and What to Check Before 31 December
+slug: gstr-9-annual-return-fy-2025-26
+excerpt: GSTR-9 for FY 2025-26 is due by 31 December 2026 for most businesses above ₹2 crore. Here is who must file, what changed, and how to get your numbers right.
+category: Tax
+author: Euroasia Team
+publishedAt: 2026-11-03
+featuredImage: /images/blog/gstr-9-annual-return-fy-2025-26.webp
+metaTitle: GSTR-9 for FY 2025-26: Who Must File, Due Date & Checklist
+metaDescription: GSTR-9 for FY 2025-26 is due by 31 December 2026. Check who must file, the ₹2 crore and ₹5 crore limits, late fees, what changed and a simple checklist.
+keywords: GSTR-9 FY 2025-26, GSTR-9 due date, GSTR-9 turnover limit, GSTR-9C applicability, GST annual return, GSTR-9 late fee
+
+Title options:
+  A (recommended): GSTR-9 for FY 2025-26: Who Must File and What to Check Before 31 December
+  B: GST Annual Return FY 2025-26: Due Date, Limits and Common Mistakes
+  C: Do You Need to File GSTR-9 This Year? A Simple Guide for Businesses
+
+
+## ARTICLE
+
+GSTR-9 is the annual return under the Goods and Services Tax (GST). For FY 2025-26, registered regular taxpayers with aggregate turnover above ₹2 crore must file it by 31 December 2026, unless the government extends the date. Businesses with turnover above ₹5 crore must also file GSTR-9C, a reconciliation statement.
+
+This guide is for Indian business owners and accountants preparing for this year's filing. It covers who must file, what changed this year, the late fees, and what to check before you submit. All facts are as of November 2026.
+
+**There is an earlier date to watch.** You can generally claim input tax credit (ITC) for FY 2025-26 only up to 30 November 2026, or the date you file GSTR-9, whichever comes first. So start your reconciliation now. It should not wait until December.
+
+## Quick Summary
+
+- **GSTR-9:** Required above ₹2 crore of aggregate turnover for regular taxpayers. Exempt up to ₹2 crore.
+- **GSTR-9C:** Required above ₹5 crore, and now self-certified.
+- **Due date:** 31 December 2026, unless extended.
+- **ITC cut-off:** 30 November 2026, or your GSTR-9 filing date if earlier.
+- **Before you can file:** All GSTR-1 and GSTR-3B returns for the year must be filed.
+- **No revision:** You cannot revise GSTR-9 after you file it, so check it carefully first.
+
+## Who Must File GSTR-9 for FY 2025-26?
+
+| Aggregate turnover in FY 2025-26 | GSTR-9 | GSTR-9C |
+|---|---|---|
+| Up to ₹2 crore | Not required | Not required |
+| Above ₹2 crore and up to ₹5 crore | Required | Not required |
+| Above ₹5 crore | Required | Required |
+
+The ₹2 crore exemption comes from Notification 15/2025-Central Tax. Note three details:
+
+- **Aggregate turnover is counted at PAN level across India.** If one PAN has registrations in several states, add them together to test the limit.
+- **Each GSTIN files its own return.** A business registered in Gujarat and Maharashtra files separately for each.
+- **This is the regular taxpayer rule.** Composition taxpayers and other special categories have different rules, so check yours.
+
+## What Changed in GSTR-9 This Year?
+
+The filing was enabled on the GST portal from 8 October 2026. Published guidance points to these things to watch:
+
+### New reporting for import credit
+A new row, Table 8H1, covers import IGST for FY 2025-26 that was claimed in the next year. IGST is the Integrated GST charged on imports and inter-state supplies.
+
+### Credit of an earlier year
+Table 6A1 is for credit from an earlier year that was claimed this year. This came with the revised form, so it is not new for FY 2025-26, but it is easy to miss.
+
+### Mid-year rate change
+GST rates changed on 22 September 2025. If the rate on your product changed that day, published guidance says your HSN summary in Table 17 needs two lines, one up to 21 September and one from 22 September. HSN is the product classification code. Businesses above ₹5 crore report six-digit codes, and others report four-digit codes.
+
+### Row-wise credit reversals
+Table 7 now asks for reversals under Rules 37, 37A and 38 in separate rows. Keep your working for each one.
+
+## What Is the Late Fee for GSTR-9?
+
+| Turnover in the state or UT | Late fee per day (CGST + SGST) | Maximum |
+|---|---|---|
+| Up to ₹5 crore | ₹50 | 0.04% of state turnover |
+| Above ₹5 crore and up to ₹20 crore | ₹100 | 0.04% of state turnover |
+| Above ₹20 crore | ₹200 | 0.5% of state turnover |
+
+The fee keeps adding up every day until you file, up to the maximum. For a business in the first row, filing 30 days late would cost ₹1,500, subject to the maximum.
+
+## How to Prepare Your GSTR-9: A Simple Checklist
+
+**In November**
+
+- [ ] Confirm that every GSTR-1 and GSTR-3B for the year is filed
+- [ ] Match your purchase register with GSTR-2B and find missing credit
+- [ ] Claim eligible ITC of FY 2025-26 before the cut-off
+- [ ] Follow up with suppliers who have not reported their invoices
+- [ ] Check for supplier payments overdue under Rule 37
+
+**By early December**
+
+- [ ] Match sales in your books with GSTR-1 and GSTR-3B
+- [ ] Review your credit notes and amendments
+- [ ] Reconcile ITC in your books, GSTR-3B and GSTR-2B
+- [ ] Prepare the HSN summary, including the split at 22 September 2025 if it applies
+- [ ] List all reversals under Rules 37, 37A and 38
+
+**Before filing**
+
+- [ ] Compare your figures with your audited or final accounts
+- [ ] Pay any extra tax through Form DRC-03
+- [ ] Prepare GSTR-9C if your turnover is above ₹5 crore
+- [ ] Have someone other than the preparer review the return
+- [ ] File before the last few days, when portals can be slow
+
+## Common Mistakes to Avoid
+
+1. **Starting in late December.** By then, the ITC cut-off has already passed.
+2. **Treating GSTR-9 as a copy of your returns.** It should agree with your books. Differences need to be explained or corrected.
+3. **Assuming you can correct it later.** It cannot be revised after filing.
+4. **Missing the mid-year rate split.** Your HSN summary may need two lines for one product.
+5. **Testing the limit by one state only.** The limit depends on aggregate turnover under the PAN.
+6. **Ignoring tax found during reconciliation.** Pay it through DRC-03, with interest if it applies.
+
+## Frequently Asked Questions
+
+**What is the due date for GSTR-9 for FY 2025-26?**
+The due date is 31 December 2026, unless the government extends it. The filing option has been enabled on the portal since 8 October 2026. Check the GST portal before you plan around the date.
+
+**Is GSTR-9 required if my turnover is below ₹2 crore?**
+No. Regular taxpayers with aggregate turnover up to ₹2 crore are exempt under Notification 15/2025-Central Tax. You may still file for your own records if the portal allows it. Remember that the limit is counted at PAN level.
+
+**Does GSTR-9C need a CA's signature?**
+Published guidance says GSTR-9C is now self-certified. Having a CA prepare or review the reconciliation is still a good idea for larger businesses. Your auditor can advise you on what applies, particularly if a separate audit is required.
+
+**Can I revise GSTR-9 after filing?**
+No. GSTR-9 cannot be revised after you file it. If you find extra tax due later, you can pay it through Form DRC-03. Check your figures carefully before you submit.
+
+**What is the last date to claim ITC for FY 2025-26?**
+The general cut-off is 30 November 2026, or the date you file GSTR-9, whichever comes first. So filing GSTR-9 early can end your window to claim credit. Complete your reconciliation before you file.
+
+## Conclusion
+
+GSTR-9 is much easier when you treat it as a year-end reconciliation instead of a form to complete in late December. Check whether you need to file, finish your ITC review before 30 November, and leave time for a second person to review the return.
+
+Need help reconciling your returns or filing GSTR-9? See our [GST and tax compliance services](/services/gst-compliance), or [contact us for a free consultation](/contact).
+
+*This article is general information as of November 2026, not legal or tax advice. GST rules and due dates can change. Check the latest notifications on the GST portal before filing.*
+
+**Sources**
+
+- GST portal: https://www.gst.gov.in/
+- GSTR-9 and 9C changes for FY 2025-26, A R Dhorajiya & Co.: https://ardhorajiya.com/gstr-9-9c-for-fy-2025-26-what-has-changed/
+- GSTR-9 and 9C filing enabled, CAclubindia: https://www.caclubindia.com/news/gst-portal-enables-gstr-9-and-gstr-9c-filing-for-fy-2025-26-26861.asp
+- Compliance calendar for November 2026, Ebizfiling: https://ebizfiling.com/?p=70529
+
+
+================================================================
+REMOVE EVERYTHING BELOW BEFORE PUBLISHING
+================================================================
+
+WHAT THE CA MUST CHECK
+1. Late fee table: comes from one CA firm's blog, with no notification number. Confirm it against the current notification, including whether "turnover" means state turnover.
+2. Notification 15/2025-Central Tax and whether it covers FY 2025-26: one source says it applies from FY 2024-25.
+3. GSTR-9C self-certification: sources conflict. Most say self-certified, and one says a CA must certify. Please settle this.
+4. Table 6A1, 8H1, Table 7 and Table 17 details: from one CA firm. That firm itself says sources disagree on the rows in Table 7.
+5. Rate-change date and the HSN split: confirm the wording, and that it is required.
+6. Section 16(4) ITC date, and the wording "whichever comes first".
+7. "You may still file for your own records if the portal allows it": my wording, so please confirm or remove it.
+8. "Composition taxpayers" (GSTR-9A): I did not explain this because it was not confirmed. Add it if you want.
+9. The Euroasia content rules ask for official sources. Please replace the secondary sources with CBIC or GST portal links where you can.
+
+BEFORE IT GOES LIVE
+- Add a named expert as author only if that person actually wrote or reviewed it. Otherwise keep "Euroasia Team".
+- Make the image: public/images/blog/gstr-9-annual-return-fy-2025-26.webp
+- Publish as early as you can, because the 30 November ITC date makes this time-sensitive.
