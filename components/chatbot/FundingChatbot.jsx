@@ -43,7 +43,7 @@ export default function FundingChatbot() {
       <Script src={`${CHATBOT_URL}/widget/chatbot.js`} strategy="lazyOnload" />
       <funding-chatbot
         api={`${CHATBOT_URL}/api/v1`}
-        bot-name="Ankur"
+        bot-name="Nisarg"
         avatar="ankur"
         company="Euroasia"
         subtitle="Euroasia · Scheme finder"
@@ -52,8 +52,8 @@ export default function FundingChatbot() {
         font-display="var(--font-display), 'Plus Jakarta Sans', sans-serif"
         font-mono="var(--font-ledger), ui-monospace, monospace"
         /* Desktop: above the WhatsApp button (56px, 16px from the bottom). Phones/tablets: above MobileActionBar (lg breakpoint). */
-        offset-bottom="88px"
-        offset-side="22px"
+        offset-bottom="38px"
+        offset-side="32px"
         offset-bottom-mobile="calc(4.5rem + env(safe-area-inset-bottom) + 14px)"
         offset-side-mobile="16px"
         mobile-breakpoint="1024"

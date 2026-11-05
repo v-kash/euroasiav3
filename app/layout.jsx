@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { displayFont, ledgerFont } from "@/styles/fonts";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/layout/WhatsAppButton";
+// import WhatsAppButton from "@/components/layout/WhatsAppButton";
 // import FloatingAlerts from "@/components/shared/FloatingAlerts";
 import NavratriProvider from "@/components/navratri/NavratriProvider";
 import { DIWALI } from "@/components/diwali/config";
@@ -150,7 +150,7 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
           <MobileActionBar />
-          <WhatsAppButton />
+          {/* <WhatsAppButton /> */}
           {/* Ankur, the AI funding assistant (served from chatbot.euroasia.cloud) */}
           <FundingChatbot />
           {/* Keep off: its "approved/sanctioned" alerts are made up, which counts as a dark pattern. */}
