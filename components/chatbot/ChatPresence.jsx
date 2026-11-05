@@ -12,7 +12,8 @@ import { FiX } from "react-icons/fi";
   renders under `next dev`. The live site renders nothing here until this reads a
   real count from the chatbot server.
 */
-const PREVIEW = process.env.NODE_ENV === "development";
+// const PREVIEW = process.env.NODE_ENV === "development";
+const PREVIEW = true;
 const TAG = "funding-chatbot";
 const DISMISSED = "chat-presence:dismissed";
 
