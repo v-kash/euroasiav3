@@ -395,6 +395,23 @@ h6 {
   animation: livePulse 2s ease-in-out infinite;
 }
 
+/*
+  "N people chatting" pill (components/chatbot/ChatPresence.jsx), level with the chat
+  button: a 60px circle at the offsets set in FundingChatbot.jsx. The widget switches
+  to its phone offsets below 1024px, so this does too.
+*/
+.chat-presence {
+  right: calc(32px + 60px + 12px);
+  bottom: calc(38px + 10px);
+}
+
+@media (max-width: 1023.98px) {
+  .chat-presence {
+    right: calc(16px + 60px + 10px);
+    bottom: calc(4.5rem + env(safe-area-inset-bottom) + 14px + 10px);
+  }
+}
+
 /* Dashboard Card Float (no longer used on the home page; kept for other pages) */
 @keyframes dashboardFloat {
   0%,

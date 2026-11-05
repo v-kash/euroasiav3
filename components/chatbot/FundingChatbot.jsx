@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { rememberLeadSent } from "@/components/contact/leadMemory";
+import ChatPresence from "@/components/chatbot/ChatPresence";
 
 /*
   Ankur, the AI funding assistant. The widget itself lives on the chatbot server
@@ -60,6 +61,7 @@ export default function FundingChatbot() {
         /* Popup level, like ContactModal (z-[9999]): the festival cursors (Navratri 10000, Diwali sparkler 10001) stay on top */
         z-index="9998"
       />
+      <ChatPresence />
     </>
   );
 }
