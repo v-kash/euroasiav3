@@ -65,6 +65,8 @@ const skipped = (path = "") =>
 
 // Typing somewhere, or something already covering the middle of the screen?
 function visitorIsBusy() {
+  // Chatting with Ankur (components/chatbot): its input sits in a shadow root, so check the widget itself
+  if (document.querySelector("funding-chatbot")?.isOpen) return true;
   const el = document.activeElement;
   if (
     el &&

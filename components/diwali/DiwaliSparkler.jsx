@@ -136,9 +136,11 @@ export default function DiwaliSparkler() {
     const onMove = (event) => {
       if (event.pointerType === "touch") return show(false);
 
-      if (event.target !== lastTarget) {
-        lastTarget = event.target;
-        const element = event.target instanceof Element ? event.target : null;
+      // Inside a shadow root (the Ankur chatbot) event.target is only the host; composedPath sees the real element
+      const target = event.composedPath?.()[0] ?? event.target;
+      if (target !== lastTarget) {
+        lastTarget = target;
+        const element = target instanceof Element ? target : null;
         overField = Boolean(element?.closest(FIELD));
         cursor.classList.toggle(styles.hot, Boolean(element?.closest(CLICKABLE)));
       }

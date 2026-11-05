@@ -14,6 +14,7 @@ import DiwaliOfferBar from "@/components/diwali/DiwaliOfferBar";
 import ContactModalProvider from "@/components/contact/ContactModal";
 import LeadTriggers from "@/components/contact/LeadTriggers";
 import MobileActionBar from "@/components/layout/MobileActionBar";
+import FundingChatbot from "@/components/chatbot/FundingChatbot";
 
 export const metadata = {
   metadataBase: new URL("https://www.euroasias.com"),
@@ -150,6 +151,8 @@ export default function RootLayout({ children }) {
           <Footer />
           <MobileActionBar />
           <WhatsAppButton />
+          {/* Ankur, the AI funding assistant (served from chatbot.euroasia.cloud) */}
+          <FundingChatbot />
           {/* Keep off: its "approved/sanctioned" alerts are made up, which counts as a dark pattern. */}
           {/* <FloatingAlerts /> */}
           <LeadTriggers />
