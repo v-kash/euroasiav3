@@ -15,6 +15,60 @@ const services = [
   "Other",
 ];
 
+const LABEL =
+  "block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2";
+
+/*
+  Popup on phones: each label sits inside its field like a placeholder and
+  floats up to the top corner once the field is focused or filled, so a field
+  takes one row instead of two. From sm up the label goes back above the field.
+  The field comes before its label in the DOM so the label can follow it
+  (Tailwind's peer-*); the real placeholder stays hidden until focus, then
+  shows as a hint under the floated label.
+*/
+const FLOAT_LABEL =
+  "max-sm:pointer-events-none max-sm:absolute max-sm:left-[18px] max-sm:top-2 max-sm:mb-0 max-sm:text-[10.5px] max-sm:leading-4 max-sm:transition-all max-sm:duration-150 " +
+  "max-sm:peer-placeholder-shown:top-5 max-sm:peer-placeholder-shown:text-[13px] max-sm:peer-placeholder-shown:text-text-muted " +
+  "max-sm:peer-focus:top-2 max-sm:peer-focus:text-[10.5px] max-sm:peer-focus:text-primary-navy";
+// The service dropdown always shows a value, so its label stays up.
+const FLOAT_LABEL_UP =
+  "max-sm:pointer-events-none max-sm:absolute max-sm:left-[18px] max-sm:top-2 max-sm:mb-0 max-sm:text-[10.5px] max-sm:leading-4";
+const FLOAT_ROOM = "max-sm:min-h-[56px] max-sm:pt-[22px] max-sm:pb-1.5";
+const FLOAT_FIELD = `peer ${FLOAT_ROOM} max-sm:placeholder:text-transparent max-sm:focus:placeholder:text-silver-grey`;
+
+const fieldClass = (hasError, extra = "") =>
+  `w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
+    hasError ? "border-red-500" : "border-[#D5DDE9]"
+  } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors ${extra}`;
+
+// One form field: its label, the control (children) and its error message.
+function Field({ id, label, floating, labelUp, error, children }) {
+  const labelEl = (
+    <label
+      htmlFor={id}
+      className={`${LABEL} ${floating ? (labelUp ? FLOAT_LABEL_UP : FLOAT_LABEL) : ""}`}
+    >
+      {label}
+    </label>
+  );
+  return (
+    <div>
+      {floating ? (
+        <div className="relative sm:flex sm:flex-col-reverse">
+          {children}
+          {labelEl}
+        </div>
+      ) : (
+        <>
+          {labelEl}
+          {children}
+        </>
+      )}
+      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+    </div>
+  );
+}
+
 /*
   Used on the /contact page and inside the site-wide contact popup.
   - idPrefix keeps field ids unique when both are on screen at once.
@@ -23,6 +77,7 @@ const services = [
   - source records where the lead came from (see lib/leadSources.js).
   - onActivity tells the mascot what's happening: "focus", "typing",
     "invalid", "submitting", "success" or "error".
+  - compact: the popup's tighter layout (floating labels on phones).
 */
 export default function ContactForm({
   idPrefix = "",
@@ -84,7 +139,7 @@ export default function ContactForm({
       onSubmit={handleSubmit(onSubmit, () => onActivity?.("invalid"))}
       onFocus={() => onActivity?.("focus")}
       onInput={() => onActivity?.("typing")}
-      className={compact ? "space-y-4" : "space-y-5"}
+      className={compact ? "space-y-3 sm:space-y-4" : "space-y-5"}
       noValidate
     >
       {/* Honeypot field for spam protection */}
@@ -97,37 +152,37 @@ export default function ContactForm({
       />
 
       {/* Full Name */}
-      <div>
-        <label
-          htmlFor={`${idPrefix}name`}
-          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-        >
-          Full Name <span className="text-red-500">*</span>
-        </label>
+      <Field
+        id={`${idPrefix}name`}
+        floating={compact}
+        error={errors.name?.message}
+        label={
+          <>
+            Full Name <span className="text-red-500">*</span>
+          </>
+        }
+      >
         <input
           type="text"
           id={`${idPrefix}name`}
           {...register("name", { required: "Full name is required" })}
-          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
-            errors.name ? "border-red-500" : "border-[#D5DDE9]"
-          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
+          className={fieldClass(errors.name, compact ? FLOAT_FIELD : "")}
           placeholder="Enter your full name"
         />
-        {errors.name && (
-          <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
-        )}
-      </div>
+      </Field>
 
       {/* Email + Phone: side by side in the popup, stacked on the page */}
-      <div className={compact ? "grid gap-4 sm:grid-cols-2" : "space-y-5"}>
-        {/* Email */}
-        <div>
-          <label
-            htmlFor={`${idPrefix}email`}
-            className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-          >
-            Email Address <span className="text-red-500">*</span>
-          </label>
+      <div className={compact ? "grid gap-3 sm:grid-cols-2 sm:gap-4" : "space-y-5"}>
+        <Field
+          id={`${idPrefix}email`}
+          floating={compact}
+          error={errors.email?.message}
+          label={
+            <>
+              Email Address <span className="text-red-500">*</span>
+            </>
+          }
+        >
           <input
             type="email"
             id={`${idPrefix}email`}
@@ -138,24 +193,21 @@ export default function ContactForm({
                 message: "Invalid email address",
               },
             })}
-            className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
-              errors.email ? "border-red-500" : "border-[#D5DDE9]"
-            } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
+            className={fieldClass(errors.email, compact ? FLOAT_FIELD : "")}
             placeholder="Enter your email"
           />
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
-          )}
-        </div>
+        </Field>
 
-        {/* Phone */}
-        <div>
-          <label
-            htmlFor={`${idPrefix}phone`}
-            className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-          >
-            Phone Number <span className="text-red-500">*</span>
-          </label>
+        <Field
+          id={`${idPrefix}phone`}
+          floating={compact}
+          error={errors.phone?.message}
+          label={
+            <>
+              Phone Number <span className="text-red-500">*</span>
+            </>
+          }
+        >
           <input
             type="tel"
             id={`${idPrefix}phone`}
@@ -166,31 +218,25 @@ export default function ContactForm({
                 message: "Please enter a valid 10-digit phone number",
               },
             })}
-            className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
-              errors.phone ? "border-red-500" : "border-[#D5DDE9]"
-            } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors`}
+            className={fieldClass(errors.phone, compact ? FLOAT_FIELD : "")}
             placeholder={
               compact ? "10-digit mobile" : "Enter your phone number"
             }
           />
-          {errors.phone && (
-            <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>
-          )}
-        </div>
+        </Field>
       </div>
 
       {/* Service Interest */}
-      <div>
-        <label
-          htmlFor={`${idPrefix}serviceInterest`}
-          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-        >
-          Service Interest
-        </label>
+      <Field
+        id={`${idPrefix}serviceInterest`}
+        floating={compact}
+        labelUp
+        label="Service Interest"
+      >
         <select
           id={`${idPrefix}serviceInterest`}
           {...register("serviceInterest")}
-          className="w-full min-h-[48px] px-4 py-3 rounded-xl border-2 border-[#D5DDE9] bg-white text-text-dark focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors"
+          className={fieldClass(false, compact ? FLOAT_ROOM : "")}
         >
           <option value="">Select a service</option>
           {serviceOptions.map((service) => (
@@ -199,38 +245,41 @@ export default function ContactForm({
             </option>
           ))}
         </select>
-      </div>
+      </Field>
 
       {/* Message */}
-      <div>
-        <label
-          htmlFor={`${idPrefix}message`}
-          className="block font-ledger text-xs font-semibold uppercase tracking-[0.12em] text-primary-navy mb-2"
-        >
-          Message{" "}
-          <span className="normal-case tracking-normal font-sans font-normal text-text-muted">
-            (optional)
-          </span>
-        </label>
+      <Field
+        id={`${idPrefix}message`}
+        floating={compact}
+        error={errors.message?.message}
+        label={
+          <>
+            Message{" "}
+            <span className="normal-case tracking-normal font-sans font-normal text-text-muted">
+              (optional)
+            </span>
+          </>
+        }
+      >
         <textarea
           id={`${idPrefix}message`}
           rows={compact ? 3 : 4}
           {...register("message")}
-          className={`w-full min-h-[48px] px-4 py-3 rounded-xl border-2 bg-white text-text-dark placeholder:text-silver-grey ${
-            errors.message ? "border-red-500" : "border-[#D5DDE9]"
-          } focus:outline-none focus:border-primary-navy focus:ring-4 focus:ring-accent/30 transition-colors resize-none`}
+          className={fieldClass(
+            errors.message,
+            `resize-none ${compact ? `${FLOAT_FIELD} max-sm:h-[84px]` : ""}`,
+          )}
           placeholder="Tell us about your requirements"
         />
-        {errors.message && (
-          <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
-        )}
-      </div>
+      </Field>
 
       {/* Consent: unticked by default and required (DPDP Act) */}
       <div>
         <label
           htmlFor={`${idPrefix}consent`}
-          className="flex items-start gap-3 text-sm text-text-muted cursor-pointer"
+          className={`flex items-start gap-3 text-sm text-text-muted cursor-pointer ${
+            compact ? "max-sm:text-[13px] max-sm:leading-snug" : ""
+          }`}
         >
           <input
             type="checkbox"

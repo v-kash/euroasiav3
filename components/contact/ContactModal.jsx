@@ -256,7 +256,7 @@ function ContactDialog({ options, onClose }) {
             </div>
 
             {/* Form */}
-            <div className="px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-6 sm:px-8 sm:py-7 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-10 lg:py-10">
+            <div className="px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-8 sm:px-8 sm:py-7 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-10 lg:py-10">
               {sentName ? (
                 <div className="flex h-full flex-col items-center justify-center py-10 text-center">
                   <Mascot mood="celebrate" className="mb-6 h-24 w-24" />
@@ -277,10 +277,11 @@ function ContactDialog({ options, onClose }) {
                 </div>
               ) : (
                 <>
-                  <h3 className="font-display text-xl font-bold tracking-[-0.01em] text-primary-navy lg:pr-10">
+                  {/* Phones skip this heading (the header above says it) to keep the form short */}
+                  <h3 className="hidden font-display text-xl font-bold tracking-[-0.01em] text-primary-navy sm:block lg:pr-10">
                     Send us your details
                   </h3>
-                  <p className="mb-5 mt-1 text-sm text-text-muted sm:mb-6">
+                  <p className="mb-6 mt-1 hidden text-sm text-text-muted sm:block">
                     Fields marked <span className="text-red-500">*</span> are
                     required.
                   </p>
