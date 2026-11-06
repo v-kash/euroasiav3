@@ -198,7 +198,7 @@ function ContactDialog({ options, onClose }) {
         aria-modal="true"
         aria-labelledby="contact-popup-title"
         tabIndex={-1}
-        className="relative flex w-full sm:max-w-xl lg:max-w-5xl max-h-[92dvh] flex-col overflow-hidden rounded-t-2xl sm:rounded-2xl border-2 border-primary-navy bg-white shadow-2xl outline-none"
+        className="contact-sheet relative flex w-full sm:max-w-xl lg:max-w-5xl flex-col overflow-hidden rounded-t-2xl sm:rounded-2xl border-2 border-b-0 sm:border-b-2 border-primary-navy bg-white shadow-2xl outline-none"
       >
         {/* Stays put while the content scrolls. White over the navy header on
             phones, navy over the white form column on desktop. */}
@@ -206,13 +206,13 @@ function ContactDialog({ options, onClose }) {
           type="button"
           onClick={onClose}
           aria-label="Close contact form"
-          className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-lg text-white/80 transition-colors hover:bg-white/10 hover:text-white lg:right-4 lg:top-4 lg:text-text-muted lg:hover:bg-light-bg lg:hover:text-primary-navy"
+          className="absolute right-2 top-2 z-20 flex h-10 w-10 items-center justify-center rounded-lg text-white/80 transition-colors hover:bg-white/10 hover:text-white sm:right-3 sm:top-3 lg:right-4 lg:top-4 lg:text-text-muted lg:hover:bg-light-bg lg:hover:text-primary-navy"
         >
           <FiX aria-hidden="true" className="h-5 w-5" />
         </button>
 
         <div className="overflow-y-auto overscroll-contain">
-          {/* Phones: intro → form → info. Desktop: intro + info on the left, form on the right. */}
+          {/* Phones/tablets: intro → form. Desktop: intro + contact info on the left, form on the right. */}
           <div className="relative grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:grid-rows-[auto_1fr]">
             {/* One continuous navy column behind intro + info on desktop */}
             <div
@@ -226,7 +226,7 @@ function ContactDialog({ options, onClose }) {
             />
 
             {/* Intro */}
-            <div className="relative bg-primary-navy px-6 pb-6 pt-7 pr-16 text-white sm:px-8 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:px-10 lg:pb-8 lg:pt-10">
+            <div className="relative bg-primary-navy px-5 pb-6 pr-14 pt-5 text-white sm:px-8 sm:pr-16 sm:pt-7 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:px-10 lg:pb-8 lg:pt-10">
               {/* Mascot: peeks over the header's bottom edge on phones; sits
                   above the title with a speech bubble on desktop. Hidden after
                   sending, when the thank-you view shows its own. */}
@@ -244,18 +244,19 @@ function ContactDialog({ options, onClose }) {
               </p>
               <h2
                 id="contact-popup-title"
-                className="mt-2 font-display text-2xl font-extrabold leading-tight tracking-[-0.02em] lg:text-3xl"
+                className="mt-2 font-display text-[22px] font-extrabold leading-tight tracking-[-0.02em] sm:text-2xl lg:text-3xl"
               >
                 {title}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-white/75">
+              {/* .contact-intro: hidden on short phone and landscape screens, so the form starts higher */}
+              <p className="contact-intro mt-2 text-sm leading-relaxed text-white/75 sm:mt-3">
                 {options.intro ||
                   "Tell us what you need and our experts will guide you on the right schemes, registrations and paperwork. Free, with no obligation."}
               </p>
             </div>
 
             {/* Form */}
-            <div className="px-6 py-7 sm:px-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-10 lg:py-10">
+            <div className="px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-6 sm:px-8 sm:py-7 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:px-10 lg:py-10">
               {sentName ? (
                 <div className="flex h-full flex-col items-center justify-center py-10 text-center">
                   <Mascot mood="celebrate" className="mb-6 h-24 w-24" />
@@ -279,7 +280,7 @@ function ContactDialog({ options, onClose }) {
                   <h3 className="font-display text-xl font-bold tracking-[-0.01em] text-primary-navy lg:pr-10">
                     Send us your details
                   </h3>
-                  <p className="mb-6 mt-1 text-sm text-text-muted">
+                  <p className="mb-5 mt-1 text-sm text-text-muted sm:mb-6">
                     Fields marked <span className="text-red-500">*</span> are
                     required.
                   </p>
@@ -295,8 +296,8 @@ function ContactDialog({ options, onClose }) {
               )}
             </div>
 
-            {/* Contact info */}
-            <div className="relative bg-primary-navy px-6 pb-8 pt-7 text-white sm:px-8 lg:col-start-1 lg:row-start-2 lg:bg-transparent lg:px-10 lg:pb-10 lg:pt-0">
+            {/* Contact info: desktop only, so the form gets the room on smaller screens */}
+            <div className="relative hidden px-10 pb-10 text-white lg:col-start-1 lg:row-start-2 lg:block">
               <ul className="space-y-5 lg:border-t lg:border-white/15 lg:pt-8">
                 <InfoItem icon={FiPhone} title="Call or WhatsApp">
                   <a

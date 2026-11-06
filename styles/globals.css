@@ -412,6 +412,43 @@ h6 {
   }
 }
 
+/* Contact popup (components/contact/ContactModal.jsx). dvh keeps the sheet
+   inside the visible screen on phones; older browsers without dvh get vh
+   (otherwise the sheet grows past the screen and can't scroll). */
+.contact-sheet {
+  max-height: 92vh;
+  max-height: 92dvh;
+}
+
+/* Short phone or landscape screens: drop the intro line so the form starts higher. */
+@media (max-width: 1023.98px) and (max-height: 719.98px) {
+  .contact-intro {
+    display: none;
+  }
+}
+
+/* Ankur as the chat button (components/chatbot/ChatLauncher.jsx). The 88px box
+   is offset so his body sits where the widget's 60px button was (38px / 32px
+   from the corner; above MobileActionBar below 1024px). */
+.chat-launcher {
+  right: calc(32px - 14px);
+  bottom: calc(38px - 10px);
+}
+
+@media (max-width: 1023.98px) {
+  .chat-launcher {
+    right: calc(16px - 14px);
+    bottom: calc(4.5rem + env(safe-area-inset-bottom) + 14px - 10px);
+  }
+}
+
+/* Phones: the open chat fills the screen, so the button steps aside. */
+@media (max-width: 640px) {
+  .chat-launcher[aria-expanded="true"] {
+    display: none;
+  }
+}
+
 /* Dashboard Card Float (no longer used on the home page; kept for other pages) */
 @keyframes dashboardFloat {
   0%,
